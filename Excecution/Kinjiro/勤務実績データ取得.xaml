@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>612,1320</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>612,1303.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>勤務実績データ取得_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,7 +112,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xD;&#xA;&#xD;&#xA;①勤務実績参照を開く&#xD;&#xA;②当月入力判定&#xD;&#xA;　→指定月がある場合、入力して抽出ボタンを押下&#xA;③勤務実績情報の表データを取得、dt変数に保存&#xA;④dt変数の出勤時刻、退勤時刻の「当」を削除する&#xD;&#xA;⑤当日の日付と比較する&#xD;&#xA;　→当日以降の勤務時間がある場合は途中フラグをつける&#xD;&#xA;⑥未承認フラグ判定&#xD;&#xA;　→未承認がある場合、対応する日付データを上書きする&#xD;&#xA;⑦勤務情報＆実績.xlsxの「勤務実績」シートに移動&#xD;&#xA;⑧処理したdt変数を書き込む&#xD;&#xA;&#xD;&#xA;次のワークフローは「TKタブ移動、勤次郎終了」" DisplayName="勤務実績データ取得" sap:VirtualizedContainerService.HintSize="546,1255.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①勤務実績参照を開く&#xA;②当月入力判定&#xA;　→指定月がある場合、入力して抽出ボタンを押下&#xA;③勤務実績情報の表データを取得、dt変数に保存&#xA;④dt変数の出勤時刻、退勤時刻の「当」を削除する&#xA;⑤当日の日付と比較する&#xA;　→当日以降の勤務時間がある場合は途中フラグをつける&#xA;⑥未承認フラグ判定&#xA;　→未承認がある場合、対応する日付データを上書きする&#xA;⑦処理したdt変数を勤務情報＆実績.xlsxの「勤務実績」シートに書き込む&#xA;&#xA;次のワークフローは「TKタブ移動、勤次郎終了」" DisplayName="勤務実績データ取得" sap:VirtualizedContainerService.HintSize="546,1238.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="WorkData" />
     </Sequence.Variables>
