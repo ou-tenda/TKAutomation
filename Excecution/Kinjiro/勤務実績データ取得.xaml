@@ -4,6 +4,7 @@
     <x:Property Name="out_NotEnd" Type="OutArgument(x:Boolean)" />
     <x:Property Name="in_NotApprovalWork" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_IsApproval" Type="InArgument(x:Boolean)" />
+    <x:Property Name="out_WorkData" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -112,7 +113,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①勤務実績参照を開く&#xA;②当月入力判定&#xA;　→指定月がある場合、入力して抽出ボタンを押下&#xA;③勤務実績情報の表データを取得、dt変数に保存&#xA;④dt変数の出勤時刻、退勤時刻の「当」を削除する&#xA;⑤当日の日付と比較する&#xA;　→当日以降の勤務時間がある場合は途中フラグをつける&#xA;⑥未承認フラグ判定&#xA;　→未承認がある場合、対応する日付データを上書きする&#xA;⑦処理したdt変数を勤務情報＆実績.xlsxの「勤務実績」シートに書き込む&#xA;&#xA;次のワークフローは「TKタブ移動、勤次郎終了」" DisplayName="勤務実績データ取得" sap:VirtualizedContainerService.HintSize="546,1238.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①勤務実績参照を開く&#xA;②当月入力判定&#xA;　→指定月がある場合、入力して抽出ボタンを押下&#xA;③勤務実績情報の表データを取得、dt変数に保存&#xA;④dt変数の出勤時刻、退勤時刻の「当」を削除する&#xA;⑤当日の日付と比較する&#xA;　→当日以降の勤務時間がある場合は途中フラグをつける&#xA;⑥未承認フラグ判定&#xA;　→未承認がある場合、対応する日付データを上書きする&#xA;⑦処理したdt変数を引数として出力する&#xD;&#xA;&#xA;次のワークフローは「勤務実績の書き込み」" DisplayName="勤務実績データ取得" sap:VirtualizedContainerService.HintSize="546,1238.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="WorkData" />
     </Sequence.Variables>
