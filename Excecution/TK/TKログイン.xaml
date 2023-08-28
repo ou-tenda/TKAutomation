@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>660,1862</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>806,3130</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TKログイン_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -119,7 +119,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①アプリが開いているを判定する&#xA;　→開いている場合は全部閉じる&#xA;②Chromeを開く&#xA;③TKのURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;④TKにログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;⑤作業実績確認画面に遷移する&#xA;&#xA;次のワークフローは「プロジェクト名取得」&#xA;&#xA;引数&#xA;in_TKID:TKのID&#xA;in_TKPW:TKのパスワード&#xA;in_TKURL:TKのURL&#xA;&#xA;変数&#xA;isTKAcsess:TKにアクセスできたかの判定に使用 / Boolean / TKにアクセスできたかの判定&#xA;isTKLogin:TKにログインできたかの判定に使用 / Boolean / ログインできたかの判定&#xA;isTKNotice:TKログイン時、お知らせ表示の判定に使用 / Boolean / お知らせの判定" DisplayName="TKログイン" sap:VirtualizedContainerService.HintSize="670,1797.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①アプリが開いているを判定する&#xA;　→開いている場合は全部閉じる&#xA;②Chromeを開く&#xA;③TKのURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;④TKにログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;⑤作業実績確認画面に遷移する&#xA;&#xA;次のワークフローは「プロジェクト名取得」&#xA;&#xA;引数&#xA;in_TKID:TKのID&#xA;in_TKPW:TKのパスワード&#xA;in_TKURL:TKのURL&#xA;&#xA;変数&#xA;isTKAcsess:TKにアクセスできたかの判定に使用 / Boolean / TKにアクセスできたかの判定&#xA;isTKLogin:TKにログインできたかの判定に使用 / Boolean / ログインできたかの判定&#xA;isTKNotice:TKログイン時、お知らせ表示の判定に使用 / Boolean / お知らせの判定" DisplayName="TKログイン" sap:VirtualizedContainerService.HintSize="816,3065" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TKURL" />
       <Variable x:TypeArguments="x:String" Name="TKName" />
@@ -131,9 +131,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="608,556.6666666666666" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="754,556" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="無視されるアクティビティ" sap:VirtualizedContainerService.HintSize="512,476.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="無視されるアクティビティ" sap:VirtualizedContainerService.HintSize="512,477" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -147,7 +147,7 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" sap2010:Annotation.AnnotationText="参考文献：https://it-rpa.hatenablog.com/entry/uipath_%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E5%90%8D%E5%8F%96%E5%BE%97_killprocess" DisplayName="Chromeを強制終了" sap:VirtualizedContainerService.HintSize="388,195.33333333333334" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Chrome">
+            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" sap2010:Annotation.AnnotationText="参考文献：https://it-rpa.hatenablog.com/entry/uipath_%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E5%90%8D%E5%8F%96%E5%BE%97_killprocess" DisplayName="Chromeを強制終了" sap:VirtualizedContainerService.HintSize="388,195" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Chrome">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -158,19 +158,19 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <Sequence DisplayName="②Chromeを開く / ③TKにアクセス" sap:VirtualizedContainerService.HintSize="608,726.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence DisplayName="②Chromeを開く / ③TKにアクセス" sap:VirtualizedContainerService.HintSize="754,1995" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard sap2010:Annotation.AnnotationText="②Chromeを開く&#xA;③TKのURLにアクセス" AttachMode="ByInstance" CloseMode="Never" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="546,616" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
+      <uix:NApplicationCard sap2010:Annotation.AnnotationText="②Chromeを開く&#xA;③TKのURLにアクセス" AttachMode="ByInstance" CloseMode="Never" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="692,1884" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="TKにアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="512,353.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap2010:Annotation.AnnotationText="TKにアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="658,1622" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,7 +178,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="TKにアクセスできたかの判定" sap:VirtualizedContainerService.HintSize="450,83.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence DisplayName="TKにアクセスできたかの判定" sap:VirtualizedContainerService.HintSize="596,83" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="isTKAccess" />
                 </Sequence.Variables>
@@ -222,14 +222,14 @@
                   </If.Else>
                 </If>
               </Sequence>
-              <Sequence DisplayName="④TKにログインする" sap:VirtualizedContainerService.HintSize="450,83.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="④TKにログインする" sap:VirtualizedContainerService.HintSize="596,1353" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence sap2010:Annotation.AnnotationText="ID,PWを入力し、ログインボタンを押下します。" DisplayName="ログインする" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <Sequence sap2010:Annotation.AnnotationText="ID,PWを入力し、ログインボタンを押下します。" DisplayName="ログインする" sap:VirtualizedContainerService.HintSize="534,114" sap2010:WorkflowViewState.IdRef="Sequence_16">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -237,7 +237,7 @@
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="IDを入力" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,220" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Text="[in_TKID]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="IDを入力" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,219" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Text="[in_TKID]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/login.html" CvElementArea="1202, 454, 314, 45" CvTextArea="1212, 465, 63, 19" CvTextArgument="01883" CvType="InputBox" DesignTimeRectangle="1204, 457, 311, 41" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'01883'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='required' aaname='' /&gt;" Guid="9caa48cf-3b13-40c3-b990-d20b7ca044d7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATsAAAAtCAYAAADRJMz1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAN6SURBVHhe7do/bupMFIZx1oiUDUVshewhEgVVQsMGKGhSRLAFkOby2mcs/5kZ2zdO5MHPTzrFhwcuX/Po2GTlAGABiB2ARQjG7n6/u/P57A6Hg9vtdu79/Z1hGGa2o06pV+qW+hXSid3lcnH7/T74gQzDMHMf9Usda2vETgf8G47Ho7ter+52u9lVAJgndUq9Urd8w9rBq2Kn1c9vdKfTyV4FgLyoX+qYela/pa1ip3tdv9EBQM78hqeueVXs9HBPF7UKAkDO1DH1TF3zqtj5X115Rgcgd+qYeqaueVXsdEEDAM+g3TRiB+ApETsAi0DsACwCsQOwCL8Qu2+3fVm51ao2rx92LeXDbR5nN5/2nzFfW7euf7bmZfv4VyNGnS+/Q+PsY3q/E4DZmzh2FotG3Oy1VJBqgUyF5fttHTjj37t22y97yYw676PY/p6fm+IzhgUbwFxNGruP10AsxELSCVlg64rGzs6u30LJDET2P85vgmft/2u1ebwLQK4mjF0ZkHBcbJtKbUe2QUVjl7xun18P7djzCeWG2N0cAeRjutjFtjcT3fq8vtj5LTCxOTZCO/Z8Qu93BzB708WuJ1a9t4J9sXvwz+Ca5+Jb2tjzIeX3ZqsDcvdnsSvD87PYlex5W23SG9rY8w/2XYrhhwngKWQVu86zs3qUopvd8PNB9p6ht7wA5unPYvfj29jE9ep2tR6wsecTOtEEkJ3pYvfLP1CkY2nP4WpBGns+qS/EAGZvutjZs7Hw7Z7F5Qd/etK3GZbXh8auez6J2AHZmzB2FpDQ9taz9RX6gpK8bj9CDLyNDZ3/fttEw9cXTgDzN2nsqr9ta2xwgRCFDNieyui0z8RvScec98/x2ptp+DMA5Gba2BW6f+oRvX31cQxO5BbTotiYAbfHQ85XP1w0ho0OeAa/EDsAmB9iB2ARiB2ARSB2ABaB2AFYBGIHYBGIHYBFIHYAFiEau91uV1y43W72CgDkSR1Tz9Q1r4rd4XAoLl6vV3sFAPKkjqln6ppXxe58PhcXj8ejvQIAeVLH1DN1zatid7/f3X6/Lw6cTid7FQDyon6pY+qZuuZVsZPL5VIc8hueVkGe4QGYO3VKvfIbnUY9q2vETnTAb3gMwzC5jfrVDp10Yida/XSvq4d7/ldahmGYuY46pV6pW/Vb17pg7ADg2RA7AAvg3D+NDdsaaCWZIwAAAABJRU5ErkJggg==" InformativeScreenshot="260384c5308e56cc40bf1ca2a029532b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -247,8 +247,14 @@
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="PassWordを入力" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,220" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" SecureText="[in_TKPW]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="PassWordを入力" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,219" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" SecureText="[in_TKPW]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/login.html" CvType="InputBox" DesignTimeRectangle="1204, 552, 311, 41" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBoxPassword" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='required' aaname='' /&gt;" Guid="f79d6a0b-45cb-4419-8dfc-f4b3004c153a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATsAAAAtCAYAAADRJMz1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHOSURBVHhe7dkxbqtQFEXRP/8ZWaKgpGECLuhhCiDxdSwechynN75rSacBknLrgf/tAAWIHVDC29ht27ZP07QPw7B3Xbffbjczs49dOpVepVvp1zu/YjfP8973/dt/aGb26Uu/0rFXP2KXB9ofjOO4L8uyr+t63AX4TOlUepVutYa9Bu+MXY5+7UR3v9+PqwDXkn6lY+nZ8yvtGbu867YTHcCVtRNeutacscvHvdzMURDgytKx9Cxda87YtV9dfaMDri4dS8/SteaMXW5kAN/gtWliB3wlsQNKEDugBLEDShA7oASxA0oQO6AEsQNKEDugBLEDShA7oASxA0oQO6AEsQNKEDugBLEDShA7oASxA0oQO6AEsQNKEDugBLEDShA7oASxA0oQO6AEsQNK+DN2Xdc9bqzrelwBuKZ0LD1L15ozdsMwPG4uy3JcAbimdCw9S9eaM3bTND1ujuN4XAG4pnQsPUvXmjN227btfd8/Hrjf78dVgGtJv9Kx9Cxda87YxTzPj4faCS9HQd/wgE+XTqVX7USXpWfPfsQu8kA74ZmZXW3p12vo4lfsIke/vOvm4177ldbM7FOXTqVX6dbzq+uzt7ED+DZiBxSw7/8B8UJG+fsCipIAAAAASUVORK5CYII=" InformativeScreenshot="8264891774ff3e729a454d067808f678.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -259,13 +265,13 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック 'ログイン'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック 'ログイン'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/login.html" CvElementArea="1200, 671, 318, 46" CvTextArea="1316, 681, 85, 21" CvTextArgument="0J12" CvType="Button" DesignTimeRectangle="1319, 674, 82, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'ログイン'" FullSelectorArgument="&lt;webctrl parentid='login_submit_btn' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='login_submit_btn' tag='DIV' type='' class='string' aaname='ログイン' check:innerText='ログイン' /&gt;" Guid="8e999979-cb88-44f4-b8fe-39e74d7786c8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFYAAAAuCAYAAACyJ+5bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAIPSURBVGhD7ZsxjsIwEEU5FBfhFnscTsAJKLgAHRUtDRUVEn0EtddOPCGYyXrs+DuRdkZ6UkQS23mecQwSK6MBCRULitV682OU8qhYECoWhIoFoWJBqFgQKhaEigWhYkGoWBDLE7u7msa8zHlnj48P++XwYQ7cdQtnHrGtPBv3E3v+cLfnnlezpeOR69LYm/OzVFtxZhHbyqKsZM6vNydzs1fcjvZ4mMHstTK6Po1prFg3YZ/nu/5KSg/E+lnNDZ9ln20GULYKo5XLtZPA9vLqGhsTt9vbcb+fvbns+esS4MVKBH3gZ1xw37DMufMEZdhUsVGpIf3ET6uSumLbl5FEFmXPtIejyckp8eQJCagn1meCrMzkFcBTqqzz195KYhMH6DM7S4q/10WJ9TmK6495rgpi07Mvvmvg8P0MAi+W+vweK1ZsZL/KQvdIxzDcZfh7aH1Ei/2rH6DY7rPUcpbuBvoXk4tgvFXERparei8vCbQ+jmY4lZ6L8a+6cLHRcS5JbF/S038bgIoVSHUsQ2xBqQ6UWFp+JMvb7GJJQslfsYqL7SdevlOZT+zgbT5tE/9NMbFU9i5SdjYWXmxuRMUG7ScOVsoUse8K6iJ30gOxOPrtUcZykUqy2GFmFlqSqon9b6hYECoWhIoFoWJBqFgQKhaEigWhYkGoWBAqFoSKBaFiQahYEPqXT1CoWEgY8wu+N4iRQI5jnAAAAABJRU5ErkJggg==" InformativeScreenshot="90804c690dcad22e5df41f404421a23f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
                 </Sequence>
-                <Sequence sap2010:Annotation.AnnotationText="TKにログインできたかか同課の確認をします。&#xA;できないときはエラーとします。&#xA;※要素が存在しないとき、「要素を確認」で止まって進まない" DisplayName="ログインできたか判定" sap:VirtualizedContainerService.HintSize="450,143.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence sap2010:Annotation.AnnotationText="TKにログインできたかか同課の確認をします。&#xA;できないときはエラーとします。&#xA;※要素が存在しないとき、「要素を確認」で止まって進まない" DisplayName="ログインできたか判定" sap:VirtualizedContainerService.HintSize="534,143" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="isTKLogin" />
                   </Sequence.Variables>
@@ -311,14 +317,14 @@
                     </If.Else>
                   </If>
                 </Sequence>
-                <Sequence DisplayName="お知らせを消す" sap:VirtualizedContainerService.HintSize="450,83.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence DisplayName="お知らせを消す" sap:VirtualizedContainerService.HintSize="534,901" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap2010:Annotation.AnnotationText="TKログイン時、お知らせが表示されているときは閉じます。&#xA;表示されないときは何もしません。" DisplayName="お知らせの判定" sap:VirtualizedContainerService.HintSize="472,782.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence sap2010:Annotation.AnnotationText="TKログイン時、お知らせが表示されているときは閉じます。&#xA;表示されないときは何もしません。" DisplayName="お知らせの判定" sap:VirtualizedContainerService.HintSize="472,786" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="isTKNotice" />
                     </Sequence.Variables>
@@ -329,7 +335,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NCheckElement DelayBefore="0" DisplayName="要素を確認 '未読のみ'" sap:VirtualizedContainerService.HintSize="410,158.66666666666666" sap2010:WorkflowViewState.IdRef="NCheckElement_4" Result="[isTKNotice]" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
+                    <uix:NCheckElement DelayBefore="0" DisplayName="要素を確認 '未読のみ'" sap:VirtualizedContainerService.HintSize="410,158" sap2010:WorkflowViewState.IdRef="NCheckElement_4" Result="[isTKNotice]" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
                       <uix:NCheckElement.Target>
                         <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#schedule_week" CvElementArea="394, 336, 107, 46" CvTextArea="410, 347, 73, 22" CvTextArgument="*1Oa+" CvType="Button" DesignTimeRectangle="395, 339, 106, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'未読のみ'" FullSelectorArgument="&lt;webctrl parentid='content_readtype_btns_news' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='content_readtype_btns_news' tag='DIV' type='' class='common_btn_left common_tab tab_color_2 active' aaname='未読のみ' check:innerText='未読のみ' /&gt;" Guid="e3637957-9424-4c2b-a22f-fd01fe1ed157" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG4AAAAuCAYAAADJAyyXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAS/SURBVHhe7ZxZUyM3GEXznofUVKqSykz2KTLFDMNqVgPGBttgGy9g/v9PUXSEb5fcLRvDYNNK9HCLRrt0dL9WN9V8NxgMTFJ8SuAiVQIXqYLg6u222Tyrmt8rO+aHL5/M9+trSSURfN59+FgEd9i4ML9sfw1WSnp7BcHt12vm3cZ6sEJSOVQA1+rcJKdFoAI47mmhgknlUgHc+53NYMGkcmkKXKfXS6fHSFRwXKhQUvmUwEWqBC5SJXCR6s3AHV01zMPDgxnd35t/jg+CZZJmq/TgeE96Oxy6stJN/3ZmGdr18/6rKj24RfRccB92t0y1dWX6o5EZj8fZhrizY+n0+2avXjM/bn4u1GOcjFfl8zprNQt1lqWVgMMhoYnOU+Pm2tUVYF8sXt6Fs+SD5Bn1oFF3gEJlffVHQ7NePc7qoqfArdLtpQe3iBZxHNBq1+3MYcC76nbM/fgRxLGtB6j2bS8bw/DuzqYdBduTdi7ObRtj127FOjVUZhlaCbiQ5KSXhsqQE/Py74WAEbTuoG/+PqhMOcgHjisFtGPL/jznpfupDY+UYyN8njh0VruvqSjA5R2bP5w8pbWjfece6uLMP/d3XfrXs6pbcByDc1Qed+JGyru82lmWl1er9+hQQusfk3ajBxc6ET5H88LlouGXheMgwnU+nOGssU333SJRTg49vrrM0oFet+Ma3T9uBImyHHYAjgt1H/1fgws5TmmzFoa6ypcrGAtjUpnzdsulD+yC/3WwN1Ufl+E28jUOHCrnLipC7a5187xw+xItFVxI23ZBFEZ8sYuf85cJgdNPoMhZXCvUAc4vq/o/bW24ex3pgPXbRj44HMQhRdAGdyOzdX6aHWQAv3F6YvYbF67fUQAu99h8H9+ilYJj5ymEEKI0KV23el33jOXX8e8Xkg8AMKQBgZDGdd5ZIXCERsZC34eX9Sxd0qGDEAgQxsbvQPp4WDGbFpwOMGwYv64cDkD6ZDxrR6/7dmgl4AgTOEr3DCbP0dxNzi7eSfMyWwTtXtUVOCZPOtc+gEbnxtVjsQQxD07uAy5Oc/UmoZT7kg4rEmAYhxuPdRcP5HIbQJnP9WQz5Pv6YseozXlpx+a3+5paKjhCH7vVvy8wYSaqRQYEcPwQCuBmt+sWdB443NkbDjLX+OBwHwtYu25NHULoZ++i5jYKadXmtFvogxOixgsojYHQSdRodB6h0wa/q64DOgmf9AVEv+3X1FLB4SQtAJMkpOhVUh4caTxbcTNXHXY7QGaBc0DsYmrX++B4/cQ1zgJw185N7Uos8nubR/8nFiD1/PymDY/AoIzuhxL9Mj/Nlf4ZVyhvGVoqOIUUucfPC4FDcikhjN2s3e4vGgvEcxfpuFlvN9SmL06O5NGONgWbiNDN+BQyfeEWnOgflj6dHDqwuJQ+K3aMyvt1b9v0vI3x3IPWS7RUcPM0C1xeAidXkfabXSjg4QK/Lte+awh5LLjyQ+J5jRAIDA4gbJbQC+anRFikP+a1bGjozcAlfZsSuEiVwEWqBC5SJXCRKoGLVAlcpErgItUUuPTRRzwqOC59ZhWHCuDSh41xqAAufUochwrgUPp4v/wKgkPp32WUWzPBofQPasor+MwEl1R2Dcy/aog06Pd3T5AAAAAASUVORK5CYII=" InformativeScreenshot="fa2e5e108755ba89a8e0f263a51da2de.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -340,7 +346,7 @@
                         </uix:TargetAnchorable>
                       </uix:NCheckElement.Target>
                     </uix:NCheckElement>
-                    <If Condition="[isTKNotice]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="410,429.3333333333333" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If Condition="[isTKNotice]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="410,429" sap2010:WorkflowViewState.IdRef="If_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -354,7 +360,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック 'DIV modal_close_news'" sap:VirtualizedContainerService.HintSize="334,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック 'DIV modal_close_news'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#schedule_week" CvType="CloseButton" DesignTimeRectangle="1534, 300, 19, 19" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'DIV modal_close_news'" FullSelectorArgument="&lt;webctrl id='modal_close_news' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='modal_close_news' tag='DIV' type='' class='icon' aaname='' /&gt;" Guid="e4468feb-95f2-45c6-8f12-e3ab214a699a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAEpSURBVEhL3ZW5EoMwDETzN0DJTcndgf//a5xZZsQIWXKOSVKkeA1ab+S1rdycc/5b/JH5vu++6zo/TdPluwV0bdv6bduCWmBelqVPkuRgnudLTbIsi0/T9NAWRRHUT3N0zI1BlmW+7/tgERjH8ahzPX6A7+A0RxRcSMAARqQDiEIaE4iIdKc5FtAWJfhOEa3rGtXxRi6ZI0OrIyxsmiZal5cgONBhGEwDC+i1swnMQSwiCXRoSPNRzUEsIgLGsetqmgNkrJkSVVWp64jfd/5q5vIdEIH5u7dFO9SL+aN7Xte1uSMtotMchdhCeiB8WGk69YXGZovcsja0CHW2YCpiqnEhOrGmonY25lQk+NiVs0LCI8rz/GiQ1wNzCLA163pJ0MDT/0Sfw/k7skaakB1TB5QAAAAASUVORK5CYII=" InformativeScreenshot="8f4ca1da7140a2e44ed3e4fbb74cd65d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
                             </uix:NClick.Target>
@@ -366,11 +372,6 @@
                       </If.Else>
                     </If>
                   </Sequence>
-                  <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="クリック '作業実績確認'" sap:VirtualizedContainerService.HintSize="472,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#schedule_week" CvElementArea="13, 423, 287, 61" CvTextArea="68, 441, 120, 22" CvTextArgument="PESJHDERE" CvType="Button" DesignTimeRectangle="71, 440, 228, 28" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'作業実績確認'" FullSelectorArgument="&lt;webctrl parentid='performance_list' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='performance_list' tag='P' type='' class='string' aaname='作業実績確認' check:innerText='作業実績確認' /&gt;" Guid="5feb7163-9f7d-4be8-95cc-46929b8e89e8" ImageBase64="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" InformativeScreenshot="837da60a329c79b6f64c09eb5cb082e6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
                 </Sequence>
               </Sequence>
             </Sequence>
