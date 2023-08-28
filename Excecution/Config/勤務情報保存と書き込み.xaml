@@ -187,7 +187,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[Int32.TryParse(Split(out_RequestMonth, &quot;/&quot;)(0),New int32) = true AND Int32.TryParse(Split(out_RequestMonth, &quot;/&quot;)(1),New int32) = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="510,356.6666666666667" sap2010:WorkflowViewState.IdRef="If_4">
+                              <If Condition="[Int32.TryParse(Split(out_RequestMonth, &quot;/&quot;)(0),New int32) = true AND Int32.TryParse(Split(out_RequestMonth, &quot;/&quot;)(1),New int32) = true]" DisplayName="指定月判定" sap:VirtualizedContainerService.HintSize="510,356.6666666666667" sap2010:WorkflowViewState.IdRef="If_4">
                                 <If.Then>
                                   <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                     <sap:WorkflowViewStateService.ViewState>

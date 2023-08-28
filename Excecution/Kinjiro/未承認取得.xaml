@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>734,3756.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>734,3631.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>事後未承認取得_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,7 +112,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①未承認のGOが存在するか&#xA;　→存在しない場合は本ワークフローを終了する&#xA;②未承認件数画面に遷移する&#xA;③申請情報の表データを取得、dt変数に保存&#xA;④dt変数にフィルターをかけ、承認状況が「未」のみのデータを新たなdt変数に保存&#xA;⑤&quot;申請内容&quot;の中身を分割してdt変数に追加保存する&#xA;⑥処理したdt変数を引数に渡し、出力する&#xA;⑦トップページへ移動する&#xA;&#xA;次のワークフローは「勤務実績データ取得」" DisplayName="事後未承認取得" sap:VirtualizedContainerService.HintSize="744,3692" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①未承認のGOが存在するか&#xA;　→存在しない場合は本ワークフローを終了する&#xA;②未承認件数画面に遷移する&#xA;③申請情報の表データを取得、dt変数に保存&#xA;④dt変数にフィルターをかけ、承認状況が「未」のみのデータを新たなdt変数に保存&#xA;⑤&quot;申請内容&quot;の中身を分割してdt変数に追加保存する&#xA;⑥処理したdt変数を引数に渡し、出力する&#xA;⑦トップページへ移動する&#xA;&#xA;次のワークフローは「勤務実績データ取得」" DisplayName="事後未承認取得" sap:VirtualizedContainerService.HintSize="744,3566.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="RequestData" />
       <Variable x:TypeArguments="sd:DataTable" Name="NotApprovalWork" />
@@ -124,13 +124,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 株式会社テンダ" sap:VirtualizedContainerService.HintSize="682,3369.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 株式会社テンダ" sap:VirtualizedContainerService.HintSize="682,3244" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="勤次郎にアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="648,3104.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence sap2010:Annotation.AnnotationText="勤次郎にアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="648,2979.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -264,14 +264,6 @@
                 </ActivityAction>
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
-            <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="586,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Boolean">[out_IsNotApproval]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Boolean">[IsNotApproval]</InArgument>
-              </Assign.Value>
-            </Assign>
             <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="586,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[out_NotApprovalWork]</OutArgument>
