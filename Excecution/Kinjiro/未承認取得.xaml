@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="事後未承認取得" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="事後未承認取得" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_NotApprovalWork" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="out_IsApproval" Type="OutArgument(x:Boolean)" />
@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>612,1626</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>612,2406</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>事後未承認取得_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -47,6 +47,7 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Security</x:String>
       <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -106,13 +107,17 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①未承認のGOが存在するか&#xA;　→存在しない場合は本ワークフローを終了する&#xA;②未承認件数画面に遷移する&#xA;③申請情報の表データを取得、dt変数に保存&#xA;④dt変数にフィルターをかけ、承認状況が「未」のみのデータを新たなdt変数に保存&#xA;⑤&quot;申請内容&quot;の中身を分割してdt変数に追加保存する&#xA;⑥処理したdt変数を引数に渡し、出力する&#xA;⑦トップページへ移動する&#xA;&#xA;次のワークフローは「勤務実績データ取得」" DisplayName="事後未承認取得" sap:VirtualizedContainerService.HintSize="568,1561.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①未承認のGOが存在するか&#xA;　→存在しない場合は本ワークフローを終了する&#xA;②未承認件数画面に遷移する&#xA;③申請情報の表データを取得、dt変数に保存&#xA;④dt変数にフィルターをかけ、承認状況が「未」のみのデータを新たなdt変数に保存&#xA;⑤&quot;申請内容&quot;の中身を分割してdt変数に追加保存する&#xA;⑥処理したdt変数を引数に渡し、出力する&#xA;⑦トップページへ移動する&#xA;&#xA;次のワークフローは「勤務実績データ取得」" DisplayName="事後未承認取得" sap:VirtualizedContainerService.HintSize="592,2341.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsApproval" />
       <Variable x:TypeArguments="sd:DataTable" Name="RequestData" />
       <Variable x:TypeArguments="sd:DataTable" Name="NotApprovalWork" />
+      <Variable x:TypeArguments="x:String" Name="RequestContent" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -120,20 +125,23 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 株式会社テンダ" sap:VirtualizedContainerService.HintSize="506,1238.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 株式会社テンダ" sap:VirtualizedContainerService.HintSize="530,2018.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="勤次郎にアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="472,974" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence sap2010:Annotation.AnnotationText="勤次郎にアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="496,1754" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="test" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckElement DelayBefore="0" DisplayName="未承認件数の存在確認" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[IsApproval]" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
+            <uix:NCheckElement DelayBefore="0" DisplayName="未承認件数の存在確認" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[IsApproval]" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
               <uix:NCheckElement.Target>
                 <uix:TargetAnchorable BrowserURL="https://ini5a.kinjirou-asp.jp/TDAD1702/KinjirouWeb/Kinjirou/kwtop/kwtop.aspx" CvTextArgument="GO" CvType="Text" DesignTimeRectangle="1752, 449, 51, 21" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT MininPic'" FullSelectorArgument="&lt;webctrl tableRow='3' tag='TABLE' /&gt;&lt;webctrl id='MininPic' tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='MininPic' type='image' tag='INPUT' class='' aaname='未承認状況を確認' /&gt;" Guid="fecc110e-31c3-4a3f-9dbb-8abc677cd9b4" ImageBase64="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" InformativeScreenshot="3a846823ca0279ce536b7fe645f9e6f2.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='勤次郎Enterprise - 株式会社テンダ' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -144,7 +152,7 @@
                 </uix:TargetAnchorable>
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <If Condition="[IsApproval = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="410,630.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[IsApproval = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="434,630.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,446.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
@@ -174,15 +182,113 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[IsApproval]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
                 </Sequence>
               </If.Else>
             </If>
+            <ui:BuildDataTable DataTable="[NotApprovalWork]" DisplayName="データ テーブルを構築" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;日付&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;勤務種類&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;出勤時刻&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;退勤時刻&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[RequestData]" DisplayName="繰り返し (データ テーブルの各行)" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="request" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="552,1350.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[request(&quot;承認状況&quot;).ToString = &quot;未&quot; OR request(&quot;承認状況&quot;).ToString = &quot;反映待ち&quot;]" DisplayName="休暇の判定" sap:VirtualizedContainerService.HintSize="510,1263.3333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="476,1079.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[RequestContent]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[request("申請内容").ToString.Replace("（"," ")]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[RequestContent]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[RequestContent.ToString.Replace("）"," ")]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <If Condition="[RequestContent.ToString.contains(&quot; &quot;) = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="434,741.3333333333334" sap2010:WorkflowViewState.IdRef="If_3">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,278.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{request(&quot;申請日付&quot;),Split(RequestContent.ToString, &quot; &quot;)(0)}]" DataTable="[NotApprovalWork]" DisplayName="データ行を追加" sap:VirtualizedContainerService.HintSize="334,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,278.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{request(&quot;申請日付&quot;),Split(RequestContent.ToString, &quot; &quot;)(0),Split(RequestContent.ToString, &quot; &quot;)(2),Split(RequestContent.ToString, &quot; &quot;)(4)}]" DataTable="[NotApprovalWork]" DisplayName="データ行を追加" sap:VirtualizedContainerService.HintSize="334,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9" />
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+            <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[out_IsApproval]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">[IsApproval]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[out_NotApprovalWork]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[NotApprovalWork]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="トップページへ移動" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://ini5a.kinjirou-asp.jp/TDAD1702/KinjirouWeb/kinjirou/sinsei/kwsitr/kwsitrlst.aspx?sinLst=2" DesignTimeRectangle="1640, 201, 165, 32" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'トップページへ'" FullSelectorArgument="&lt;webctrl id='TableMenu' tag='TABLE' /&gt;&lt;webctrl id='Hyperlink2' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='TableMenu' tag='TABLE' /&gt;&lt;webctrl id='Hyperlink2' type='' tag='A' class='' aaname='トップページへ' check:innerText='トップページへ' /&gt;" Guid="edcd0e38-f690-4ac2-959d-32f4b592f23f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKkAAAAkCAYAAADy+xopAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGvSURBVHhe7ZhNTsMwEEZzjIpLcBqOwGnYc0gWhQX7IEcEWa1jT9Kx/cW8J5mqwZkfz2sqmGYAcZAU5EFSkGcoSV+e3pYFY1GU9CxDj+scTdT//sFD0gTh/lZ953LF11vVo8gwkgZyA7fSS4yt2lvWoIq8pOvwrMvK1v742p54Kmz1dWaGe5JaiPel7gnXztT3Sqmvs9JU0toHZ4mf2tNjoCGnZ16VvmpgkjRee7m9p/T+EUqxcr+31OFZ60qIaY27tS93f42aW7P7SRre72083p+K50EpjiWPdc+R5UEqjiW2V/5eHP66D9etzef2eR2gVw6verxJ1TVCXyWm6dr3DyfP2FuxjuRQHOhtTaP0lSMIurwuPzPUbMwrdo0alQbqWYtSX1a6SeoVt+ahKwy0Rg0Kfe2hi6ReMVscdq+Bhrw1c/fq6whNJfU6eK84aqx9jdjbIzSR1OvgRxvg2s9ofXnzJ+nr8/vdobHGX58f378G6HG5fNn+BQXQGyQFeZAU5EFSkAdJQR4kBXmQFORBUpAHSUEeJAV5kBTkQVKQB0lBHiQFeZAU5EFSEGeefwCaHXb97cZhNQAAAABJRU5ErkJggg==" InformativeScreenshot="c1d3b7e939cf0ce9e4064a3b6a873719.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='勤次郎Enterprise - 株式会社テンダ' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
