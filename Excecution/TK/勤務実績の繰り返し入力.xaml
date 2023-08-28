@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="時間ごとの繰り返し入力" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="702,1782" sap2010:WorkflowViewState.IdRef="時間ごとの繰り返し入力_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="時間ごとの繰り返し入力" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="622,1939.9999999999998" sap2010:WorkflowViewState.IdRef="時間ごとの繰り返し入力_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -35,6 +35,11 @@
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>UiPath.Excel.Model</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -84,9 +89,22 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「勤務情報＆実績ファイル終了」" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="712,1717.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「勤務情報＆実績ファイル終了」" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="632,1875" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="StartTime" />
       <Variable x:TypeArguments="x:String" Name="EndTime" />
@@ -108,26 +126,26 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="650,83.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="570,602" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,494.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,491" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,275.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,273" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="クリック '09:00'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="クリック '09:00'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_list" DesignTimeRectangle="471, 414, 63, 69" DesignTimeScaleFactor="1.5" FriendlyName="'chrome.exe Time Krei'" Guid="65e024be-b2b5-48ba-8830-80ae51f237dc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAABFCAYAAAD95j54AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABsSURBVHhe7dIxDQAwDMCwkSuE8ofSAXEOA4iUt7unKl5VvKp4VfGq4lXFq4pXFa8qXlW8qnhV8ariVcWrilcVrype9WbmVG2vKl5VvKp4VfGq4lXFq4pXFa8qXlW8qnhV8ariVcWrilfB8Xsf32DKKuxkHNQAAAAASUVORK5CYII=" InformativeScreenshot="05cd40c72088ef2209af7fadc2be9e93.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -147,29 +165,37 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持" DisplayName="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し" sap:VirtualizedContainerService.HintSize="650,1120" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持" DisplayName="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し" sap:VirtualizedContainerService.HintSize="570,473" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="　→件名がない時はその日をスキップし、エラー内容を保持" DisplayName="③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する" sap:VirtualizedContainerService.HintSize="588,965.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence sap2010:Annotation.AnnotationText="　→件名がない時はその日をスキップし、エラー内容を保持" DisplayName="③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する" sap:VirtualizedContainerService.HintSize="508,195" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[string.IsNullOrEmpty(WorkName) = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="526,824" sap2010:WorkflowViewState.IdRef="If_1">
+        <If Condition="[string.IsNullOrEmpty(WorkName) = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="446,53" sap2010:WorkflowViewState.IdRef="If_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Sequence sap:VirtualizedContainerService.HintSize="492,410" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence sap:VirtualizedContainerService.HintSize="588,719" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="休憩時間の部分を切り取り、StartTIme1,2,3,4とEndTime1,2,3,4に代入します。" DisplayName="④出勤時刻と終了時刻を4段階に分割し、代入する" sap:VirtualizedContainerService.HintSize="450,134.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence sap2010:Annotation.AnnotationText="休憩時間の部分を切り取り、StartTIme1,2,3,4とEndTime1,2,3,4に代入します。" DisplayName="④出勤時刻と終了時刻を4段階に分割し、代入する" sap:VirtualizedContainerService.HintSize="546,135" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,28 +203,479 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Sequence>
-              <Sequence sap2010:Annotation.AnnotationText="　→登録済(青)の場合は⑥へ&#xD;&#xA;　→未登録(白)の場合は⑧へ" DisplayName="⑤作業実績詳細欄が登録されているかを判定" sap:VirtualizedContainerService.HintSize="450,148" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence sap2010:Annotation.AnnotationText="　→登録済(青)の場合は⑥へ&#xD;&#xA;　→未登録(白)の場合は⑧へ" DisplayName="⑤作業実績詳細欄が登録されているかを判定" sap:VirtualizedContainerService.HintSize="546,456" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,301" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Boolean" Name="isSchedule9to12" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckElement DelayBefore="0" DisplayName="要素を確認 '09:00-12:00test'" sap:VirtualizedContainerService.HintSize="526,158" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[isSchedule9to12]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                          <uix:NCheckElement.Target>
+                            <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_create" CvTextArgument="09:00-12:00 test" CvType="Text" DesignTimeRectangle="1402, 509, 397, 365" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'09:00-12:00test'" FullSelectorArgument="&lt;webctrl class='string' idx='7' parentid='performance_cell_2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='string' type='' parentid='performance_cell_2' tag='DIV' aaname='' check:innerText='09:00-12:00test' /&gt;" Guid="5e93d461-17e2-4d11-a1b5-8b6810100e01" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZEAAAFxCAYAAACyZZXVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAg6SURBVHhe7dnNattoGIDR2c8VzKLQXbsoBAptYSCr0sUsuuz9X4onke3YsiVFetxC05zF2dj6+aTA+8jKX//+92MHAIWIAJCJCACZiACQiQgAmYgAkIkIANl1RO6/7P5+8+Hk3f3u0+U2g2+7t+fbvfm4e/91arvnrD3O9937d+fbfdi9vZ/abq39eeeOcXc3Ptfg7tvktss2rHv1vQf4PYwjMgyx8RAfhunlMDsMu9EwnPrsWftB/s/n76fPJtbwNIjPh/jX+90/m893cozE5P7Dsb/s7kafH2K3abBvWPfae7/RzzjGohv/DsDLdhaRiYE++fnEYDz49PnjwyC8HL7z5gbc5edzx916vpt/zUwGbt76da+999uJCPArnSIyDIPpATkMomM0lobGpoGyH+iTA3IY1qchOzr/uYU1P6sMv437rF73wnXMHmMlEQF+pVNEFp6yR4NocWhMPTkfn/4vj73wlD1ay/wvn5sGWNl35h7tf1nMXPeada+99xsN+z6cZ2x8nqttrs51/evt0bD2w3VcfndL9ICX5SkiS6+Gxt8tvWLZEJGlIT76buv5VgoR2Q/cuddTl+tYv+719367+Qgd/i6j7y4/26/zKgqP0Tt+Fu4j8OcIETkNzcvBcXyqXTXUX1pEhl8LW4bl7x2R2eOe35c192jrfQT+KCkig8NQPff2fj8cVw2UpeEz+m5DRCbWNP0U/mDL8Dtsu+01ze8ckYVXbaO1zfyKPCci8Kpt/5/IkmGgLAyckYUhO1rLwsC7ZYCt3ne/zlXXP7Jh3T/j3s9YjMjjdc05X/dVnM+iJiLwqp0ishCAYRCteAofnppXD7z9IJuPyGlQzZ5/Yc3PWjX8akD2Vq/7J9z7OYsRScc97Hs85qr7CPypThGZ/WWw8IthZL/dlmEyPeCuP597pXPTq57nht/h+1sG+Pp133rv583d41vu3WhfEYFX7SwiDyZeq8wNoZHDIJkedsdXJ1NP2hNDcvLVzsST863Da2n/jQHZD9Wp69+w7nrvn3N4FXV9nft7PxfxYfvHfa++P+z3dE0Xv0yAV2UckUeHofNkcjgcBsmT6Vcxe0sRebT2WMfjnGwPyPUxnpxd5zEK88ZP8PMRebRh3avu/XZDjJ6OOxGq83M+ejrv5d9m7+o6j9E9uuHXG/CyXEcEAFYSEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASD6sfsfStPVnh+FGVUAAAAASUVORK5CYII=" InformativeScreenshot="b047351c76763a7d44f3fb025c3aff88.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NCheckElement.Target>
+                        </uix:NCheckElement>
+                        <If sap2010:Annotation.AnnotationText="TRUE:要素があるとき&#xD;&#xA;FALSE:要素がないとき" Condition="[isSchedule9to12 = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="526,830" sap2010:WorkflowViewState.IdRef="If_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="492,357" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Sequence DisplayName="⑥クリックする" sap:VirtualizedContainerService.HintSize="450,269" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="クリック '09:00-12:00test'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_create" CvTextArgument="09:00-12:00 test" CvType="Text" DesignTimeRectangle="1402, 509, 397, 365" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'09:00-12:00test'" FullSelectorArgument="&lt;webctrl class='string' idx='7' parentid='performance_cell_2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='string' type='' parentid='performance_cell_2' tag='DIV' aaname='' check:innerText='09:00-12:00test' /&gt;" Guid="a7ea96f0-b866-40e6-a42b-907cc75ee349" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZEAAAFxCAYAAACyZZXVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAg6SURBVHhe7dnNattoGIDR2c8VzKLQXbsoBAptYSCr0sUsuuz9X4onke3YsiVFetxC05zF2dj6+aTA+8jKX//+92MHAIWIAJCJCACZiACQiQgAmYgAkIkIANl1RO6/7P5+8+Hk3f3u0+U2g2+7t+fbvfm4e/91arvnrD3O9937d+fbfdi9vZ/abq39eeeOcXc3Ptfg7tvktss2rHv1vQf4PYwjMgyx8RAfhunlMDsMu9EwnPrsWftB/s/n76fPJtbwNIjPh/jX+90/m893cozE5P7Dsb/s7kafH2K3abBvWPfae7/RzzjGohv/DsDLdhaRiYE++fnEYDz49PnjwyC8HL7z5gbc5edzx916vpt/zUwGbt76da+999uJCPArnSIyDIPpATkMomM0lobGpoGyH+iTA3IY1qchOzr/uYU1P6sMv437rF73wnXMHmMlEQF+pVNEFp6yR4NocWhMPTkfn/4vj73wlD1ay/wvn5sGWNl35h7tf1nMXPeada+99xsN+z6cZ2x8nqttrs51/evt0bD2w3VcfndL9ICX5SkiS6+Gxt8tvWLZEJGlIT76buv5VgoR2Q/cuddTl+tYv+719367+Qgd/i6j7y4/26/zKgqP0Tt+Fu4j8OcIETkNzcvBcXyqXTXUX1pEhl8LW4bl7x2R2eOe35c192jrfQT+KCkig8NQPff2fj8cVw2UpeEz+m5DRCbWNP0U/mDL8Dtsu+01ze8ckYVXbaO1zfyKPCci8Kpt/5/IkmGgLAyckYUhO1rLwsC7ZYCt3ne/zlXXP7Jh3T/j3s9YjMjjdc05X/dVnM+iJiLwqp0ishCAYRCteAofnppXD7z9IJuPyGlQzZ5/Yc3PWjX8akD2Vq/7J9z7OYsRScc97Hs85qr7CPypThGZ/WWw8IthZL/dlmEyPeCuP597pXPTq57nht/h+1sG+Pp133rv583d41vu3WhfEYFX7SwiDyZeq8wNoZHDIJkedsdXJ1NP2hNDcvLVzsST863Da2n/jQHZD9Wp69+w7nrvn3N4FXV9nft7PxfxYfvHfa++P+z3dE0Xv0yAV2UckUeHofNkcjgcBsmT6Vcxe0sRebT2WMfjnGwPyPUxnpxd5zEK88ZP8PMRebRh3avu/XZDjJ6OOxGq83M+ejrv5d9m7+o6j9E9uuHXG/CyXEcEAFYSEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASD6sfsfStPVnh+FGVUAAAAASUVORK5CYII=" InformativeScreenshot="f62b9b16fc65b9a5734f63adeaadd9e3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,246" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="クリック '09:00'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_create" DesignTimeRectangle="1502, 630, 110, 85" DesignTimeScaleFactor="1.5" FriendlyName="'chrome.exe Time Krei'" Guid="ba73806d-ffe4-45e7-836e-bd7abdb2cfa2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG4AAABVCAYAAACo5tGVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADgSURBVHhe7dMxDQAwDMCwkSuE8ofS4bCUwwiivN29eAqHKhyqcKjCoQqHKhyqcKjCoQqHKhyqcKjCoQqHKhyqcKjCoQqHKhyqcKjCoQqHKhyqcKjCoQqHKhyqcKjCoQqHKhyqcKjCoQqHKhyqcKjCoQqHKhzqzczF03GowqEKhyocqnCowqEKhyocqnCowqEKhyocqnCowqEKhyocqnCowqEKhyocqnCowqEKhyocqnCowqEKhyocqnCowqEKhyocqnCowqEKhyocqnCowqEKhyocqnCowqEKhyocqnCkvQ90TbKNEd6TAQAAAABJRU5ErkJggg==" InformativeScreenshot="1308b223a0dcf17f6b343475d77c2733.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CvTextArgument="09:00" CvType="Text" DesignTimeRectangle="867, 553, 69, 25" ElementType="Text" FriendlyName="'09:00'" FullSelectorArgument="&lt;webctrl aaname='09:00' class='string' parentid='performance_time_bg' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='09:00' class='string' parentid='performance_time_bg' tag='DIV' type='' check:innerText='09:00' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAAdCAYAAADmbEE9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGUSURBVGhD7ZVBsoMgDED/GbwDa7u12+Kqrpzx/kfhG4QqkMQgnT+/nSzeojSDyUuAn2VZHDDPs5IxjqN3o5IYVJIAlSRAJQlQSQJUkoA3SJrcYDrXdTv9A4ub3XQ3SVx3s2jcGeJ9Hn0aZwY3YXEnNEoKgo5JPgdn1oRSUSEuSRJbO2cT1Dv7WkNyALwg44bnvmZv10Q1SSoTJtaRhDes61eh5j5l6wRoA7B1at/K7wWaJPnOYKPuk96lcB2s6q6XXTYlTtOr+Oz7R8icGRokEWMOZJ3lRKDTGO+SbG9qcotcyMmtbEqgQRI3uul/dHF1kqQTWf29E/5EUvxdFBgmTpr0l0sCwpHwUgJrURaSJgrP+UBJ8juJwxeH7YFAF/hv7ySmQOZ1SdkmTiLT83mvG91Z6Uj7uJquUhNarFNXAXdF0DRJQo+c8Kj5jlIiidcNKBtAHHvkyF05akCjJCAkCUUFMEFbcYc4buQZSYB4r7hP5IIg4A2Svh+VJEAlCVBJAlSSAJUkQCUJUEkCVJKATdLifgHnDbzB8wE9sAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
+                                        <uix:Target CvTextArgument="SEH" CvType="Text" DesignTimeRectangle="1389, 406, 452, 43" ElementType="Text" FriendlyName="'実績'" FullSelectorArgument="&lt;webctrl id='performance_list_header_result' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='performance_list_header_result' tag='DIV' type='' class='string' aaname='実績' check:innerText='実績' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAcgAAAAvCAYAAABnl1pkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAO+SURBVHhe7d3bUuJYGIZhr4FCpJVMpCi0kWKCZiikJ23TEBgakY6p8v4v5euEQNi43JHgybwHT2mtBbHP3vqz66MgCAQAALYRSAAADI7CMNRoNFL8EwAAJAgkAAAGBBIAAAMCCQCAAYEEAMCAQAIAYEAgAQAwIJAAABgQSAAADAgkAAAGBBIAAAMCCRyUL6dQUCHW9g37L5mp97WqRqev6W/TfuS+p/ry2M7QsA8gEwIJZLYRwX3Ve5ptHHP+vaFivF5xNX5crUfRrO98z6iu3v36WAD2QyCBzPILZDDx1Dwvq3Qcr1tyx6Em3aoKJ5Zad7Ptv8sECRwUgQQyWwVyj8lt6GwFMvw9kHOaRK/emyp8uFMjjmXlWn4Qavatnnz+NR86lQvgJQQSyOy1QL5xDXI3kJFg4OgsWrPafXmtYrRvRRNi8Py7TJDAQRFIILO8r0EG6i/CmOxZN76CeH0jiG+pf9s5HQvgwwgkkIv33kDznDFm/3VkxfvnXY2HruwvltzRzmcAHBSBBA7qjVOsJo9T9S6SCdJuNHVZKS1+P3PHmr7nGuTOHbEA9kMggZz4bUOs3mV97XL27ysBPHV1twqkIbbp3yeQQC4IJJCTPAK5uGnnxJJtX6p2nuzXuhONb2uyL115/zBBAp+FQAIHtccp1qVVcDevUaaPeTBBAgdHIIHMcriLNZ0ilzf7nLhyV4HsdOXYlso3/vuegySQQC4IJJBZnoFcHuvCk5dOkJ6u45cFRGs+EyTwaQgkcADBdKBOw07ep1ooyv7LSuJ1bKt5G02C6ftVdyyfdSxG0+L6FKufTJXH1/KYIIFPQyCBHATzuaajvnqdVvpYxkIURKc/U/g4l9+pqZSul1W9ulbvx0DjX3PNl/9jR9BvLfZb/WDrGqTfLsmqNNUdDtS7aah6Eu0tXz+3fiyklBzz50SzeH3n3wjgYwgkkFHws7WcFDdEAay7fU3mO5+/jybLq+o6lKmqur9Czb43ZX9p6i763vZNOoEGf6/frhNPpeULV/5DdMxgIq+1fcyz9vLtOwD2RiCBrB7Hck+jCc+uqeF05Y2mCl46hboSTDX2unKualEQi8agbQcyWhs6Klcu1bqNwhuHcefz4cNE/dt4gq0tYvtsH8CHEEgAAAwIJAAABgQSAAADAgkAgAGBBADAgEACAGBAIAEAMCCQAAAYEEgAAAwIJAAABgQSAAADAgkAgAGBBADAgEACAGBwFMcRAAAk0kA+PT1pZbX5FN4DAPD/s9FEAgkAwEraxCf9AV4jbYcbs1+QAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                                        <uix:Target CvTextArgument="¥7E" CvType="Text" DesignTimeRectangle="1140, 414, 42, 21" ElementType="Text" FriendlyName="'予定'" FullSelectorArgument="&lt;webctrl class='string' parentid='performance_head' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='string' parentid='performance_head' tag='DIV' type='' aaname='予定' check:innerText='予定' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAckAAAAvCAYAAACIVTFaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAL0SURBVHhe7d3RTiJXHMDhfQaC9KKy1FC6bugGddcYDKUuorVIZtHE93+Uf8cVYZQ5VtRh0/S7+GI4M3Pi3S9nZji8m81mAQCsEkkASHh3fX0dZ2dncfsXAP7PHvdQJAFgTiQBIEEkASBBJAEgQSQBIEEkASBBJAEgQSQBIEEkASBBJAEgQSThP2p63IlarfZd77T8HOB1RBIqMN67i9d6mtH9Y1I6XxmRhOqJJFTgZZHMbXXjJFvOUwzhS3WOpw/+N+D5RBIqlo160azVY+dgFNOrwrHLk+i9ry9iVt/Zj9G0cDwnkvBjiSRUKRvF/uMQXmZxftzNw3kfska0D8eRFQM6t4jk3njl2NOm0e+IJLyWSELVrqYxOtiJ+iKKS41fP+fRLLlmrhjJtW7h7vVFEt6ASMKGZOPDaP9UCNnuILKS81LWi+S6K0+gjEjCm1re5nyx7W4MJ2VzP3LaW1zj7VaohkjCm3qDSOaaB+OYpea9XyWKJFROJGGDlrdMezEujE/6ncUzy8buICYrL/FMot+eX1sSyRTPI+F1RBI2aCWSV1mMvyxf6ml2hyWBvDWO3vycer7K/D4mklA5kYQNehjJWYwPmvPP9Wj1Th5+j7Lo4iha8/C1+/NdedxuhcqJJGzQ6kpyEsPfO9EdPLUdXR7TvZ8XQaxt78d4lo+LJFROJGGDUs8knzLLY7jceOBOY7cfk68iCVUTSdiYWZx070P3vEhOBoWdebY60f97Ev3f7nbwqW8td/L59GcW2bfyOYCXE0moVBbDj/dhLNg+jIvS8wuulkG8/YWQ3ulsPj6N0ed2NB7PmfJxuNamBcCSSELFzr8Unifm6u+70f9rHrx/czmID78kzv82ifPBUex/+hCtViuaxd18ClpHF6vXAs8ikgCQIJIAkCCSAJAgkgCQIJIAkCCSAJAgkgCQIJIAkCCSAJAgkgCQIJIAkCCSAJAgkgCQIJIAkLASydsBAGDVYiV5c3MDAOREEgAS7iJ5Fv8AYpkpNsdXonoAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <Sequence DisplayName="作業実績入力" sap:VirtualizedContainerService.HintSize="526,83" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NSelectItem DisplayName="開始時選択" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[Split(StartTime1.ToString,&quot;:&quot;)(0)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                            <uix:NSelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="34">
+                                <x:String>－</x:String>
+                                <x:String>00</x:String>
+                                <x:String>01</x:String>
+                                <x:String>02</x:String>
+                                <x:String>03</x:String>
+                                <x:String>04</x:String>
+                                <x:String>05</x:String>
+                                <x:String>06</x:String>
+                                <x:String>07</x:String>
+                                <x:String>08</x:String>
+                                <x:String>09</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                              </scg:List>
+                            </uix:NSelectItem.Items>
+                            <uix:NSelectItem.Target>
+                              <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="737, 365, 82, 46" CvTextArea="747, 378, 25, 18" CvTextArgument="09" CvType="InputBox" DesignTimeRectangle="740, 368, 78, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="DropDown" FriendlyName="'09'" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' type='' class='' aaname='' /&gt;" Guid="413e427f-77ad-42fc-be77-b0d86f2d717d" InformativeScreenshot="3263b63518e6bb418f154b489a147acb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CvTextArgument="2023/08/01('K)" CvType="Text" DesignTimeRectangle="573, 376, 149, 28" ElementType="Text" FriendlyName="'2023/08/01(火)'" FullSelectorArgument="&lt;webctrl id='work_date' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='work_date' tag='DIV' type='' class='string' aaname='2023/08/01(火)' check:innerText='2023/08/01(火)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJkAAAAgCAYAAAABmdoHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPpSURBVHhe7ZY7duMwDEVnDd5DXDu108ZlXHn/S9FIIijx8/BAyqHPjA+KWySiQHwuKf95PB6T44zEJXOG45I5w3HJnOG4ZM5wXDJnOC6Zs3H7PE2nj+t0B8+e4b0l+75Mp9N5uv6AZy/hPl0/5sF93sCz0cjep9N0+UbPa/ok2+Ofv+7g+U4l2brR/GIKD7JvtkGa2hsfrW8bmuSFmrbKl8bkIqIcmgYn+9Rrb9OliGcNKhDea9k75Nx3wNZ3FMnuX+c53mW6Ff9v2SeRLMpSvPBznc5LI+Dm0qxs6PK/an1vfGX9NqC64AyJWw4kNCuPGf5HZChzi5IassOhSV6ZVLEHNN5+mE3JJD8mLpJGl0z2hvnJM/heIJfsU1monEg1KTjg3vj9+aTAk6eIt4BqCacUy4xkzQmC5oMmw1prAvGigAms7paha3n0zTPBmEfbbzLZJG8YamKENBMB4xPM9Xh/KF6kGrIxLEt0JA0dFuunYO25YAmxoKzRJKN9W+HzPi6ZUYx6KhAoPgMNsHre3sQVUE+4yXCN4ZnWeEVQmnfDwWyQzBZCX4Nrashrhu3bJFkIUDTHKJgPIQfG15B9mZBYJuNmgqLH33/Fe9awlQPI6zTyWzAlaxFCagJrwszQnBtmQy6dBskkKXgq9YKZ2TlK/Ixk2GbMsLaW0Bqi9l6sJe5v56DVbh0mfDgSTMn0GiJ6DtKf4n0zpw19b0OyuDFI6lckI/FVRDitcPXkHZFM9tpO/T4IvXZZA26Kf0EylXiTf8w5NklVotdNJQvXp1KUUXB4l0tG4zPgpy2gD8qQrIrJ1ot8KHfy2eCSGfktWJKRvS32SyHU1h/jgGSmAEZB+rCT5wcbUt8wwjM5le/K3+qtIAMvc6B7qLfsgj6kjVE3WVFr21eopFOyNgFYQbxhzwm2gCWzmkOflwJYksnzPAdjyKXIGQ2CDJEM3aDofxb63oVkEpz8bkhRT63azI74c4yL1izYbC72ChlyXQtvdBC2iEVvqgWSo/nujClZQw8y4jzQweP1V5DeJpLFDdsEW5HA6DTXyXXGj7HLONLoqpGkyJRwi+Y5QGEWOnNQD12KvJudeNhHgClZx6cu7knXMglzwr54trtk26acukCRKgU160h85R3U5KYBC1GqHSZ+bLSxXnJlAmyAuqxPbLp250AeSbzWz2o4mGw9v/XUH/7/F0d+i/wuzTfIcMjA0S3ajPaFmjFu2PeQbC2S3UajkcFan7tX8ZRMvfBbbOENJLOLHE7Db6VXg357jqBlnzf5XDo1cviGyb/Ht25Ml8wZjkvmDMclc4bjkjnDccmc4bhkzmAe018I6KMj5KunVgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NSelectItem.Target>
+                          </uix:NSelectItem>
+                          <uix:NSelectItem DisplayName="開始分入力" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[Split(StartTime1.ToString,&quot;:&quot;)(0)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                            <uix:NSelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="50">
+                                <x:String>－</x:String>
+                                <x:String>00</x:String>
+                                <x:String>01</x:String>
+                                <x:String>02</x:String>
+                                <x:String>03</x:String>
+                                <x:String>04</x:String>
+                                <x:String>05</x:String>
+                                <x:String>06</x:String>
+                                <x:String>07</x:String>
+                                <x:String>08</x:String>
+                                <x:String>09</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                                <x:String>33</x:String>
+                                <x:String>34</x:String>
+                                <x:String>35</x:String>
+                                <x:String>36</x:String>
+                                <x:String>37</x:String>
+                                <x:String>38</x:String>
+                                <x:String>39</x:String>
+                                <x:String>40</x:String>
+                                <x:String>41</x:String>
+                                <x:String>42</x:String>
+                                <x:String>43</x:String>
+                                <x:String>44</x:String>
+                                <x:String>45</x:String>
+                                <x:String>46</x:String>
+                                <x:String>47</x:String>
+                                <x:String>48</x:String>
+                              </scg:List>
+                            </uix:NSelectItem.Items>
+                            <uix:NSelectItem.Target>
+                              <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvTextArgument="00" CvType="Text" DesignTimeRectangle="864, 368, 78, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="DropDown" FriendlyName="'00'" FullSelectorArgument="&lt;webctrl parentid='date_minute_start' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='date_minute_start' tag='SELECT' type='' class='' aaname='' /&gt;" Guid="f48509ff-d256-4593-b0d6-3c688f54ac28" InformativeScreenshot="08df0acc5073c1c725ce30495b83692e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CvTextArgument="BfJ" CvType="Text" DesignTimeRectangle="359, 375, 211, 28" ElementType="Text" FriendlyName="'日付'" FullSelectorArgument="&lt;webctrl parentid='edit_date' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='edit_date' tag='DIV' type='' class='edit_title' aaname='日付' check:innerText='日付' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANcAAAAgCAYAAACB6u0UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHTSURBVHhe7dpRb9JQGIdxP0PDjHFpJmqjJKQytNEGyZLBGkLICJ72+3+Uv5RWrbXiFveO9Oy5+N30vBxueMJp4VlRFALw8IgLMEJcgBHiAowQF2CEuAAjjxKXu471PLzQxbtE2a57pii2mkWBgmDvMutYB/qlFVfjA35ffw3CaflhUM28TLTqnCkRF/xiH5dbKj6rZs4/rbpnDogLfjkS10TZb2sdbmeK/hGXW8QaHGaGStNJvfcdRTNtO/YE+sA4rp3m76v1wehKuxviwtNhG9cqUXjnUDgWwi+Gce10NaofZJSIC0+M3QON5rdW6UdcudNmkSh6nShzjXnigmds4srXSoet9TquXw84AoUfM7mu9yYueMDkWOgWkyqgs1jxuF7/eSxsHhdDTTNXv4644Beze67N17GmS6fssl5v3nPdzhXVv30FYaJVXl4nLvjF8IFGpTOuvfWXYf0+gaL5dn+NuOCXk8VVuEzTt2OlN2VY5TXigl9OF9cfiAt+ORLXPf1vXPlan18d3wvok9PGlS81ae+zd54c+4Mv0A8nPhZuNHtTrx8M9GKUav2tPQf0TysuAA+FuAAjxAUYIS7ACHEBRogLMEJcgBHiAowQF2Ci0HdqX724dJGxBAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NSelectItem.Target>
+                          </uix:NSelectItem>
+                          <uix:NSelectItem DisplayName="終了時選択" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="[Split(EndTime1.ToString,&quot;:&quot;)(0)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                            <uix:NSelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="34">
+                                <x:String>－</x:String>
+                                <x:String>00</x:String>
+                                <x:String>01</x:String>
+                                <x:String>02</x:String>
+                                <x:String>03</x:String>
+                                <x:String>04</x:String>
+                                <x:String>05</x:String>
+                                <x:String>06</x:String>
+                                <x:String>07</x:String>
+                                <x:String>08</x:String>
+                                <x:String>09</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                              </scg:List>
+                            </uix:NSelectItem.Items>
+                            <uix:NSelectItem.Target>
+                              <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="1033, 365, 82, 46" CvTextArea="1046, 377, 24, 19" CvTextArgument="12" CvType="InputBox" DesignTimeRectangle="1036, 368, 78, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="DropDown" FriendlyName="'12'" FullSelectorArgument="&lt;webctrl parentid='date_hour_stop' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='date_hour_stop' tag='SELECT' type='' class='' aaname='' /&gt;" Guid="ea829ffa-c9a4-4f99-a5b2-8891909647e5" InformativeScreenshot="3578c2b09361ef06044dbdef6bcdff3d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target DesignTimeRectangle="980, 376, 38, 28" ElementType="Text" FriendlyName="'から'" FullSelectorArgument="&lt;webctrl aaname='から' class='string' parentid='edit_date' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='から' class='string' parentid='edit_date' tag='DIV' type='' check:innerText='から' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAgCAYAAABkWOo9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAFTSURBVFhH7ZVBEoMwCEV7Bu+ga7vWrS7NyvsfhSqJmiaA2DKdOpPF2yQxfOATH/M8wx0oQq0pQq0pQq1hhbq+gapqYST2ruOgq6vlPk87UGdkfiT0nfF5iEaeI3ku5iuhGPAkCN5Td+CIvZ2hDaL5eLJQMYADN3TQLAGa3hH7Hk0yGg6he1ZnNNBN0SX4XbIWYS80gQuA60mlqTWPHyKp4loYoUKAaW13UkFco6Z5hDY5672/diZHeg1ooZQYcS88P2kH0BbLgMS24nwfkuUGiha6BaD2uCSIb9ASimodrB1YzhOWI4Qy1dmQqp2Abb44SJzfc6GhBWwFpGob4LuQ358IDdUU3k/VA/4x2tYH0/N+sntuckKRGFtFQols0AZRGzARnT+1vD9XvKV2oWRLp/U36au8oZveHP791CWeD9OfUoRaU4RaU4RaU4RacxOhM7wACKImP4Io6QgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NSelectItem.Target>
+                          </uix:NSelectItem>
+                          <uix:NSelectItem DisplayName="終了分入力" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="[Split(EndTime1.ToString,&quot;:&quot;)(0)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                            <uix:NSelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="50">
+                                <x:String>－</x:String>
+                                <x:String>00</x:String>
+                                <x:String>01</x:String>
+                                <x:String>02</x:String>
+                                <x:String>03</x:String>
+                                <x:String>04</x:String>
+                                <x:String>05</x:String>
+                                <x:String>06</x:String>
+                                <x:String>07</x:String>
+                                <x:String>08</x:String>
+                                <x:String>09</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                                <x:String>33</x:String>
+                                <x:String>34</x:String>
+                                <x:String>35</x:String>
+                                <x:String>36</x:String>
+                                <x:String>37</x:String>
+                                <x:String>38</x:String>
+                                <x:String>39</x:String>
+                                <x:String>40</x:String>
+                                <x:String>41</x:String>
+                                <x:String>42</x:String>
+                                <x:String>43</x:String>
+                                <x:String>44</x:String>
+                                <x:String>45</x:String>
+                                <x:String>46</x:String>
+                                <x:String>47</x:String>
+                                <x:String>48</x:String>
+                              </scg:List>
+                            </uix:NSelectItem.Items>
+                            <uix:NSelectItem.Target>
+                              <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="1158, 365, 82, 45" CvTextArea="1169, 377, 25, 19" CvTextArgument="00" CvType="InputBox" DesignTimeRectangle="1161, 368, 78, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="DropDown" FriendlyName="'00'" FullSelectorArgument="&lt;webctrl parentid='date_minute_stop' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='date_minute_stop' tag='SELECT' type='' class='' aaname='' /&gt;" Guid="f886accf-2eac-4454-abf9-bef6e3c59d76" InformativeScreenshot="d7063c1d7eabf02397b87d9ed38c535c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target DesignTimeRectangle="980, 376, 38, 28" ElementType="Text" FriendlyName="'から'" FullSelectorArgument="&lt;webctrl aaname='から' class='string' parentid='edit_date' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='から' class='string' parentid='edit_date' tag='DIV' type='' check:innerText='から' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAgCAYAAABkWOo9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAFTSURBVFhH7ZVBEoMwCEV7Bu+ga7vWrS7NyvsfhSqJmiaA2DKdOpPF2yQxfOATH/M8wx0oQq0pQq0pQq1hhbq+gapqYST2ruOgq6vlPk87UGdkfiT0nfF5iEaeI3ku5iuhGPAkCN5Td+CIvZ2hDaL5eLJQMYADN3TQLAGa3hH7Hk0yGg6he1ZnNNBN0SX4XbIWYS80gQuA60mlqTWPHyKp4loYoUKAaW13UkFco6Z5hDY5672/diZHeg1ooZQYcS88P2kH0BbLgMS24nwfkuUGiha6BaD2uCSIb9ASimodrB1YzhOWI4Qy1dmQqp2Abb44SJzfc6GhBWwFpGob4LuQ358IDdUU3k/VA/4x2tYH0/N+sntuckKRGFtFQols0AZRGzARnT+1vD9XvKV2oWRLp/U36au8oZveHP791CWeD9OfUoRaU4RaU4RaU4RacxOhM7wACKImP4Io6QgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NSelectItem.Target>
+                          </uix:NSelectItem>
+                          <uix:NSelectItem DisplayName="項目を選択 '件名'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NSelectItem_5" Item="[Category]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                            <uix:NSelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="27">
+                                <x:String>カテゴリを選択</x:String>
+                                <x:String>テレワーク</x:String>
+                                <x:String>会議</x:String>
+                                <x:String>来客</x:String>
+                                <x:String>外出</x:String>
+                                <x:String>移動時間</x:String>
+                                <x:String>出張</x:String>
+                                <x:String>営業</x:String>
+                                <x:String>社外</x:String>
+                                <x:String>作業予定</x:String>
+                                <x:String>客先</x:String>
+                                <x:String>面接</x:String>
+                                <x:String>説明会</x:String>
+                                <x:String>試験</x:String>
+                                <x:String>研修</x:String>
+                                <x:String>スクール</x:String>
+                                <x:String>社内行事</x:String>
+                                <x:String>全休</x:String>
+                                <x:String>午前半休</x:String>
+                                <x:String>午後半休</x:String>
+                                <x:String>私用</x:String>
+                                <x:String>【新規顧客】</x:String>
+                                <x:String>【既存顧客】</x:String>
+                                <x:String>【入局（新規）】</x:String>
+                                <x:String>【入局】</x:String>
+                                <x:String>【SES一次面接】</x:String>
+                                <x:String>【SES二次面接】</x:String>
+                              </scg:List>
+                            </uix:NSelectItem.Items>
+                            <uix:NSelectItem.Target>
+                              <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvTextArgument="hJFJU&amp;i3R" CvType="Text" DesignTimeRectangle="570, 455, 191, 41" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'カテゴリを選択'" FullSelectorArgument="&lt;webctrl parentid='performance_category' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='performance_category' tag='DIV' type='' class='common_btn' aaname='' check:innerText='カテゴリを選択' /&gt;" Guid="3afb19db-8194-4e35-b6e1-7b11335b003c" InformativeScreenshot="0cdc01e0b9db92c54d3a0c93eed20907.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CvTextArgument="ft&amp; oan" CvType="Text" DesignTimeRectangle="359, 464, 211, 28" FriendlyName="'件名'" FullSelectorArgument="&lt;webctrl parentid='edit_plan' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='edit_plan' tag='DIV' type='' class='edit_title common_required' aaname='件名' check:innerText='件名' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NSelectItem.Target>
+                          </uix:NSelectItem>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="文字を入力 'カテゴリを選択'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,219" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Text="[WorkName]" Version="V3">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="779, 459, 837, 44" CvTextArea="789, 470, 39, 19" CvTextArgument="test" CvType="InputBox" DesignTimeRectangle="781, 461, 836, 41" DesignTimeScaleFactor="1.2000000476837158" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='required alert' aaname='' /&gt;" Guid="d8574d0b-23d1-48c0-8ad8-9640916cfc90" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAA0gAAAAtCAYAAACUNkuvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAI9SURBVHhe7dyxasJgFIZhwcXZyUtw8AokY1taaEGhuf9LSfnCSUg0uCd9hmf5c3R/Ofmza9u2AwAAoO0EEgAAQFkMpN/7vfu5XLrP47F73++7t90OAABgtdI16Zt0TnpnqYPiKZBu12v3cTgs/ikAAMDapXfSPY8tFLNAytDwo6/Tqbs1zcu6AgAAWIN0TfomnTM0z1IkjYGUHwybo+/z+WkQAABgC9I76Z70z+NCaAykvIs3bI6mAwAAAFszbJLSQdPzMZByYalfMzXNbAAAAGBr0j3pn3TQ9HwMpOFrde4cAQAAW5fuSf+kg6bnYyDlYUwfAgAAbNVSAwkkAADgXxJIAAAARSABAAAUgQQAAFAEEgAAQBFIAAAARSABAAAUgQQAAFAEEgAAQBFIAAAARSABAAAUgQQAAFAEEgAAQBFIAAAARSABAAAUgQQAAFAEEgAAQBFIAAAARSABAAAUgQQAAFAEEgAAQBFIAAAARSABAAAUgQQAAFAEEgAAQBFIAAAA5WUgve/3/cPf+302AAAAsDXpnvRPOmh6PgbS5/HYD9yaZjYAAACwNeme9E86aHo+BtLP5dIPfJ1OswEAAICtSfekf9JB0/MxkLJi+jgc+qHv83k2BAAAsBXpnXRP+ufxitEYSHG7XvvBYZOUtZM7SQAAwNqla9I3w+Yo0j+Pc7NAigwNmyQAAICtSe8sxVE8BVKkrvIuXi4sDV+3AwAAWKt0TfomnfPqLbnFQAIAAPiPBBIAAECv7f4AKDpVHe7MbCAAAAAASUVORK5CYII=" InformativeScreenshot="1bb6ba0a85e69365dbe2ecc98291e76b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CvTextArgument="JTJV&amp;NR" CvType="Text" DesignTimeRectangle="577, 463, 173, 38" ElementType="Text" FriendlyName="'カテゴリを選択'" FullSelectorArgument="&lt;webctrl class='string' parentid='performance_category' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='string' parentid='performance_category' tag='DIV' type='' aaname='カテゴリを選択' check:innerText='カテゴリを選択' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALEAAAAqCAYAAAD8iLpFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQLSURBVHhe7Z1fT9swEMD5CpP2NBjbBIxtwMQLDxWaKlaBEKKUNuT7fxQv5z+pE19in0na3noPP63EiX0+/3xx0aYdfD2/Uh8/n6kPhyeCwJID7KIgcEIkFtgjEgvsEYkF9ojEAntEYoE9IrHAHpFYYI9ILLBHJBbYkynxRM2WpSqXj+oabd9xbh7VspyrW6xtD7h9rtbu+Q5t48geSXynnspSPU3Nz+hCarnX9/Rx/bBSZblSsxu8PWA6r+5P69snjNPMA/qq0e3I9Y71SeoTgRr7ptisxFYSLEFxBqicWiTbj46lJeGIEmtxyHOYVOP0y6/jwKoqzJUo8fJh4l3zIORlGzCtxHZ8LTedIRarT2IjLBFMRIvpz401XiX+fyW2r8E8dufcmVQ5R6rEeVXYx0hm4oLP2Lhd1x2I5IC3AfazEkerh0hM6VPnLPp2C2WF556m4XWIERNz/yoxSmTSFSIxYDb78uFR58uvgHXu/DcdCHxTnYODfpqY3PqYOMLr+Fx2SeLp33v1snhVX86v0Hbg24/favG6VH/uZmh7nsR2UiSJ7TPtJNOISdPNNiReS9XazI1cdPfRlrIdl46hVblDQUO6JPbHwhhDYpAT+l4VhTo6/RW0H59dquLtTd/zPH8J2oE8iXX1SFlASiV2X9bGqd6blrir3Rezrwg0aMSVJpwBj89JrGPUMoeVGNsgYwD/PK4ojKRQkY9OL+q2o7MLfQ3aVqtCHX+/bDzryJI4RdBsiUdK3CYlNm1d1Reuu2NGjsRrMNGcoP59PvgmMhI3+tdjRvI1ECCukxWEBrF9uecvC/Xp5Cf6LJAhceT8pMkRcgckTqYnVv930Y1rfs42L7GZvxkzuAcVNmWdhwNELqojhRMZjhfwGf48PAmPGT5kidNksIvcUxECXKWiPENgUImtlCkV282rKUO+xE7GZJB8BhJjG68C2yRjAl/unLwASN33hc9BkxhdEAz6LnaLkyRGBoNJTNxsZty2IMNU4lzaEuufMVkHHjeFw+rLHRwtFq3zcR8EiY2YSTuTUqkAohg5DCGxXmxinLjERDpkMvH4ffccczyaEvcXnEHiH5lEiW1yEicTJrcbk6R44t9LtsR2QxpyNoHd/NkiuNxXaPFcf07qibquY7Kf65jxMRsS63v75pW2MbZJgsSECgy4BMaqlScH5dhhWC8kjTQJ64pLeCZGvVlj+Hl2byh9zcn8/njWEts+Y2vl8h29bztEJDbBd0vWIVPvZNeVZZNnLY6AbGHu6RvY5Ln5nO5Xb5LUN4RZN3rBGR/aFztB2EFEYoE9IrHAHpFYYI9ILLBHJBbYIxIL7BGJBfaIxAJ7RGKBPSKxwB6RWGCP/D92AnsO/L/tJAj8KNU/cFv9zKxP0p8AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NSelectItem DisplayName="項目を選択 'プロジェクト名を選択'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NSelectItem_6" Item="[ProjectName]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                            <uix:NSelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="2">
+                                <x:String>プロジェクト名を選択</x:String>
+                                <x:String>SJ-1部※SES-営業支援(原)</x:String>
+                              </scg:List>
+                            </uix:NSelectItem.Items>
+                            <uix:NSelectItem.Target>
+                              <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvTextArgument="&amp;IR" CvType="Text" DesignTimeRectangle="1075, 515, 287, 41" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'プロジェクト名を選択'" FullSelectorArgument="&lt;webctrl parentid='performance_pulldown' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='performance_pulldown' tag='DIV' type='' class='common_btn' aaname='' check:innerText='プロジェクト名を選択' /&gt;" Guid="2ff1ff8a-e6ac-4bd0-a4c9-97d3cfbf1d48" InformativeScreenshot="9a42955b350caea2de0c134c326eccef.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                            </uix:NSelectItem.Target>
+                          </uix:NSelectItem>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '更新する'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="1692, 280, 132, 46" CvTextArea="1722, 293, 66, 18" CvTextArgument="Targz" CvType="Button" DesignTimeRectangle="1695, 283, 127, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'更新する'" FullSelectorArgument="&lt;webctrl id='submit' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='submit' tag='DIV' type='' class='common_btn common_btn_edit_submit' aaname='更新する' check:innerText='更新する' /&gt;" Guid="34270690-cc9b-4503-9fb6-3713b0948119" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAAAuCAYAAAALH6pWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAMkSURBVHhe7Zy9btswFEaLAh2ydikKdMuQoZsBA13STGkMuIJlOHr/R2F1SYoiL68oSnYtRvqGM0Qm9fcdXlIBpE91XSsACMgAHLIM1V913P9Uh8ev6u37F/Xn22fwwaEcKU/KlfKVco9kqH7/Um8/HsQdgnVA+VLOPPtABmogdQbrhAvRy9CWDlSEbUF5+1OGk4HmEqkDWDd6DcFloMWF1BisG8o9kgFPDduEco9kkBqCbQAZgAMyAAdkAA7IABzFyHA6Nqpp5nF5jvdXvdaqOe6j7T66TWIfMnt1mdT+41CMDMM8qfO5Ue+vT8JvIUmhSIznQ7jt/KIq27faje/fkCnD7kW9+8dKUIpYq5KBICH8tnr0d6FrGQ7qZH8T4cJMYaQSBdjj5F7XPShLhslB1Oq8C/fBp4dAjhwZRrl+mjAV7NrzuD3lyeCVbsNQZaBQYhnCwKmv12ZxGcy1TKogd6Q8GYKRP4YvgwlJbtdCkiX3L4hl8ReaTSsXrQUmy6CPPXyMEihPhmsrg0WXYj4CeWXgfwsYEXifaTKkFralLB4JyJCUQZoSzLa8hV9freTQu9/TQt6L8mSwNy8PXwY7H4vtbBizZGDCdY+MkbQhpqLkTQuiuAtQlgwS+ubn3dQeeUQGj5nEqAw8KCPc5dj2S8jAn2hG0de4fHUoUIZwWogCzODUhnWxIVKYnRDRCMyQgVccOq9p58QqltRvlvC3p0gZql0/srsA5LYxFBSF3wdPYdCNNvsM5u4sGTihrGmsCJ6AWiR+zFnncXsKlMHC/52bMRL98pxVBWaEoPeb3UcQMJLJtJki/P+iOBnMyDECRPO93a7xgyZIHk+YUIaB0TxJhq5azZCHiayvpd126q6JX8tCFCNDH3bOzQ6nEalqBDIwURxZMthS3x5n7ug11URAOqcFKUYGsDyQATggA3BABuCADMABGYADMgAHZACOSAa8eLtNxBdv8Ur+NhFfycfHOraJ+LEOfMZnewx+xofAB762xfAHvizUABVi3VC+XAQikkHTlg6aS2hxgaeMdUA5Up56jeBNDT6yDGCTQAZgqdU/PrSgglZ/qZAAAAAASUVORK5CYII=" InformativeScreenshot="e9c5543c0a232b76320fc7a4f22331b6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target DesignTimeRectangle="1339, 295, 209, 20" ElementType="Text" FriendlyName="'破棄する（一覧に戻る）'" FullSelectorArgument="&lt;webctrl parentid='stop' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='stop' tag='DIV' type='' class='string' aaname='破棄する（一覧に戻る）' check:innerText='破棄する（一覧に戻る）' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANUAAAAYCAYAAABtNrjpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAUDSURBVHhe7ZjPbhQxDMa5wQNw4UIPqEKAyqoCipYVatWe9rbv/zLD2Ikz+WMndjItSOTwu8xkktj+PmdmXl0ul2UymezHNNVksjP/pqkevy2v335bHrh7Iufl7vr9cvPI3ZtMXo4XNdXD4f1qlpLCCBVTnY+fiud1fFruzuV8LF2mfn4of7s2Dow1zxVBOXvuhuXm5/fQ4Pq0nNk5O/C5uDqe+ftKRFP9PN0vx98P7D2O27tfy4cvt+y9HBTH4Ym9h1hELY51hepKkHb9qiBjDIaWwLV2mCcH5g3CFMwjxZnU8Gm5Wa/97TcFqXEXSGY8n5arwTyzpgJD0eIaY4GhaPzhx5Eds8GJ3RWE5mBhkyAUMhdB9qw68QwW0dCpOi60gQbRotYYMG+QY0WDGRajQgMF1rcJOhHrz6E+JNMpEE+qj1+/h83XjGUzFADJy5OfXcNCb4GjOKOuqHkF3ITcIchsfTu+eAOFSRjeTwWYm9snmGS9frcKTJW7fB7cc1mXmLTZCA1SwpoTNL0ylsEGUf2mahnLbqgVtog1U2lN4caNnwor1oIlOHHseao0X5dHqImf6uQFmd5PRZc3PjvPaCocazMJ5Ly3hs0fFZKxugwVjt8ILET9pGKBMYk5OVNl84qk+7q6hpPQbip3gvaaUWLHZsGR5LF/rREROpypEm00aeXa17XD7FjLovnraJoKyI3VZ6gVNMv6nN/s1t1aCSVjpOK3whe9TLz75rKYo7YvW4cskTu45jVYIuSCamKhEJuLfw9T7dY82NPVozGLprELqEwFxMYiTIbyib85bJ0xNdUqvkdIRBaIFFzSYQE/v/Wk4ubHa0ozhOIJ4+m+ppAsihhGMXxD8B2cy70VOU7XPPQCD81GyDndrzaBlzAV8O7DZ7fZFe3v8wAUDgwUmSGYCosKAZTF4Yu4gkG7vdRpiCXaD11TJX1Ff6KNdPKdOzhHaAxKinpwezTGXDG2q4cmz24fqte9ViN5CVPFr3yE5nd7QdVU0TUcbxFUb7fM1vB7uWl8I5i/IRjz6tjjFGjQElgE3+SYOlnjDSL2xtAS1oDndDEQtRrycepQmSr/htL+bmfhTJUUYCsQFxhe82vbqCQcRRWPs54smRC4ThlEk11XgCeipvv2ksSvoBBbaXxr05FF7OaGdU2NBfO97Zl7Vs6rtf4pTVNJPyW6jcWYKpiLxoQiazqPT/rh5Ap7dM+aCpBj6NxkqLgAWCyuGbCiUTBgSBXDJ1UpQpupZBHjehA77lGZA8xXHE9Zo6pxTPUvqZqq9Zevy1hZBwlmiEzgEunu1wqD4g1jXJLcPN5oXSL2p472ZGALsJ2225gRo1cEsAd+f6EmLZi8Fl3f11kVsyBip4PoemEWHtb4WWMKZo3HeLimaEE0lfa3udlYEFy8YUyoDy4YjoKl16o4kd4wcD0JPDaVh8SiTRCtrzUU4veTPUMiS40fP2dEKagxfL6TfME1Zt24biuskBtmpZzgs1H+nOBhDCN6TU39mNTQ1Og4TUXskGfWVKf7x+UNLqz7bT7yjQWiw+RWgnFJhnsuIbxAGVMRPsmisEPxe5MZGT3HZNA6ZND+Ey+jED3XuUmEDLGwcS7u+RaQO8o7raWYh/YumauIbUPMn2+qow1QPKnAWBpDEWAsgLs3mfxPNH9UTCYTG9NUk8nOBFPl752TycRGYarJZLIP01STya5clj+A5xOE49RwLwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="ac318d6c4f760816d4cc393ec5af5e9c.jpg" Selector="&lt;html app='chrome.exe' title='Time Krei' /&gt;" Title="Time Krei" Url="https://tenda.timekrei.net/home.html#performance_create" />
+                  </uix:NApplicationCard.TargetApp>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NApplicationCard>
               </Sequence>
             </Sequence>
           </If.Then>
           <If.Else>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,230.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;件名が存在しない&quot;]" />
+              <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;件名が存在しない&quot;]" />
             </Sequence>
           </If.Else>
         </If>
       </Sequence>
+      <Sequence DisplayName="⑪その日が終了したら登録を押下し、次の日に移動" sap:VirtualizedContainerService.HintSize="508,83" sap2010:WorkflowViewState.IdRef="Sequence_18">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,885" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="963169a7-3c42-493a-a20f-dff79026258e" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,667" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '登録する'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="963169a7-3c42-493a-a20f-dff79026258e" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_create" CvElementArea="1719, 280, 132, 47" CvTextArea="1749, 291, 37, 19" CvTextArgument="P1R" CvType="Button" DesignTimeRectangle="1722, 283, 127, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'登録する'" FullSelectorArgument="&lt;webctrl id='submit' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='submit' tag='DIV' type='' class='common_btn common_btn_edit_submit' aaname='登録する' check:innerText='登録する' /&gt;" Guid="3bb3b4b0-6717-4e5f-92ce-2fc8a997c808" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAAAuCAYAAAALH6pWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAANxSURBVHhe7ZxLi9swFIXLQBez7aYUuptFFt0FAt2kWaVjSEMckvz/n6Lq6i35ypYNGWvss/jIYEuyR+fchwPxl7ZtBQAEzAAcvBnO/8Rp90s0b9/E+4+v4u/3F/DJIR1JT9KV9OV075jh/Oe3eP/5yi4IlgHpSzqn2kdmoAHcZLBMUkN4M8jUgYywLkjvsGQ4M1At4SaAZaN6iNQM1Fxwg8GyId07ZsBTwzoh3Ttm4AaCdQAzAAfMABwwA3As1Awbcb0+xOPRiuuWOw846jLD9iDuDxIxw/UgztHYRlzC+YbzsVVjL/R52unj+4ZfkwjXLcCuP2bOZ6AuM3AYg9z2L+JyksKRuObY/bjJjLcZYSduZm5nnGGKsKVz1P1aw/VRibHqMgNFb7QxWkwvOp/+adO14Ol4iV2zL+tE17TXmMKYsmSvw2e3OajLDBIdTbRBjLAKs4kq/Zu/pZiX7UbNvR8Pal6pQM/MDFn6MtuMVGcGQm223Ky+9G5TcG5DtTGGN/vDzaB6lzob28rMoLOB2+hs02c20563TWJAbAaz7gB588Xz79cpZggzGnd+fuoxgxJ2Wv30pSU+ls8MWty+zONJy5UvTcVmKO5X5qUeMzhsY1VGJGhu0zvRmJqBrsmnbq4k6DJWZlxb8nKi2/MlJe3ZVGuG4ajtj+40MzhRlDFM2g+b0JMUK2eGxEw6Ew3dY3gN7nxA9Dg8HwszAx3TEevMQBvdiUojlKE3KlOh1KNqI26990jrjxO3v6x9DNWawQo1RCyIT/duc0m8IDop0m97YyT5GFoUkVEj6x97hw1riObz81S2KckiT6RCM1jy0ZXfOJ9VrBm0+PKc6ycauab+LoKO6/IxsnEd0+yqseH/oY0UZwF938gMPbCpc6C+2jnx3LT0xJGtzFUqrjFVqXDKbGmZSsw0yZBPoGozqE3jOvlMZx6iBTZ0skg3zavxA2laizYygo15wmv56+vPWr6EqsgM43qFFJ/y7TFmg12pIEZEoqv5E6M3um5MbJJ5qcgMYG5gBuCAGYADZgAOmAE4YAbggBmAA2YAjo4Z8MPbdcL+8BY/yV8n7E/y8bKOdcK+rAOv8Vkf2df4EHjB17rIv+DLQAOQIZYN6ZsageiYQSFTB9USai7wlLEMSEfSU/UIQWkI4c0AVgnMAAyt+A8L86z2yjeLRQAAAABJRU5ErkJggg==" InformativeScreenshot="2ccb43191d46a8a663f9d20525555e20.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '登録する'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="963169a7-3c42-493a-a20f-dff79026258e" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_create" CvElementArea="961, 629, 153, 50" CvTextArea="993, 641, 88, 24" CvTextArgument="Sikg Z" CvType="Button" DesignTimeRectangle="964, 632, 148, 46" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'登録する'" FullSelectorArgument="&lt;webctrl aaname='登録する' parentid='modal_area' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='登録する' parentid='modal_area' tag='DIV' type='' class='accept submit' check:innerText='登録する' /&gt;" Guid="1df5e6dc-4cb2-4407-aab9-b84cc48f2c62" ImageBase64="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" InformativeScreenshot="8ba369a40918883a384d236aa7257f77.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '実績編集'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="963169a7-3c42-493a-a20f-dff79026258e" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_create" CvType="ArrowButton" DesignTimeRectangle="976, 349, 38, 42" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'DIV schedule_btn_tomorr…'" FullSelectorArgument="&lt;webctrl id='schedule_btn_tomorrow' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='schedule_btn_tomorrow' tag='DIV' type='' class='common_btn_right' aaname='' /&gt;" Guid="695e5b3a-7e98-487c-a4e3-79d6693209ce" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAuCAYAAABeUotNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAEaSURBVFhH7ZndCoJQDIB9hYgu+oVKoyKCvCjUzOj/RpDS93+UxYTK7FyITdroXHwoh118zJ0JmxFFEUiAhWgYhsrzLEatPUxf8Pkrmv0xDCZzsJcuHM+XD0mEhWiWjjkFxw/4iyKtwQSc9bssS1EEM5stA7aiCNasCFG8YCJEsRuIEEW0KDValBotSs3/ivZGM7heb+AFO2j0LGVMGchFrdkCkiRJ2R3PypgykIvWuybYKw/i+CVLkVly0QdLd/OU9bf7r2UrE0Uws1RlUKlovgwOp4syrghaFBHx6dlfJjHtSUzDF/MLrQotSo0WpUaLUqNFKREzJBMzdhQxyBUxGk+XDbnNCDvRdH2T24iwES20EFMdckSIaAR3SP24mM19Zz0AAAAASUVORK5CYII=" InformativeScreenshot="7e9c3ba17b556ac4ff1810e5c440e901.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target DesignTimeRectangle="478, 273, 115, 61" ElementType="Text" FriendlyName="'実績編集'" FullSelectorArgument="&lt;webctrl aaname='実績編集' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='実績編集' tag='SPAN' type='' class='' check:innerText='実績編集' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="7e0aca36b0c56b3177b1a628a898dd89.jpg" Selector="&lt;html app='chrome.exe' title='Time Krei' /&gt;" Title="Time Krei" Url="https://tenda.timekrei.net/home.html#performance_create" />
+          </uix:NApplicationCard.TargetApp>
+        </uix:NApplicationCard>
+      </Sequence>
+    </Sequence>
+    <Sequence DisplayName="⑫その月分の繰り返しが終了したらChromeを終了する" sap:VirtualizedContainerService.HintSize="570,246" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="プロセスを強制終了" sap:VirtualizedContainerService.HintSize="388,135" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Chrome" />
     </Sequence>
   </Sequence>
 </Activity>
