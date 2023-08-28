@@ -79,7 +79,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xD;&#xA;&#xD;&#xA;①スケジュール画面の1日の項目をクリック&#xD;&#xA;②実績の未登録or登録済問わず作業実績詳細欄をダブルクリック&#xD;&#xA;③プロジェクト名のプルダウンからプロジェクト名を取得する&#xD;&#xA;　→1つも取得できない場合はエラーを保持&#xD;&#xA;④プロジェクト名情報を引数として出力する&#xD;&#xA;⑤Chromeを終了する&#xD;&#xA;&#xD;&#xA;次のワークフローは「勤務情報保存と読み込み」" DisplayName="プロジェクト名取得" sap:VirtualizedContainerService.HintSize="450,283.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②実績の未登録or登録済問わず作業実績詳細欄をダブルクリック&#xA;③プロジェクト名のプルダウンからプロジェクト名を取得する&#xA;　→1つも取得できない場合はエラーを保持&#xA;④プロジェクト名情報を引数として出力する&#xA;⑤Chromeを終了する&#xA;&#xA;次のワークフローは「勤務情報保存と書み込み」" DisplayName="プロジェクト名取得" sap:VirtualizedContainerService.HintSize="450,283.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ProjectList" />
     </Sequence.Variables>
