@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>612,1900</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>692,4063.333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>config読み込み_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -94,11 +94,11 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①config.xlsxを格納する「事前設定」フォルダーの存在を確認&#xA;　→なければフォルダーを作成する&#xA;②config.xlsxの存在を確認&#xA;　→なければconfigを作成する&#xA;③configファイルを開く&#xA;④各種URL、ログイン情報を読み込む&#xA;　→一つでも空の場合は終了する&#xA;&#xA;次のワークフローは「勤務情報＆実績ファイル準備」" DisplayName="config読み込み" sap:VirtualizedContainerService.HintSize="450,1835.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①config.xlsxを格納する「事前設定」フォルダーの存在を確認&#xA;　→なければフォルダーを作成する&#xA;②config.xlsxの存在を確認&#xA;　→なければconfigを作成する&#xA;③configファイルを開く&#xA;④各種URL、ログイン情報を読み込む&#xA;　→一つでも空の場合は終了する&#xA;&#xA;次のワークフローは「勤務情報＆実績ファイル準備」" DisplayName="config読み込み" sap:VirtualizedContainerService.HintSize="702,3998.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="TKAutomation_2023" Name="configPass" />
-      <Variable x:TypeArguments="x:Boolean" Name="FolderExist" />
-      <Variable x:TypeArguments="x:Boolean" Name="FileExist" />
+      <Variable x:TypeArguments="x:Boolean" Name="isFolderExist" />
+      <Variable x:TypeArguments="x:Boolean" Name="isFileExist" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -106,8 +106,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:FolderExistsX DisplayName="事前設定フォルダーの存在を確認" Exists="[FolderExist]" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="..\TKAutomation\事前設定" />
-    <If Condition="[FolderExist = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:FolderExistsX DisplayName="事前設定フォルダーの存在を確認" Exists="[isFolderExist]" sap:VirtualizedContainerService.HintSize="640,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="..\TKAutomation\事前設定" />
+    <If Condition="[isFolderExist = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="640,184" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="376,169.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -128,8 +128,8 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:FileExistsX DisplayName="configファイルの存在を確認" Exists="[FileExist]" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="事前設定\config.xlsx" />
-    <If Condition="[FileExist = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:FileExistsX DisplayName="configファイルの存在を確認" Exists="[isFileExist]" sap:VirtualizedContainerService.HintSize="640,136.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="事前設定\config.xlsx" />
+    <If Condition="[isFileExist = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="640,2347.3333333333335" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="606,2163.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -182,7 +182,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:ReadCell Cell="D2" DisplayName="セルを読み込み (ワークブック)" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ReadCell_1" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
+    <ui:ReadCell Cell="D2" DisplayName="セルを読み込み (ワークブック)" sap:VirtualizedContainerService.HintSize="640,88" sap2010:WorkflowViewState.IdRef="ReadCell_1" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
       <ui:ReadCell.Result>
         <OutArgument x:TypeArguments="x:String">[out_TKURL]</OutArgument>
       </ui:ReadCell.Result>
