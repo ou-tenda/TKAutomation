@@ -119,7 +119,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①アプリが開いているを判定する&#xA;　→開いている場合は全部閉じる&#xA;②Chromeを開く&#xA;③TKのURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;④TKにログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;⑤作業実績確認画面に遷移する&#xA;&#xA;次のワークフローは「プロジェクト名取得」&#xA;&#xA;引数&#xA;in_TKID:TKのID&#xA;in_TKPW:TKのパスワード&#xD;&#xA;in_TKURL:TKのURL&#xA;&#xA;変数&#xA;isTKAcsess:TKにアクセスできたかの判定に使用 / Boolean / TKにアクセスできたかの判定&#xD;&#xA;isTKLogin:TKにログインできたかの判定に使用 / Boolean / ログインできたかの判定&#xD;&#xA;isTKNotice:TKログイン時、お知らせ表示の判定に使用 / Boolean / お知らせの判定" DisplayName="TKログイン" sap:VirtualizedContainerService.HintSize="670,2154" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①アプリが開いているを判定する&#xA;　→開いている場合は全部閉じる&#xA;②Chromeを開く&#xA;③TKのURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;④TKにログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;⑤作業実績確認画面に遷移する&#xA;&#xA;次のワークフローは「プロジェクト名取得」&#xA;&#xA;引数&#xA;in_TKID:TKのID&#xA;in_TKPW:TKのパスワード&#xD;&#xA;in_TKURL:TKのURL&#xA;&#xA;変数&#xA;isTKAcsess:TKにアクセスできたかの判定に使用 / Boolean / TKにアクセスできたかの判定&#xD;&#xA;isTKLogin:TKにログインできたかの判定に使用 / Boolean / ログインできたかの判定&#xD;&#xA;isTKNotice:TKログイン時、お知らせ表示の判定に使用 / Boolean / お知らせの判定" DisplayName="TKログイン" sap:VirtualizedContainerService.HintSize="670,1904.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TKURL" />
       <Variable x:TypeArguments="x:String" Name="TKName" />
@@ -156,22 +156,6 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="608,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[in_TKID]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["01883"]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign DisplayName="テスト用(落合のもの)" sap:VirtualizedContainerService.HintSize="608,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="ss:SecureString">[in_TKPW]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="ss:SecureString">[New System.Net.NetworkCredential("", "defaultpasstenda").SecurePassword]</InArgument>
-      </Assign.Value>
-    </Assign>
     <Sequence DisplayName="②Chromeを開く" sap:VirtualizedContainerService.HintSize="608,894" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
