@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="config読み込み" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="config読み込み" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_TKURL" Type="OutArgument(x:String)" />
     <x:Property Name="out_KinURL" Type="OutArgument(x:String)" />
@@ -6,11 +6,13 @@
     <x:Property Name="out_TKPass" Type="OutArgument(ss:SecureString)" />
     <x:Property Name="out_KinName" Type="OutArgument(x:String)" />
     <x:Property Name="out_KinPass" Type="OutArgument(ss:SecureString)" />
+    <x:Property Name="out_isconfig" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="io_ErrorLog" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>612,2320</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>612,2727.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>config読み込み_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -47,6 +49,9 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Net</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -101,9 +106,20 @@
       <AssemblyReference>System.Net.Requests</AssemblyReference>
       <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①config.xlsxを格納する「事前設定」フォルダーの存在を確認&#xA;　→なければフォルダーを作成する&#xA;②config.xlsxの存在を確認&#xA;　→なければconfigを作成する&#xA;③configファイルを開く&#xA;④各種URL、ログイン情報を読み込む&#xA;　→一つでも空の場合は終了する&#xA;&#xA;次のワークフローは「勤務情報＆実績ファイル準備」" DisplayName="config読み込み" sap:VirtualizedContainerService.HintSize="496,2255.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①config.xlsxを格納する「事前設定」フォルダーの存在を確認&#xA;　→なければフォルダーを作成する&#xA;②config.xlsxの存在を確認&#xA;　→なければconfigを作成する&#xA;③configファイルを開く&#xA;④各種URL、ログイン情報を読み込む&#xA;　→一つでも空の場合は終了する&#xA;&#xA;次のワークフローは「勤務情報＆実績ファイル準備」" DisplayName="config読み込み" sap:VirtualizedContainerService.HintSize="572,2662.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="TKAutomation_2023" Name="configPass" />
       <Variable x:TypeArguments="x:Boolean" Name="isFolderExist" />
@@ -117,14 +133,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:FolderExistsX sap2010:Annotation.AnnotationText="①config.xlsxを格納する「事前設定」フォルダーの存在を確認" DisplayName="事前設定フォルダーの存在を確認" Exists="[isFolderExist]" sap:VirtualizedContainerService.HintSize="434,167.33333333333334" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="..\TKAutomation\事前設定">
+    <ui:FolderExistsX sap2010:Annotation.AnnotationText="①config.xlsxを格納する「事前設定」フォルダーの存在を確認" DisplayName="事前設定フォルダーの存在を確認" Exists="[isFolderExist]" sap:VirtualizedContainerService.HintSize="510,167.33333333333334" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="..\TKAutomation\事前設定">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FolderExistsX>
-    <If sap2010:Annotation.AnnotationText="なければフォルダーを作成する" Condition="[isFolderExist = false]" DisplayName="フォルダー存在判定" sap:VirtualizedContainerService.HintSize="434,214.66666666666666" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="なければフォルダーを作成する" Condition="[isFolderExist = false]" DisplayName="フォルダー存在判定" sap:VirtualizedContainerService.HintSize="510,214.66666666666666" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -151,14 +167,14 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:FileExistsX sap2010:Annotation.AnnotationText="②config.xlsxの存在を確認" DisplayName="configファイルの存在を確認" Exists="[isFileExist]" sap:VirtualizedContainerService.HintSize="434,167.33333333333334" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="事前設定\config.xlsx">
+    <ui:FileExistsX sap2010:Annotation.AnnotationText="②config.xlsxの存在を確認" DisplayName="configファイルの存在を確認" Exists="[isFileExist]" sap:VirtualizedContainerService.HintSize="510,167.33333333333334" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="事前設定\config.xlsx">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FileExistsX>
-    <If sap2010:Annotation.AnnotationText="なければconfigを作成する" Condition="[isFileExist = false]" DisplayName="ファイル存在判定" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="なければconfigを作成する" Condition="[isFileExist = false]" DisplayName="ファイル存在判定" sap:VirtualizedContainerService.HintSize="510,84.66666666666667" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -219,28 +235,28 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:AppendLine File="{x:Null}" DisplayName="config読み込み開始→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;config.xlsxの読み込みを実行しました。&quot;]" UseDefaultEncoding="False" />
-    <ui:ReadCell Cell="D2" DisplayName="TKURL読み込み" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadCell_1" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
+    <ui:AppendLine File="{x:Null}" DisplayName="config読み込み開始→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="510,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;config.xlsxの読み込みを実行しました。&quot;]" UseDefaultEncoding="False" />
+    <ui:ReadCell Cell="D2" DisplayName="TKURL読み込み" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadCell_1" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
       <ui:ReadCell.Result>
         <OutArgument x:TypeArguments="x:String">[out_TKURL]</OutArgument>
       </ui:ReadCell.Result>
     </ui:ReadCell>
-    <ui:ReadCell Cell="D3" DisplayName="勤次郎URL読み込み" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadCell_2" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
+    <ui:ReadCell Cell="D3" DisplayName="勤次郎URL読み込み" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadCell_2" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
       <ui:ReadCell.Result>
         <OutArgument x:TypeArguments="x:String">[out_KinURL]</OutArgument>
       </ui:ReadCell.Result>
     </ui:ReadCell>
-    <ui:ReadCell Cell="D5" DisplayName="TKログインID読み込み" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadCell_3" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
+    <ui:ReadCell Cell="D5" DisplayName="TKログインID読み込み" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadCell_3" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
       <ui:ReadCell.Result>
         <OutArgument x:TypeArguments="x:String">[out_TKName]</OutArgument>
       </ui:ReadCell.Result>
     </ui:ReadCell>
-    <ui:ReadCell Cell="D6" DisplayName="TKログインパスワード読み込み" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadCell_4" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
+    <ui:ReadCell Cell="D6" DisplayName="TKログインパスワード読み込み" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadCell_4" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
       <ui:ReadCell.Result>
         <OutArgument x:TypeArguments="x:String">[TKPass]</OutArgument>
       </ui:ReadCell.Result>
     </ui:ReadCell>
-    <Assign DisplayName="パスワードをsecurestringに変換" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="パスワードをsecurestringに変換" sap:VirtualizedContainerService.HintSize="510,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="ss:SecureString">[out_TKPass]</OutArgument>
       </Assign.To>
@@ -248,17 +264,17 @@
         <InArgument x:TypeArguments="ss:SecureString">[(new System.Net.NetworkCredential("",TKPass)).SecurePassword]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ReadCell Cell="D8" DisplayName="勤次郎ユーザー名読み込み" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadCell_5" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
+    <ui:ReadCell Cell="D8" DisplayName="勤次郎ユーザー名読み込み" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadCell_5" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
       <ui:ReadCell.Result>
         <OutArgument x:TypeArguments="x:String">[out_KinName]</OutArgument>
       </ui:ReadCell.Result>
     </ui:ReadCell>
-    <ui:ReadCell Cell="D9" DisplayName="勤次郎パスワード読み込み" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadCell_6" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
+    <ui:ReadCell Cell="D9" DisplayName="勤次郎パスワード読み込み" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadCell_6" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
       <ui:ReadCell.Result>
         <OutArgument x:TypeArguments="x:String">[KinPass]</OutArgument>
       </ui:ReadCell.Result>
     </ui:ReadCell>
-    <Assign DisplayName="パスワードをsecurestringに変換" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="パスワードをsecurestringに変換" sap:VirtualizedContainerService.HintSize="510,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="ss:SecureString">[out_KinPass]</OutArgument>
       </Assign.To>
@@ -266,5 +282,133 @@
         <InArgument x:TypeArguments="ss:SecureString">[(new System.Net.NetworkCredential("",KinPass)).SecurePassword]</InArgument>
       </Assign.Value>
     </Assign>
+    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="510,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[out_isconfig]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[string.IsNullOrEmpty(out_TKURL) = true OR string.IsNullOrEmpty(out_KinURL) = true]" DisplayName="URL情報の空判定" sap:VirtualizedContainerService.HintSize="510,54" sap2010:WorkflowViewState.IdRef="If_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,266.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;URL情報が抜けています。入力した後再度実行してください。&quot;}]" DataTable="[io_ErrorLog]" DisplayName="URL漏れエラー情報追加" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddDataRow>
+          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_isconfig]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[string.IsNullOrEmpty(out_TKName) = true OR string.IsNullOrEmpty(out_TKPass.ToString) = true]" DisplayName="TK情報の空判定" sap:VirtualizedContainerService.HintSize="510,54" sap2010:WorkflowViewState.IdRef="If_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="476,266.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;TKのログイン情報が抜けています。入力した後再度実行してください。&quot;}]" DataTable="[io_ErrorLog]" DisplayName="TK情報漏れエラー追加" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddDataRow>
+          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_isconfig]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10" />
+      </If.Else>
+    </If>
+    <If Condition="[string.IsNullOrEmpty(out_KinName) = true OR string.IsNullOrEmpty(out_KinPass.ToString) = true]" DisplayName="勤次郎情報の空判定" sap:VirtualizedContainerService.HintSize="510,54" sap2010:WorkflowViewState.IdRef="If_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="476,266.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;勤次郎のログイン情報が抜けています。入力した後再度実行してください。&quot;}]" DataTable="[io_ErrorLog]" DisplayName="勤次郎情報漏れエラー追加" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddDataRow>
+          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_isconfig]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>
