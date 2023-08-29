@@ -1,13 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="勤次郎ログイン" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="勤次郎ログイン" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_KinURL" Type="InArgument(x:String)" />
     <x:Property Name="in_KinName" Type="InArgument(x:String)" />
-    <x:Property Name="in_KinPass" Type="InArgument(x:String)" />
+    <x:Property Name="in_KinPass" Type="InArgument(ss:SecureString)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>682,2854.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>682,2860</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>勤次郎ログイン_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,20 +105,20 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①Chromeを開く&#xA;②勤次郎のURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;③勤次郎にログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;&#xA;次のワークフローは「未承認取得」" DisplayName="勤次郎ログイン" sap:VirtualizedContainerService.HintSize="692,2790" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①Chromeを開く&#xA;②勤次郎のURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;③勤次郎にログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;&#xA;次のワークフローは「未承認取得」" DisplayName="勤次郎ログイン" sap:VirtualizedContainerService.HintSize="692,2795.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 勤次郎" sap:VirtualizedContainerService.HintSize="630,2517.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 勤次郎" sap:VirtualizedContainerService.HintSize="630,2522.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="勤次郎にアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="596,2252.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence sap2010:Annotation.AnnotationText="勤次郎にアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="596,2258" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="isKinAccess" />
             </Sequence.Variables>
@@ -141,7 +141,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="エラーメッセージ" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;勤次郎のアクセスに失敗しました。&quot; &amp; Environment.NewLine &amp;&#xD;&#xA;&quot;config.xlsxに記載の勤次郎のURLが正確か、また、手動で勤次郎にアクセスできるか確認してください。&quot;]" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="エラーメッセージ" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;勤次郎のアクセスに失敗しました。&quot; &amp; Environment.NewLine &amp;&#xA;&quot;config.xlsxに記載の勤次郎のURLが正確か、また、手動で勤次郎にアクセスできるか確認してください。&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -154,7 +154,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <Sequence DisplayName="勤次郎にログイン" sap:VirtualizedContainerService.HintSize="534,1508.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="勤次郎にログイン" sap:VirtualizedContainerService.HintSize="534,1514" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="isKinLogin" />
               </Sequence.Variables>
@@ -168,7 +168,7 @@
                   <uix:TargetAnchorable BrowserURL="https://ini5a.kinjirou-asp.jp/TDAD1702/KinjirouWeb/Common/Menunavi/k_login/k_login.aspx" CvElementArea="501, 498, 138, 32" CvTextArea="504, 501, 84, 21" CvTextArgument="00001882" CvType="InputBox" DesignTimeRectangle="503, 566, 135, 30" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'00001882'" FullSelectorArgument="&lt;webctrl id='TxtUser' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='TxtUser' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="355f37f4-896e-4e87-9e23-000590ac2e6d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAiCAYAAABvCirZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJASURBVHhe7ZaLTgIxEEX71XycD1BeIqAiiujXVG83Q4ba7g6yydrlnuTKbDtp4+akXXe9vvZXqyuPX0n8nBpjz+X1BFkYxhLKwpjzS5bBYMAwIbEbR7KggRAhFsbdrG8oCsmihXGj5xFlIVlEltunW+/wB6cLZSEp4AUOlOHzsLqGUFAWkgJe3G/u/ehlVF1DeGiSxTl3lBxd9QlNPdb12u4rFXiBwyTIcvdy1yhL6iX8pzGAcUkO63ptj5WMyAJPgixITpa6f17PddUXk5tre19rX+nAC3HEjTdjyvKHfa19pQMvJq+T6hpCUXcNtf3y2u6Lyc21va+1r3TkZAmyTLfTYA5lqfjrvoKlpyTgxeGbBbIgfZcFpObOGUth7SsFeCG3T7iGxq/ji5AFYF4nh7VPY+0rCXght4+DKJfwzQJSc+eMaZrmSyWcLNtJEKb6Zvl56LssXe1bOnKyHGRBKEtF22uXDmWJOGffuv4+QFkiztm3rr8PnCQLsL6krsY0dfNt71u3V184WRaAF6OTo6s+oanHul5TXzwfpy/Ai9nbLMTN3+ehaJKFXCbwYvm59IvdwruH3YNffCwoC0kCL+AHDhWHAuZQFpICXsjtE04WPFAWkgJe4DBZ7pfVyQJhKAtJcZDlJ+5x/+gRykJSwAtxhLKQWpKyUBgSo0VBjmRB0MAwSOyGW32uQrH+WvtcLcEzxq01otex1BK9jqVG9DqWWqLXsdSIXsdSS/Q6lhrR61hqiV7HUiN6neN65b8BHpvIQfz36xkAAAAASUVORK5CYII=" InformativeScreenshot="4fbc6887a42c2b0db4ad333e528499fb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='勤次郎Enterprise - 勤次郎' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="パスワード入力" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="472,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Text="[in_KinPass]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="パスワード入力" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="472,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" SecureText="[in_KinPass]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://ini5a.kinjirou-asp.jp/TDAD1702/KinjirouWeb/Common/Menunavi/k_login/k_login.aspx" CvType="InputBox" DesignTimeRectangle="503, 626, 135, 32" DesignTimeScaleFactor="1.5" ElementType="InputBoxPassword" FriendlyName="'INPUT TxtPass'" FullSelectorArgument="&lt;webctrl id='TxtPass' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='TxtPass' tag='INPUT' type='password' class='' aaname='' /&gt;" Guid="3032fa26-57ab-4539-835c-18eaf2a2b4e8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAkCAYAAAC5U8nEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAIrSURBVHhe7ZZZbsJAEETn1Fw1C0sCGAxespxg4mrS1uAuI38mUj2pzbim3f55GpNej6/55fASCvm6Wi/OvbDHZs7lKL3rvv7quxIuz/vnvD7eBmLtL0CG+6f909izqTZjjv7pGvtY4xkU1sg89zm+1rv+z7uSv8SGDuvVaqVSWU3dSL6AOWgQwnFh4AZOr5ssgz0SRTDghX+2TBaUZBEMO12Gw2T8DEkWMQe8cEcki3iIZBGLuZNld9rlbbWVLIICL97ObxmepPf6PW9PkkVw4MXxeszwRLKIh0gWsZggy+68kyyC4rLs6/1NFtxIFsGAF1VTmSPpcDnYjWQRDJcFniQYo5NFzOGy2GcIF/1nEXPACz9Q7DMEYSSLYLgsOF0SLvrPIuaAF+6IZBEPkSxiMZJFLEayiMVIFrGYIMupOUkWQbmT5dydc93XkkVQ4AUOE3iSIErz2UgWQTFZ2l9ZLv1FsohZ4IV9fbp6OFmGC24ki2DACxwmOFT0n0U8xGW5flxv/1mwkCyCAS/gh8ni1kgYMaUUpf1sc8LFb1BoUKlQUzdS+9XaN6n77rKtPxorrJFhz7NpHnrInJCTnjCH5KGHzAk56QlzSB56yJyQk54wh+Shh8wJOekJc0geesickBfr1H/3doNfW391VuP9sOfZNA89ZE7ISU+5Vz5X5qGHzAk56Sn3yufKPPSQOSEnPeVe+VyZhx4yJ+Skp9wrnyvz0EPmhHxc9/kHgF8Kkpye6gEAAAAASUVORK5CYII=" InformativeScreenshot="fdd4f5265164fda9cc35e822d716756d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='勤次郎Enterprise - 勤次郎' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -184,7 +184,7 @@
                   <uix:TargetAnchorable BrowserURL="https://ini5a.kinjirou-asp.jp/TDAD1702/KinjirouWeb/Common/Menunavi/k_login/k_login.aspx" CvTextArgument="1" CvType="Text" DesignTimeRectangle="505, 614, 132, 29" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'ログイン'" FullSelectorArgument="&lt;webctrl id='BtnLogin' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='BtnLogin' tag='INPUT' type='submit' class='' aaname='ログイン' check:text='ログイン' /&gt;" Guid="97c151f7-7a8c-45ff-ad8e-12174e8fc4db" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIgAAAAhCAYAAAACqeN0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAISSURBVHhe7ZtNjsMgDEY5dQ/RXKuz6LYXyaJ/SToSoy8aogQ5FAwkERjpqZRim8IT6abq2T314/3Q99dd2/1X9xpf8R7jPn3EgHken77UOmYtZSbgDdV3feaKscd84zgx9phvHCfGHvON48TYY75xnBh7zPQnQQSBYiHI5eeiz+ezPp1OQoXg7OHA3IlJEHzQNI2+3W66bVuhQnD2cGAuieqGTgPYI3IIcAAuQA54oYbPoD+/n/GKoQKE+oAL7/6t4cYoSD/01QqilCLHa2YhiHnElCrImgDzcZFkCVwwXqiu74q+QVyHn1qMUkSDC7g94Mauv0GwoaFQedYInR/Dt1qc9e8FXIAT4yMGnT0FocbX4Mz/BhUXSkieVDVzYgQBxQriMzfFYXFypKibk+IFST2PArEx8b5sUcOmaEFCcnI3H3Hc2FC2qjOnWEFC8nE2HjEmjhMfyhY1KIq+QXyJrb3F4W1Rg6J6QULyYC41P9Va1sid34UI4pEHc1zzUq2FImduHxaC6P9WiyCpNj/XIe4tB4ALplUlSMrNz3GQR5ADHEqQUKg8PsTEUqTMF/vdUlPdDZJj81PkRI4ca4vlMILkJucBcPKa9eRcVwqKF2SLAzjyAcdSzQ0i8BBBBCciiOBEBBGckILIn6YEYP48ZdokyPV6FUkqx8gBF0ybBEEzkuCKEerDlgNtIYg0acum9R/AOsB1lBwIYgAAAABJRU5ErkJggg==" InformativeScreenshot="a38cf126c1d8b41481492274ac513425.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='勤次郎Enterprise - 勤次郎' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <Sequence DisplayName="④-1.ログインできたか確認" sap:VirtualizedContainerService.HintSize="472,670.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="④-1.ログインできたか確認" sap:VirtualizedContainerService.HintSize="472,673.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="TKLoginBoolean" />
                 </Sequence.Variables>
