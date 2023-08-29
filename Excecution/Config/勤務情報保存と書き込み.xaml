@@ -143,15 +143,15 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:WriteTextFile File="{x:Null}" DisplayName="手動記入開始→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="444,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;勤務情報の手動記入を開始しました。&quot;]" />
+                  <ui:AppendLine File="{x:Null}" DisplayName="手動記入開始→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="444,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;勤務情報の手動記入を開始しました。&quot;]" UseDefaultEncoding="False" />
                   <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="手動入力メッセージボックス" sap:VirtualizedContainerService.HintSize="444,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;プロジェクト名取得に完了しました。&quot;&amp; Environment.NewLine &amp;&#xA;&quot;必要情報を記入してください。&quot;]" />
-                  <ui:WriteTextFile File="{x:Null}" DisplayName="手動記入終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="444,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;勤務情報の手動記入を終了しました。&quot;]" />
+                  <ui:AppendLine File="{x:Null}" DisplayName="手動記入終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="444,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;勤務情報の手動記入を終了しました。&quot;]" UseDefaultEncoding="False" />
                   <ueab:ReadCellValueX Cell="[Excel.Sheet(&quot;勤務情報&quot;).Cell(&quot;C3&quot;)]" DisplayName="セルの値を読み込み" GetFormattedText="True" sap:VirtualizedContainerService.HintSize="444,164.66666666666666" sap2010:WorkflowViewState.IdRef="ReadCellValueX_1">
                     <ueab:ReadCellValueX.SaveTo>
                       <OutArgument x:TypeArguments="x:String">[out_RequestMonth]</OutArgument>
                     </ueab:ReadCellValueX.SaveTo>
                   </ueab:ReadCellValueX>
-                  <If Condition="[string.IsNullOrEmpty(out_RequestMonth) = false]" DisplayName="指定月フォーマット確認" sap:VirtualizedContainerService.HintSize="510,994.6666666666665" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If Condition="[string.IsNullOrEmpty(out_RequestMonth) = false]" DisplayName="指定月フォーマット確認" sap:VirtualizedContainerService.HintSize="444,54" sap2010:WorkflowViewState.IdRef="If_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -177,7 +177,7 @@
                           </Assign.Value>
                         </Assign>
                         <ui:IsMatch BuilderPattern="..../.." DisplayName="テキストの一致を確認" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[out_RequestMonth]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;リテラル&quot;,&quot;OperationValue&quot;:&quot;....\/..&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;指定回数&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="..../.." RegexOption="IgnoreCase, Compiled" Result="[isRequestFormat]" />
-                        <If Condition="[isRequestFormat = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="434,325.3333333333333" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If Condition="[isRequestFormat = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="334,325.3333333333333" sap2010:WorkflowViewState.IdRef="If_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -213,7 +213,7 @@
                                         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:WriteTextFile File="{x:Null}" DisplayName="手動記入終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットチェックが完了しました。&quot;]" />
+                                    <ui:AppendLine File="{x:Null}" DisplayName="フォーマットチェック完了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットチェックが完了しました。&quot;]" UseDefaultEncoding="False" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
@@ -223,7 +223,7 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:WriteTextFile File="{x:Null}" DisplayName="フォーマット不正→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_4" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットが不正です。&quot;]" />
+                                    <ui:AppendLine File="{x:Null}" DisplayName="フォーマット不正→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットが不正です。&quot;]" UseDefaultEncoding="False" />
                                     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;指定月の書式が不正です。勤務情報&amp;実績.xlsxの説明に従って再度入力してください。&quot;]" />
                                   </Sequence>
                                 </If.Else>
@@ -237,7 +237,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:WriteTextFile File="{x:Null}" DisplayName="フォーマット不正→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_5" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットが不正です。&quot;]" />
+                              <ui:AppendLine File="{x:Null}" DisplayName="フォーマット不正→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットが不正です。&quot;]" UseDefaultEncoding="False" />
                               <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;指定月の書式が不正です。勤務情報&amp;実績.xlsxの説明に従って再度入力してください。&quot;]" />
                             </Sequence>
                           </If.Else>

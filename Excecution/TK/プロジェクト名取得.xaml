@@ -297,7 +297,7 @@
                 </uix:NExtractData.Target>
               </uix:NExtractData>
               <ui:RemoveDataRow Row="{x:Null}" DataTable="[out_ProjectList]" DisplayName="先頭行を削除" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="0" />
-              <ui:WriteTextFile File="{x:Null}" DisplayName="プロジェクト名取得→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;プロジェクト名を取得しました。&quot;]" />
+              <ui:AppendLine File="{x:Null}" DisplayName="プロジェクト名取得→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;プロジェクト名を取得しました。&quot;]" UseDefaultEncoding="False" />
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>

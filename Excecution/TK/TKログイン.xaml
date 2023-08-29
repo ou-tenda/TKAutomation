@@ -155,7 +155,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:KillProcess>
-            <ui:WriteTextFile File="{x:Null}" DisplayName="ChromeとExcelを終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;起動中のChromeとExcelファイルを終了しました。&quot;]" />
+            <ui:AppendLine File="{x:Null}" DisplayName="ChromeとExcelを終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;起動中のChromeとExcelファイルを終了しました。&quot;]" UseDefaultEncoding="False" />
           </Sequence>
         </Sequence>
       </ui:CommentOut.Body>
@@ -195,7 +195,7 @@
                     <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/login.html" CvTextArgument="Time Krei" CvType="Text" DesignTimeRectangle="21, 200, 144, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'Time Krei'" FullSelectorArgument="&lt;webctrl id='logo' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='logo' tag='DIV' type='' class='icon' aaname='Time Krei' check:innerText='Time Krei' /&gt;" Guid="bac09fb9-c67d-4328-bddb-da7c7ca9f2ce" ImageBase64="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" InformativeScreenshot="6ab514ec104098921a330c9869d1d904.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
                   </uix:NCheckElement.Target>
                 </uix:NCheckElement>
-                <If sap2010:Annotation.AnnotationText="TKにアクセスしたかの判定&#xA;Then:アクセスに成功&#xA;False:アクセスに失敗" Condition="[isTKAccess]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="410,478" sap2010:WorkflowViewState.IdRef="If_1">
+                <If sap2010:Annotation.AnnotationText="TKにアクセスしたかの判定&#xA;Then:アクセスに成功&#xA;False:アクセスに失敗" Condition="[isTKAccess]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="410,836.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -273,7 +273,7 @@
                     </uix:NClick.Target>
                   </uix:NClick>
                 </Sequence>
-                <Sequence sap2010:Annotation.AnnotationText="TKにログインできたかか同課の確認をします。&#xA;できないときはエラーとします。&#xA;※要素が存在しないとき、「要素を確認」で止まって進まない" DisplayName="ログインできたか判定" sap:VirtualizedContainerService.HintSize="534,146.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence sap2010:Annotation.AnnotationText="TKにログインできたかか同課の確認をします。&#xA;できないときはエラーとします。&#xA;※要素が存在しないとき、「要素を確認」で止まって進まない" DisplayName="ログインできたか判定" sap:VirtualizedContainerService.HintSize="472,964.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="isTKLogin" />
                   </Sequence.Variables>
@@ -307,18 +307,18 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,359.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,358.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;TKのログイン処理に失敗しました。config.xlsxに記載のログイン情報が正確か確認してください。&quot;]" />
-                        <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;TKのログイン処理に失敗しました。config.xlsxに記載のログイン情報が正確か確認してください。&quot;]" />
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;TKのログイン処理に失敗しました。config.xlsxに記載のログイン情報が正確か確認してください。&quot;]" />
+                        <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;TKのログイン処理に失敗しました。config.xlsxに記載のログイン情報が正確か確認してください。&quot;]" />
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:WriteTextFile File="{x:Null}" DisplayName="Tkにログイン→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="410,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;TKにログインしました。&quot;]" />
+                  <ui:AppendLine File="{x:Null}" DisplayName="Tkにログイン→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="410,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;TKにログインしました。&quot;]" UseDefaultEncoding="False" />
                 </Sequence>
                 <Sequence DisplayName="お知らせを消す" sap:VirtualizedContainerService.HintSize="534,907.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>

@@ -106,6 +106,6 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[in_WorkData]" DisplayName="勤務実績に書き込み (ワークブック)" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="勤務実績" WorkbookPath="事前設定\勤務情報&amp;実績.xlsx" />
-    <ui:WriteTextFile File="{x:Null}" DisplayName="勤務実績書き込み終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;勤務実績の書き込みを終了しました。&quot;]" />
+    <ui:AppendLine File="{x:Null}" DisplayName="勤務実績書き込み終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;勤務実績の書き込みを終了しました。&quot;]" UseDefaultEncoding="False" />
   </Sequence>
 </Activity>
