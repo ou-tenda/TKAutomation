@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>682,3152</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>682,3154.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>勤次郎ログイン_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,20 +106,20 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①Chromeを開く&#xA;②勤次郎のURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;③勤次郎にログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;&#xA;次のワークフローは「未承認取得」" DisplayName="勤次郎ログイン" sap:VirtualizedContainerService.HintSize="692,3087.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①Chromeを開く&#xA;②勤次郎のURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;③勤次郎にログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;&#xA;次のワークフローは「未承認取得」" DisplayName="勤次郎ログイン" sap:VirtualizedContainerService.HintSize="692,3090" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 勤次郎" sap:VirtualizedContainerService.HintSize="630,2814.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 勤次郎" sap:VirtualizedContainerService.HintSize="630,2817.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="勤次郎にアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="596,2550" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence sap2010:Annotation.AnnotationText="勤次郎にアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="596,2552.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="isKinAccess" />
             </Sequence.Variables>
@@ -142,7 +142,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="エラーメッセージ" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;勤次郎のアクセスに失敗しました。&quot; &amp; Environment.NewLine &amp;&#xA;&quot;config.xlsxに記載の勤次郎のURLが正確か、また、手動で勤次郎にアクセスできるか確認してください。&quot;]" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="エラーメッセージ" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;勤次郎のアクセスに失敗しました。&quot; &amp; Environment.NewLine &amp;&#xD;&#xA;&quot;config.xlsxに記載の勤次郎のURLが正確か、また、手動で勤次郎にアクセスできるか確認してください。&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
