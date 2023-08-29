@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="out_NotApprovalWork" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="out_IsNotApproval" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="io_ErrorLog" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>536,1052</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>612,1052</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>事後未承認取得_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
