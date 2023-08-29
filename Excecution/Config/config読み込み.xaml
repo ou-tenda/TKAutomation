@@ -138,7 +138,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="フォルダーを作成" sap:VirtualizedContainerService.HintSize="334,82" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="..\TKAutomation\事前設定" />
-          <ui:AppendLine File="{x:Null}" DisplayName="フォルダー作成→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;に事前設定フォルダーの作成を実行しました。&quot;]" UseDefaultEncoding="False" />
+          <ui:AppendLine File="{x:Null}" DisplayName="フォルダー作成→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;事前設定フォルダーの作成を実行しました。&quot;]" UseDefaultEncoding="False" />
         </Sequence>
       </If.Then>
       <If.Else>
@@ -206,7 +206,7 @@
               </ActivityAction>
             </ueab:ExcelProcessScopeX.Body>
           </ueab:ExcelProcessScopeX>
-          <ui:AppendLine File="{x:Null}" DisplayName="config作成→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="564,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;にconfig.xlsxの作成を実行しました。&quot;]" UseDefaultEncoding="False" />
+          <ui:AppendLine File="{x:Null}" DisplayName="config作成→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="564,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;config.xlsxの作成を実行しました。&quot;]" UseDefaultEncoding="False" />
         </Sequence>
       </If.Then>
       <If.Else>
@@ -219,7 +219,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:AppendLine File="{x:Null}" DisplayName="config読み込み開始→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;にconfig.xlsxの読み込みを実行しました。&quot;]" UseDefaultEncoding="False" />
+    <ui:AppendLine File="{x:Null}" DisplayName="config読み込み開始→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;config.xlsxの読み込みを実行しました。&quot;]" UseDefaultEncoding="False" />
     <ui:ReadCell Cell="D2" DisplayName="TKURL読み込み" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadCell_1" Password="[configPass]" SheetName="Sheet1" WorkbookPath="..\TKAutomation\事前設定\config.xlsx">
       <ui:ReadCell.Result>
         <OutArgument x:TypeArguments="x:String">[out_TKURL]</OutArgument>

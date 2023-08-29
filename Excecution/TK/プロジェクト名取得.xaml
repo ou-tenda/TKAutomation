@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>660,4010.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>660,2882</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>プロジェクト名取得_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,7 +112,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;作成者：落合&#xA;&#xA;①TKのホームから作業実績確認画面に遷移する&#xA;②スケジュール画面の1日の項目をクリック&#xA;③実績の未登録or登録済問わず作業実績詳細欄をダブルクリック&#xA;④プロジェクト名のプルダウンからプロジェクト名を取得する&#xA;　→1つも取得できない場合はエラーを保持&#xA;※⑤プロジェクト名情報を引数として出力する&#xA;　　メインで制御するのでこのワークフローでは出力引数とするだけ&#xA;⑥Chromeを終了する&#xA;&#xA;次のワークフローは「勤務情報保存と書み込み」&#xA;&#xA;引数&#xA;out_ProjectList:プロジェクト名一覧を取得する" DisplayName="プロジェクト名取得" sap:VirtualizedContainerService.HintSize="670,3946" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;作成者：落合&#xA;&#xA;①TKのホームから作業実績確認画面に遷移する&#xA;②スケジュール画面の1日の項目をクリック&#xA;③実績の未登録or登録済問わず作業実績詳細欄をダブルクリック&#xA;④プロジェクト名のプルダウンからプロジェクト名を取得する&#xA;　→1つも取得できない場合はエラーを保持&#xA;※⑤プロジェクト名情報を引数として出力する&#xA;　　メインで制御するのでこのワークフローでは出力引数とするだけ&#xA;⑥Chromeを終了する&#xA;&#xA;次のワークフローは「勤務情報保存と書み込み」&#xA;&#xA;引数&#xA;out_ProjectList:プロジェクト名一覧を取得する" DisplayName="プロジェクト名取得" sap:VirtualizedContainerService.HintSize="670,2817.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -267,10 +267,10 @@
         </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="④プロジェクト名のプルダウンからプロジェクト名を取得する" sap:VirtualizedContainerService.HintSize="608,1213.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_19">
+    <Sequence DisplayName="④プロジェクト名のプルダウンからプロジェクト名を取得する" sap:VirtualizedContainerService.HintSize="608,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_19">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -297,7 +297,7 @@
                 </uix:NExtractData.Target>
               </uix:NExtractData>
               <ui:RemoveDataRow Row="{x:Null}" DataTable="[out_ProjectList]" DisplayName="先頭行を削除" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="0" />
-              <ui:AppendLine File="{x:Null}" DisplayName="プロジェクト名取得→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;プロジェクト名を取得しました。&quot;]" UseDefaultEncoding="False" />
+              <ui:AppendLine File="{x:Null}" DisplayName="プロジェクト名取得→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;プロジェクト名を取得しました。&quot;]" UseDefaultEncoding="False" />
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>

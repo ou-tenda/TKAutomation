@@ -175,7 +175,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:AppendLine File="{x:Null}" DisplayName="勤務実績参照を開く→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="586,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;勤務実績参照を開きました。&quot;]" UseDefaultEncoding="False" />
+            <ui:AppendLine File="{x:Null}" DisplayName="勤務実績参照を開く→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="586,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;勤務実績参照を開きました。&quot;]" UseDefaultEncoding="False" />
             <If Condition="[in_isRequestMonth = true]" DisplayName="②当月入力判定" sap:VirtualizedContainerService.HintSize="586,184" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,340.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -435,7 +435,7 @@
                 <InArgument x:TypeArguments="sd:DataTable">[WorkData]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:AppendLine File="{x:Null}" DisplayName="勤務実績参照取得→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="586,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;勤務実績参照を取得しました。&quot;]" UseDefaultEncoding="False" />
+            <ui:AppendLine File="{x:Null}" DisplayName="勤務実績参照取得→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="586,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;勤務実績参照を取得しました。&quot;]" UseDefaultEncoding="False" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

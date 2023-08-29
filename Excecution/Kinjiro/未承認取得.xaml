@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>612,1052</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>536,1052</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>事後未承認取得_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -149,7 +149,7 @@
                 </uix:TargetAnchorable>
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <If Condition="[out_IsNotApproval = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[out_IsNotApproval = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="510,1827.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -265,7 +265,7 @@
                       <InArgument x:TypeArguments="sd:DataTable">[NotApprovalWork]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:AppendLine File="{x:Null}" DisplayName="未承認データ取得→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;未承認申請の情報を取得しました。&quot;]" UseDefaultEncoding="False" />
+                  <ui:AppendLine File="{x:Null}" DisplayName="未承認データ取得→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;未承認申請の情報を取得しました。&quot;]" UseDefaultEncoding="False" />
                   <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="トップページへ移動" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://ini5a.kinjirou-asp.jp/TDAD1702/KinjirouWeb/kinjirou/sinsei/kwsitr/kwsitrlst.aspx?sinLst=2" DesignTimeRectangle="1640, 201, 165, 32" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'トップページへ'" FullSelectorArgument="&lt;webctrl id='TableMenu' tag='TABLE' /&gt;&lt;webctrl id='Hyperlink2' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='TableMenu' tag='TABLE' /&gt;&lt;webctrl id='Hyperlink2' type='' tag='A' class='' aaname='トップページへ' check:innerText='トップページへ' /&gt;" Guid="edcd0e38-f690-4ac2-959d-32f4b592f23f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKkAAAAkCAYAAADy+xopAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGvSURBVHhe7ZhNTsMwEEZzjIpLcBqOwGnYc0gWhQX7IEcEWa1jT9Kx/cW8J5mqwZkfz2sqmGYAcZAU5EFSkGcoSV+e3pYFY1GU9CxDj+scTdT//sFD0gTh/lZ953LF11vVo8gwkgZyA7fSS4yt2lvWoIq8pOvwrMvK1v742p54Kmz1dWaGe5JaiPel7gnXztT3Sqmvs9JU0toHZ4mf2tNjoCGnZ16VvmpgkjRee7m9p/T+EUqxcr+31OFZ60qIaY27tS93f42aW7P7SRre72083p+K50EpjiWPdc+R5UEqjiW2V/5eHP66D9etzef2eR2gVw6verxJ1TVCXyWm6dr3DyfP2FuxjuRQHOhtTaP0lSMIurwuPzPUbMwrdo0alQbqWYtSX1a6SeoVt+ahKwy0Rg0Kfe2hi6ReMVscdq+Bhrw1c/fq6whNJfU6eK84aqx9jdjbIzSR1OvgRxvg2s9ofXnzJ+nr8/vdobHGX58f378G6HG5fNn+BQXQGyQFeZAU5EFSkAdJQR4kBXmQFORBUpAHSUEeJAV5kBTkQVKQB0lBHiQFeZAU5EFSEGeefwCaHXb97cZhNQAAAABJRU5ErkJggg==" InformativeScreenshot="c1d3b7e939cf0ce9e4064a3b6a873719.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='勤次郎Enterprise - 株式会社テンダ' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
@@ -280,7 +280,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:AppendLine File="{x:Null}" DisplayName="現在未承認無し→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;現在の未承認申請がありませんでした。&quot;]" UseDefaultEncoding="False" />
+                  <ui:AppendLine File="{x:Null}" DisplayName="現在未承認無し→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;現在の未承認申請がありませんでした。&quot;]" UseDefaultEncoding="False" />
                 </Sequence>
               </If.Else>
             </If>

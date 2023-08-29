@@ -204,6 +204,6 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:AppendLine File="{x:Null}" DisplayName="結果ファイル作成完了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;結果ファイルの作成を終了しました。&quot;]" UseDefaultEncoding="False" />
+    <ui:AppendLine File="{x:Null}" DisplayName="結果ファイル作成完了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;結果ファイルの作成を終了しました。&quot;]" UseDefaultEncoding="False" />
   </Sequence>
 </Activity>
