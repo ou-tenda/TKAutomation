@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="時間ごとの繰り返し入力" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="724,7264" sap2010:WorkflowViewState.IdRef="時間ごとの繰り返し入力_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="時間ごとの繰り返し入力" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="936,7044.666666666667" sap2010:WorkflowViewState.IdRef="時間ごとの繰り返し入力_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -104,7 +104,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「勤務情報＆実績ファイル終了」" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="734,7199.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「勤務情報＆実績ファイル終了」" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="946,6980" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="StartTime" />
       <Variable x:TypeArguments="x:String" Name="EndTime" />
@@ -119,6 +119,8 @@
       <Variable x:TypeArguments="x:String" Name="EndTime3" />
       <Variable x:TypeArguments="x:String" Name="EndTime4" />
       <Variable x:TypeArguments="x:String" Name="EndTime1" />
+      <Variable x:TypeArguments="s:String[]" Name="StartTimeArr" />
+      <Variable x:TypeArguments="s:String[]" Name="EndTimeArr" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -126,7 +128,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="672,604" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="884,604" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -165,7 +167,7 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持" DisplayName="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し" sap:VirtualizedContainerService.HintSize="672,5795.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持" DisplayName="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し" sap:VirtualizedContainerService.HintSize="884,5576" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,7 +175,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="　→件名がない時はその日をスキップし、エラー内容を保持" DisplayName="③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する" sap:VirtualizedContainerService.HintSize="610,4599.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence sap2010:Annotation.AnnotationText="　→件名がない時はその日をスキップし、エラー内容を保持" DisplayName="③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する" sap:VirtualizedContainerService.HintSize="822,4380" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -181,7 +183,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[string.IsNullOrEmpty(WorkName) = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="548,4458" sap2010:WorkflowViewState.IdRef="If_1">
+        <If Condition="[string.IsNullOrEmpty(WorkName) = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="760,4238.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -189,13 +191,13 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Sequence sap:VirtualizedContainerService.HintSize="514,4044" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence sap:VirtualizedContainerService.HintSize="726,3824.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="休憩時間の部分を切り取り、StartTIme1,2,3,4とEndTime1,2,3,4に代入します。" DisplayName="④出勤時刻と終了時刻を4段階に分割し、代入する" sap:VirtualizedContainerService.HintSize="472,3789.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_23">
+              <Sequence sap2010:Annotation.AnnotationText="休憩時間の部分を切り取り、StartTIme1,2,3,4とEndTime1,2,3,4に代入します。" DisplayName="④出勤時刻と終了時刻を4段階に分割し、代入する" sap:VirtualizedContainerService.HintSize="684,270.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_23">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Default="12:00" Name="breakStartTime1" />
                   <Variable x:TypeArguments="x:String" Default="13:00" Name="breakEndTime1" />
@@ -208,7 +210,7 @@
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
@@ -230,17 +232,17 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,230.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_25">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[breakEndTime4 + &quot;~&quot;]" />
+                      <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[breakEndTime4 + &quot;~&quot;]" />
                     </Sequence>
                   </If.Else>
                 </If>
-                <If sap2010:Annotation.AnnotationText="退勤時刻が休憩開始時間1よりも大きいとき&#xA;TRUE：休憩開始時間1 (12:00)&#xA;FALSE：退勤時刻" Condition="[EndTime &gt; breakStartTime1]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="410,129" sap2010:WorkflowViewState.IdRef="If_4">
+                <If sap2010:Annotation.AnnotationText="退勤時刻が休憩開始時間1よりも大きいとき&#xA;TRUE：休憩開始時間1 (12:00)&#xA;FALSE：退勤時刻" Condition="[EndTime &gt; breakStartTime1]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="410,129.33333333333334" sap2010:WorkflowViewState.IdRef="If_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -284,8 +286,8 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[breakEndTime1 + &quot;~&quot;]" />
-                      <If sap2010:Annotation.AnnotationText="退勤時刻が休憩開始時刻2より大きいとき&#xA;TRUE：休憩開始時刻2 (18:00)&#xA;FALSE：退勤時刻" Condition="[EndTime &gt; breakStartTime2]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="If_5">
+                      <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[breakEndTime1 + &quot;~&quot;]" />
+                      <If sap2010:Annotation.AnnotationText="退勤時刻が休憩開始時刻2より大きいとき&#xA;TRUE：休憩開始時刻2 (18:00)&#xA;FALSE：退勤時刻" Condition="[EndTime &gt; breakStartTime2]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="334,129.33333333333334" sap2010:WorkflowViewState.IdRef="If_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -317,13 +319,13 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,230.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_31">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;休憩1前に退勤&quot;]" />
+                      <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;休憩1前に退勤&quot;]" />
                     </Sequence>
                   </If.Else>
                 </If>
@@ -441,21 +443,21 @@
                   </If.Else>
                 </If>
               </Sequence>
-              <Sequence sap2010:Annotation.AnnotationText="　→登録済(青)の場合は⑥へ&#xD;&#xA;　→未登録(白)の場合は⑧へ" DisplayName="⑤作業実績詳細欄が登録されているかを判定" sap:VirtualizedContainerService.HintSize="472,127.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence sap2010:Annotation.AnnotationText="　→登録済(青)の場合は⑥へ&#xD;&#xA;　→未登録(白)の場合は⑧へ" DisplayName="⑤作業実績詳細欄が登録されているかを判定" sap:VirtualizedContainerService.HintSize="684,3426.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="622,1704" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="622,3272" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="588,1485.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="588,3053.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="isSchedule9to12" />
                         </Sequence.Variables>
@@ -528,10 +530,10 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <Sequence sap2010:Annotation.AnnotationText="⑥、⑧の作業実績詳細の入力" DisplayName="⑥、⑧作業実績入力" sap:VirtualizedContainerService.HintSize="526,114" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <Sequence sap2010:Annotation.AnnotationText="⑥、⑧の作業実績詳細の入力" DisplayName="⑥、⑧作業実績入力" sap:VirtualizedContainerService.HintSize="526,1558.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
@@ -828,6 +830,14 @@
                               <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvTextArgument="&amp;IR" CvType="Text" DesignTimeRectangle="1075, 515, 287, 41" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'プロジェクト名を選択'" FullSelectorArgument="&lt;webctrl parentid='performance_pulldown' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='performance_pulldown' tag='DIV' type='' class='common_btn' aaname='' check:innerText='プロジェクト名を選択' /&gt;" Guid="2ff1ff8a-e6ac-4bd0-a4c9-97d3cfbf1d48" InformativeScreenshot="9a42955b350caea2de0c134c326eccef.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
                             </uix:NSelectItem.Target>
                           </uix:NSelectItem>
+                        </Sequence>
+                        <Sequence DisplayName="⑦、⑨更新ボタンを押下する" sap:VirtualizedContainerService.HintSize="526,83.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                           <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '更新する'" sap:VirtualizedContainerService.HintSize="388,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="1692, 280, 132, 46" CvTextArea="1722, 293, 66, 18" CvTextArgument="Targz" CvType="Button" DesignTimeRectangle="1695, 283, 127, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'更新する'" FullSelectorArgument="&lt;webctrl id='submit' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='submit' tag='DIV' type='' class='common_btn common_btn_edit_submit' aaname='更新する' check:innerText='更新する' /&gt;" Guid="34270690-cc9b-4503-9fb6-3713b0948119" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAAAuCAYAAAALH6pWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAMkSURBVHhe7Zy9btswFEaLAh2ydikKdMuQoZsBA13STGkMuIJlOHr/R2F1SYoiL68oSnYtRvqGM0Qm9fcdXlIBpE91XSsACMgAHLIM1V913P9Uh8ev6u37F/Xn22fwwaEcKU/KlfKVco9kqH7/Um8/HsQdgnVA+VLOPPtABmogdQbrhAvRy9CWDlSEbUF5+1OGk4HmEqkDWDd6DcFloMWF1BisG8o9kgFPDduEco9kkBqCbQAZgAMyAAdkAA7IABzFyHA6Nqpp5nF5jvdXvdaqOe6j7T66TWIfMnt1mdT+41CMDMM8qfO5Ue+vT8JvIUmhSIznQ7jt/KIq27faje/fkCnD7kW9+8dKUIpYq5KBICH8tnr0d6FrGQ7qZH8T4cJMYaQSBdjj5F7XPShLhslB1Oq8C/fBp4dAjhwZRrl+mjAV7NrzuD3lyeCVbsNQZaBQYhnCwKmv12ZxGcy1TKogd6Q8GYKRP4YvgwlJbtdCkiX3L4hl8ReaTSsXrQUmy6CPPXyMEihPhmsrg0WXYj4CeWXgfwsYEXifaTKkFralLB4JyJCUQZoSzLa8hV9freTQu9/TQt6L8mSwNy8PXwY7H4vtbBizZGDCdY+MkbQhpqLkTQuiuAtQlgwS+ubn3dQeeUQGj5nEqAw8KCPc5dj2S8jAn2hG0de4fHUoUIZwWogCzODUhnWxIVKYnRDRCMyQgVccOq9p58QqltRvlvC3p0gZql0/srsA5LYxFBSF3wdPYdCNNvsM5u4sGTihrGmsCJ6AWiR+zFnncXsKlMHC/52bMRL98pxVBWaEoPeb3UcQMJLJtJki/P+iOBnMyDECRPO93a7xgyZIHk+YUIaB0TxJhq5azZCHiayvpd126q6JX8tCFCNDH3bOzQ6nEalqBDIwURxZMthS3x5n7ug11URAOqcFKUYGsDyQATggA3BABuCADMABGYADMgAHZACOSAa8eLtNxBdv8Ur+NhFfycfHOraJ+LEOfMZnewx+xofAB762xfAHvizUABVi3VC+XAQikkHTlg6aS2hxgaeMdUA5Up56jeBNDT6yDGCTQAZgqdU/PrSgglZ/qZAAAAAASUVORK5CYII=" InformativeScreenshot="e9c5543c0a232b76320fc7a4f22331b6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
@@ -868,7 +878,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="⑪その日が終了したら登録を押下し、次の日に移動" sap:VirtualizedContainerService.HintSize="610,1001.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_18">
+      <Sequence DisplayName="⑪その日が終了したら登録を押下し、次の日に移動" sap:VirtualizedContainerService.HintSize="822,1001.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_18">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -917,7 +927,7 @@
         </uix:NApplicationCard>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="⑫その月分の繰り返しが終了したらChromeを終了する" sap:VirtualizedContainerService.HintSize="672,246" sap2010:WorkflowViewState.IdRef="Sequence_20">
+    <Sequence DisplayName="⑫その月分の繰り返しが終了したらChromeを終了する" sap:VirtualizedContainerService.HintSize="884,246" sap2010:WorkflowViewState.IdRef="Sequence_20">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
