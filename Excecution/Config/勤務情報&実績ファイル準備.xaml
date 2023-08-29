@@ -176,7 +176,7 @@
               <InArgument x:TypeArguments="x:Boolean">[isFileExist]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;勤務情報&amp;実績.xlsxが見つかりません。担当者に連絡してファイルを獲得してください。&quot;}]" DataTable="[io_ErrorLog]" DisplayName="TK情報漏れエラー追加" sap:VirtualizedContainerService.HintSize="486.6666666666667,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;勤務情報&amp;実績.xlsxが見つかりません。担当者に連絡してファイルを獲得してください。&quot;}]" DataTable="[io_ErrorLog]" DisplayName="勤務情報ファイルエラー追加" sap:VirtualizedContainerService.HintSize="486.6666666666667,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
