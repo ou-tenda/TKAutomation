@@ -217,7 +217,7 @@
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">370,533.3333333333334</av:Point>
                           <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">470,586.6666666666667 470,713.3333333333334</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">470,586.6666666666667 470,633.3333333333334</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKログイン.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excecution\TK\TKログイン.xaml">
@@ -245,9 +245,9 @@
                         <FlowStep x:Name="__ReferenceID3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">370,713.3333333333334</av:Point>
+                              <av:Point x:Key="ShapeLocation">370,633.3333333333334</av:Point>
                               <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">470,766.6666666666667 470,813.3333333333334</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">470,686.6666666666667 470,763.3333333333334</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="プロジェクト名取得.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Excecution\TK\プロジェクト名取得.xaml">
@@ -264,16 +264,25 @@
                             <FlowStep x:Name="__ReferenceID4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">370,813.3333333333334</av:Point>
+                                  <av:Point x:Key="ShapeLocation">370,763.3333333333334</av:Point>
                                   <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">470,866.6666666666667 470,983.3333333333334</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">470,816.6666666666667 470,893.3333333333334</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務情報保存と書き込み.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Excecution\Config\勤務情報保存と書き込み.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ProjectList">[ProjectList]</InArgument>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="out_RequestMonth">[RequestMonth]</OutArgument>
-                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isRequestMonth">[isRequestMonth]</OutArgument>
+                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ProjectList">
+                                    <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ProjectList" />
+                                  </InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="out_RequestMonth">
+                                    <VisualBasicReference x:TypeArguments="x:String" ExpressionText="RequestMonth" />
+                                  </OutArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isRequestMonth">
+                                    <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isRequestMonth" />
+                                  </OutArgument>
+                                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">
+                                    <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ErrorLog" />
+                                  </InOutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -285,9 +294,9 @@
                                 <FlowStep x:Name="__ReferenceID5">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">370,983.3333333333334</av:Point>
+                                      <av:Point x:Key="ShapeLocation">370,893.3333333333334</av:Point>
                                       <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">470,1036.6666666666667 470,1083.3333333333333</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">470,946.6666666666667 470,1083.3333333333333</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤次郎ログイン.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Excecution\Kinjiro\勤次郎ログイン.xaml">

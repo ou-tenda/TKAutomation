@@ -3,11 +3,12 @@
     <x:Property Name="in_ProjectList" Type="InArgument(sd:DataTable)" />
     <x:Property Name="out_RequestMonth" Type="OutArgument(x:String)" />
     <x:Property Name="out_isRequestMonth" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="io_ErrorLog" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>626,2032.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>692,3103.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>勤務情報保存と書き込み_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,56 +111,56 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①引数から取得したプロジェクト名を勤務情報＆実績のH7以降に記入&#xA;②手動入力の旨をメッセージボックスとして出力する&#xA;③手動入力完了後メッセージボックスのOKがクリックされ、処理を続行する&#xA;④指定月の入力チェック&#xA;　→ある場合はフォーマットチェックし、一致しない場合は終了する&#xA;&#xA;次のワークフローは「勤次郎ログイン」" DisplayName="勤務情報保存と書き込み" sap:VirtualizedContainerService.HintSize="636,1968" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①引数から取得したプロジェクト名を勤務情報＆実績のH7以降に記入&#xA;②手動入力の旨をメッセージボックスとして出力する&#xA;③手動入力完了後メッセージボックスのOKがクリックされ、処理を続行する&#xA;④指定月の入力チェック&#xA;　→ある場合はフォーマットチェックし、一致しない場合は終了する&#xA;&#xA;次のワークフローは「勤次郎ログイン」" DisplayName="勤務情報保存と書き込み" sap:VirtualizedContainerService.HintSize="702,3038.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable sap2010:Annotation.AnnotationText="動作確認用に空のdtを構築した&#xA;実際dtはプロジェクト名取得から持ってくる" DataTable="[in_ProjectList]" DisplayName="データ テーブルを構築" sap:VirtualizedContainerService.HintSize="574,105.33333333333333" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="動作確認用に空のdtを構築した&#xA;実際dtはプロジェクト名取得から持ってくる" DataTable="[in_ProjectList]" DisplayName="データ テーブルを構築" sap:VirtualizedContainerService.HintSize="640,105.33333333333333" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <ui:WriteRange AddHeaders="False" DataTable="[in_ProjectList]" DisplayName="プロジェクト名の書き込み" sap:VirtualizedContainerService.HintSize="574,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="勤務情報" StartingCell="H7" WorkbookPath="事前設定\勤務情報&amp;実績.xlsx" />
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel プロセス スコープ" sap:VirtualizedContainerService.HintSize="574,1394" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ui:WriteRange AddHeaders="False" DataTable="[in_ProjectList]" DisplayName="プロジェクト名の書き込み" sap:VirtualizedContainerService.HintSize="640,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="勤務情報" StartingCell="H7" WorkbookPath="事前設定\勤務情報&amp;実績.xlsx" />
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel プロセス スコープ" sap:VirtualizedContainerService.HintSize="640,2464.6666666666665" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="540,1306.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" KeepExcelFileOpen="True" ResizeWindow="None" WorkbookPath="..\TKAutomation\事前設定\勤務情報&amp;実績.xlsx">
+          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="606,2377.3333333333335" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" KeepExcelFileOpen="True" ResizeWindow="None" WorkbookPath="..\TKAutomation\事前設定\勤務情報&amp;実績.xlsx">
             <ueab:ExcelApplicationCard.Body>
               <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="506,1026" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="572,2096.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:AppendLine File="{x:Null}" DisplayName="手動記入開始→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="444,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;勤務情報の手動記入を開始しました。&quot;]" UseDefaultEncoding="False" />
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="手動入力メッセージボックス" sap:VirtualizedContainerService.HintSize="444,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;プロジェクト名取得に完了しました。&quot;&amp; Environment.NewLine &amp;&#xD;&#xA;&quot;必要情報を記入し、完了後にOKを押してください。&quot;]" />
-                  <ui:AppendLine File="{x:Null}" DisplayName="手動記入終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="444,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;勤務情報の手動記入を終了しました。&quot;]" UseDefaultEncoding="False" />
-                  <ueab:ReadCellValueX Cell="[Excel.Sheet(&quot;勤務情報&quot;).Cell(&quot;C3&quot;)]" DisplayName="セルの値を読み込み" GetFormattedText="True" sap:VirtualizedContainerService.HintSize="444,164.66666666666666" sap2010:WorkflowViewState.IdRef="ReadCellValueX_1">
+                  <ui:AppendLine File="{x:Null}" DisplayName="手動記入開始→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="510,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;勤務情報の手動記入を開始しました。&quot;]" UseDefaultEncoding="False" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="手動入力メッセージボックス" sap:VirtualizedContainerService.HintSize="510,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;プロジェクト名取得に完了しました。&quot;&amp; Environment.NewLine &amp;&#xD;&#xA;&quot;必要情報を記入し、完了後にOKを押してください。&quot;]" />
+                  <ui:AppendLine File="{x:Null}" DisplayName="手動記入終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="510,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;勤務情報の手動記入を終了しました。&quot;]" UseDefaultEncoding="False" />
+                  <ueab:ReadCellValueX Cell="[Excel.Sheet(&quot;勤務情報&quot;).Cell(&quot;C3&quot;)]" DisplayName="セルの値を読み込み" GetFormattedText="True" sap:VirtualizedContainerService.HintSize="510,164.66666666666666" sap2010:WorkflowViewState.IdRef="ReadCellValueX_1">
                     <ueab:ReadCellValueX.SaveTo>
                       <OutArgument x:TypeArguments="x:String">[out_RequestMonth]</OutArgument>
                     </ueab:ReadCellValueX.SaveTo>
                   </ueab:ReadCellValueX>
-                  <If Condition="[string.IsNullOrEmpty(out_RequestMonth) = false]" DisplayName="指定月フォーマット確認" sap:VirtualizedContainerService.HintSize="444,54" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If Condition="[string.IsNullOrEmpty(out_RequestMonth) = false]" DisplayName="指定月フォーマット確認" sap:VirtualizedContainerService.HintSize="510,1124.6666666666667" sap2010:WorkflowViewState.IdRef="If_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="476,638" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,768" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="isRequestFormat" />
                         </Sequence.Variables>
@@ -177,7 +178,7 @@
                           </Assign.Value>
                         </Assign>
                         <ui:IsMatch BuilderPattern="..../.." DisplayName="テキストの一致を確認" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[out_RequestMonth]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;リテラル&quot;,&quot;OperationValue&quot;:&quot;....\/..&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;指定回数&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="..../.." RegexOption="IgnoreCase, Compiled" Result="[isRequestFormat]" />
-                        <If Condition="[isRequestFormat = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="334,325.3333333333333" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If Condition="[isRequestFormat = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="434,455.3333333333333" sap2010:WorkflowViewState.IdRef="If_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -185,16 +186,16 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="300,141.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,271.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[Int32.TryParse(Split(out_RequestMonth, &quot;/&quot;)(0),New int32) = true AND Int32.TryParse(Split(out_RequestMonth, &quot;/&quot;)(1),New int32) = true]" DisplayName="指定月判定" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="If_4">
+                              <If Condition="[Int32.TryParse(Split(out_RequestMonth, &quot;/&quot;)(0),New int32) = true AND Int32.TryParse(Split(out_RequestMonth, &quot;/&quot;)(1),New int32) = true]" DisplayName="指定月判定" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_4">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -213,32 +214,46 @@
                                         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:AppendLine File="{x:Null}" DisplayName="フォーマットチェック完了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットチェックが完了しました。&quot;]" UseDefaultEncoding="False" />
+                                    <ui:AppendLine File="{x:Null}" DisplayName="フォーマットチェック完了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットチェックが完了しました。&quot;]" UseDefaultEncoding="False" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="376,350.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,455.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:AppendLine File="{x:Null}" DisplayName="フォーマット不正→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットが不正です。&quot;]" UseDefaultEncoding="False" />
-                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;指定月の書式が不正です。勤務情報&amp;実績.xlsxの説明に従って再度入力してください。&quot;]" />
+                                    <ui:AppendLine File="{x:Null}" DisplayName="フォーマット不正→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットが不正です。&quot;]" UseDefaultEncoding="False" />
+                                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;指定月の書式が不正です。勤務情報&amp;実績.xlsxの説明に従って再度入力してください。&quot;}]" DataTable="[io_ErrorLog]" DisplayName="指定月エラー追加" sap:VirtualizedContainerService.HintSize="334,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:AddDataRow>
                                   </Sequence>
                                 </If.Else>
                               </If>
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,350.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,455.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:AppendLine File="{x:Null}" DisplayName="フォーマット不正→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットが不正です。&quot;]" UseDefaultEncoding="False" />
-                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;指定月の書式が不正です。勤務情報&amp;実績.xlsxの説明に従って再度入力してください。&quot;]" />
+                              <ui:AppendLine File="{x:Null}" DisplayName="フォーマット不正→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;指定月のフォーマットが不正です。&quot;]" UseDefaultEncoding="False" />
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;指定月の書式が不正です。勤務情報&amp;実績.xlsxの説明に従って再度入力してください。&quot;}]" DataTable="[io_ErrorLog]" DisplayName="指定月エラー追加" sap:VirtualizedContainerService.HintSize="334,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:AddDataRow>
                             </Sequence>
                           </If.Else>
                         </If>
@@ -262,7 +277,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Excelを閉じる" sap:VirtualizedContainerService.HintSize="444,136.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Excel" />
+                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Excelを閉じる" sap:VirtualizedContainerService.HintSize="510,136.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Excel" />
                 </Sequence>
               </ActivityAction>
             </ueab:ExcelApplicationCard.Body>
