@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>612,873.3333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>612,953.3333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>勤務情報_実績ファイル準備_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,7 +98,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①勤務情報＆実績.xlsxの存在を確認&#xA;　→&#xA;②勤務情報＆実績.xlsxを開く&#xA;&#xA;次のワークフローは「TKログイン」" DisplayName="勤務情報&amp;実績ファイル準備" sap:VirtualizedContainerService.HintSize="450,808.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①勤務情報＆実績.xlsxの存在を確認&#xA;　→&#xA;②勤務情報＆実績.xlsxを開く&#xA;&#xA;次のワークフローは「TKログイン」" DisplayName="勤務情報&amp;実績ファイル準備" sap:VirtualizedContainerService.HintSize="450,888.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="isFileExist" />
     </Sequence.Variables>
@@ -109,12 +109,12 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:AppendLine File="{x:Null}" DisplayName="勤務情報&amp;実績ファイル準備→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;勤務情報＆実績ファイルの準備を実行しました。&quot;]" UseDefaultEncoding="False" />
-    <ui:FileExistsX DisplayName="勤務情報＆実績ファイルの存在を確認" Exists="[isFileExist]" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="事前設定\勤務情報＆実績.xlsx" />
-    <If sap2010:Annotation.AnnotationText="なければ勤務情報＆実績.xlsxを作成する&#xD;&#xA;↓&#xD;&#xA;作成する工程は時間かかるので後回し&#xD;&#xA;↓&#xD;&#xA;なければエラー出力し、ファイルをもらうようにメッセージボックスを表示" Condition="[isFileExist = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="388,216" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:FileExistsX DisplayName="勤務情報＆実績ファイルの存在を確認" Exists="[isFileExist]" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="事前設定\勤務情報&amp;実績.xlsx" />
+    <If sap2010:Annotation.AnnotationText="なければ勤務情報＆実績.xlsxを作成する&#xA;↓&#xA;作成する工程は時間かかるので後回し&#xA;↓&#xA;なければエラー出力し、ファイルをもらうようにメッセージボックスを表示" Condition="[isFileExist = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="388,296" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -188,12 +188,20 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_isInfo]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
         </Sequence>
       </If.Else>
     </If>
