@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="フローチャート" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1274,2590.6666666666665" sap2010:WorkflowViewState.IdRef="フローチャート_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="フローチャート" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1274,2654.6666666666665" sap2010:WorkflowViewState.IdRef="フローチャート_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -85,7 +85,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="TKの作業実績確認の自動入力のフローチャート。&#xA;作業の流れは、大まかに以下の通りである。&#xA;&#xA;①configファイル読み込み、勤務情報&amp;実績ファイル準備&#xA;②TKにログインし、プロジェクト名を取得&#xA;③勤務情報&amp;実績ファイルに手動で記入&#xA;④勤次郎にログインし、勤務実績参照から該当月のデータをExcelファイルに保存&#xA;⑤TKに未入力の日から1日ずつ実績を入力&amp;登録する&#xA;⑥終了後履歴と結果のExcelファイルをローカルに保存&#xA;&#xA;使用変数：&#xA;ExeStartTime：実行開始時間　string&#xA;TKURL：TKのURL　string&#xA;KinURL：勤次郎のURL　string&#xA;TKName：TKのログインID　string&#xA;TKPass：TKのログインパスワード　securestring&#xA;KinName：勤次郎のユーザーID　string&#xA;KinPass：勤次郎のパスワード　securestring&#xA;ProjectList：プロジェクト名　datatable&#xA;RequestMonth：指定月　string&#xA;isRequestMonth：指定月の有無フラグ　boolean&#xA;NotApprovalWork：未承認の申請情報　datatabel&#xA;isNotApproval：未承認の有無　boolean&#xA;NotEnd：途中フラグ　boolean&#xA;WorkData：勤務実績データ　datatable&#xA;&#xA;ExeCount：土日祝以外処理した日数　int32&#xA;SuccessCount：登録した日数　int32&#xA;SuccessDays：登録した日付、&quot;、&quot;で連結した文字列　string&#xA;SkipDays：スキップした日付、&quot;、&quot;で連結した文字列　string&#xA;Errorlog：全体で保持するエラーログ情報　datatable&#xA;&#xA;isconfig：config読み込みが空じゃないかのフラグ&#xA;isInfo：勤務情報＆実績ファイルが存在するかのフラグ&#xD;&#xA;isRequestFormat：指定月のフォーマットチェックフラグ&#xA;" DisplayName="Main" sap:VirtualizedContainerService.HintSize="1284,2526" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="TKの作業実績確認の自動入力のフローチャート。&#xA;作業の流れは、大まかに以下の通りである。&#xA;&#xA;①configファイル読み込み、勤務情報&amp;実績ファイル準備&#xA;②TKにログインし、プロジェクト名を取得&#xA;③勤務情報&amp;実績ファイルに手動で記入&#xA;④勤次郎にログインし、勤務実績参照から該当月のデータをExcelファイルに保存&#xA;⑤TKに未入力の日から1日ずつ実績を入力&amp;登録する&#xA;⑥終了後履歴と結果のExcelファイルをローカルに保存&#xA;&#xA;使用変数：&#xA;ExeStartTime：実行開始時間　string&#xA;TKURL：TKのURL　string&#xA;KinURL：勤次郎のURL　string&#xA;TKName：TKのログインID　string&#xA;TKPass：TKのログインパスワード　securestring&#xA;KinName：勤次郎のユーザーID　string&#xA;KinPass：勤次郎のパスワード　securestring&#xA;ProjectList：プロジェクト名　datatable&#xA;RequestMonth：指定月　string&#xA;isRequestMonth：指定月の有無フラグ　boolean&#xA;NotApprovalWork：未承認の申請情報　datatabel&#xA;isNotApproval：未承認の有無　boolean&#xA;NotEnd：途中フラグ　boolean&#xA;WorkData：勤務実績データ　datatable&#xA;&#xA;ExeCount：土日祝以外処理した日数　int32&#xA;SuccessCount：登録した日数　int32&#xA;SuccessDays：登録した日付、&quot;、&quot;で連結した文字列　string&#xA;SkipDays：スキップした日付、&quot;、&quot;で連結した文字列　string&#xA;Errorlog：全体で保持するエラーログ情報　datatable&#xA;&#xA;isconfig：config読み込みが空じゃないかのフラグ&#xA;isInfo：勤務情報＆実績ファイルが存在するかのフラグ&#xD;&#xA;isRequestFormat：指定月のフォーマットチェックフラグ&#xD;&#xA;isTKAccess：TKにアクセスできたかのフラグ&#xD;&#xA;isTKLogin：TKにログインできたかのフラグ&#xD;&#xA;isKinAccess：勤次郎にアクセスできたかのフラグ&#xD;&#xA;isKinLogin：勤次郎にログインできたかのフラグ&#xA;" DisplayName="Main" sap:VirtualizedContainerService.HintSize="1284,2590" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="TKURL" />
       <Variable x:TypeArguments="x:String" Name="KinURL" />
@@ -109,6 +109,10 @@
       <Variable x:TypeArguments="x:String" Name="SuccessDays" />
       <Variable x:TypeArguments="x:String" Name="SkipDays" />
       <Variable x:TypeArguments="x:Boolean" Name="isRequestformat" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsTKAccess" />
+      <Variable x:TypeArguments="x:Boolean" Name="isTKLogin" />
+      <Variable x:TypeArguments="x:Boolean" Name="isKinAccess" />
+      <Variable x:TypeArguments="x:Boolean" Name="isKinLogin" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -200,7 +204,7 @@
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">370,533.3333333333334</av:Point>
                           <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">470,586.6666666666667 470,633.3333333333334</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">470,586.6666666666667 470,653.3333333333334</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKログイン.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excecution\TK\TKログイン.xaml">
@@ -220,9 +224,9 @@
                         <FlowStep x:Name="__ReferenceID3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">370,633.3333333333334</av:Point>
+                              <av:Point x:Key="ShapeLocation">370,653.3333333333334</av:Point>
                               <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">470,686.6666666666667 470,723.3333333333334</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">470,706.6666666666667 470,743.3333333333334</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="プロジェクト名取得.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Excecution\TK\プロジェクト名取得.xaml">
@@ -239,9 +243,9 @@
                             <FlowStep x:Name="__ReferenceID4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">370,723.3333333333334</av:Point>
+                                  <av:Point x:Key="ShapeLocation">370,743.3333333333334</av:Point>
                                   <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">570,750.3333333333334 770,750.3333333333334 770,776.6666666666666</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">570,770 770,770 770,806.6666666666666</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務情報保存と書き込み.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Excecution\Config\勤務情報保存と書き込み.xaml">
@@ -277,10 +281,10 @@
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <av:Point x:Key="ShapeLocation">702.3333333333334,776.6666666666666</av:Point>
+                                      <av:Point x:Key="ShapeLocation">702.6666666666666,806.6666666666666</av:Point>
                                       <av:Size x:Key="ShapeSize">134.66666666666666,86.66666666666667</av:Size>
-                                      <av:PointCollection x:Key="TrueConnector">702.3333333333334,820 470,820 470,893.3333333333334</av:PointCollection>
-                                      <av:PointCollection x:Key="FalseConnector">837.6666666666667,820 867.6666666666667,820 867.6666666666667,1690.3333333333333 570,1690.3333333333333</av:PointCollection>
+                                      <av:PointCollection x:Key="TrueConnector">702.6666666666666,850 470,850 470,893.3333333333334</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">837.3333333333333,850 867.3333333333331,850 867.3333333333331,1690 570,1690</av:PointCollection>
                                       <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>

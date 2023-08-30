@@ -4,6 +4,8 @@
     <x:Property Name="in_KinName" Type="InArgument(x:String)" />
     <x:Property Name="in_KinPass" Type="InArgument(ss:SecureString)" />
     <x:Property Name="io_ErrorLog" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="out_isKinLogin" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_isKinAccess" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -155,7 +157,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:AddDataRow>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="エラーメッセージ" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;勤次郎のアクセスに失敗しました。&quot; &amp; Environment.NewLine &amp;&#xD;&#xA;&quot;config.xlsxに記載の勤次郎のURLが正確か、また、手動で勤次郎にアクセスできるか確認してください。&quot;&amp; Environment.NewLine &amp;&#xD;&#xA;&quot;手動でアクセス完了後はOKを押してくだい。&quot;]" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="エラーメッセージ" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;勤次郎のアクセスに失敗しました。&quot; &amp; Environment.NewLine &amp;&#xA;&quot;config.xlsxに記載の勤次郎のURLが正確か、また、手動で勤次郎にアクセスできるか確認してください。&quot;&amp; Environment.NewLine &amp;&#xA;&quot;手動でアクセス完了後はOKを押してくだい。&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -231,7 +233,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:AddDataRow>
-                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;勤次郎のログイン処理に失敗しました。&quot; &amp; Environment.NewLine &amp;&#xD;&#xA;&quot;config.xlsxに記載のログイン情報が正確か確認してください。&quot;&amp; Environment.NewLine &amp;&#xD;&#xA;&quot;手動でログイン完了後はOKを押してくだい。&quot;]" />
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="メッセージ ボックス" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;勤次郎のログイン処理に失敗しました。&quot; &amp; Environment.NewLine &amp;&#xA;&quot;config.xlsxに記載のログイン情報が正確か確認してください。&quot;&amp; Environment.NewLine &amp;&#xA;&quot;手動でログイン完了後はOKを押してくだい。&quot;]" />
                     </Sequence>
                   </If.Then>
                   <If.Else>
