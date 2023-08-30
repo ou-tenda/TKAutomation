@@ -126,7 +126,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID19</x:Reference>
+      <x:Reference>__ReferenceID20</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID11">
       <sap:WorkflowViewStateService.ViewState>
@@ -209,10 +209,25 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKログイン.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excecution\TK\TKログイン.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_TKID">[TKName]</InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">[TKPass]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_TKURL">[TKURL]</InArgument>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_TKID">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKName" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">
+                            <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="TKPass" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_TKURL">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKURL" />
+                          </InArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">
+                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ErrorLog" />
+                          </InOutArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKAccess">
+                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="IsTKAccess" />
+                          </OutArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKLogin">
+                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isTKLogin" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -223,7 +238,7 @@
                       <FlowStep.Next>
                         <FlowDecision x:Name="__ReferenceID18" sap2010:Annotation.AnnotationText="TKにアクセス、ログインできたか&#xD;&#xA;(それぞれ2回リトライ後)" DisplayName="TKアクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="124,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                           <FlowDecision.Condition>
-                            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="out_isTKAccess = true AND out_isTKLogin = true" />
+                            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="isTKAccess = true AND isTKLogin = true" />
                           </FlowDecision.Condition>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -309,15 +324,30 @@
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">370,893.3333333333334</av:Point>
                                               <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">470,946.6666666666667 470,1003.3333333333334</av:PointCollection>
+                                              <av:PointCollection x:Key="ConnectorLocation">570,920 770,920 770,946.6666666666666</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤次郎ログイン.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Excecution\Kinjiro\勤次郎ログイン.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_KinURL">[KinURL]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_KinName">[KinName]</InArgument>
-                                              <InArgument x:TypeArguments="ss:SecureString" x:Key="in_KinPass">[KinPass]</InArgument>
-                                              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_KinURL">
+                                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="KinURL" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_KinName">
+                                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="KinName" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="ss:SecureString" x:Key="in_KinPass">
+                                                <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="KinPass" />
+                                              </InArgument>
+                                              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">
+                                                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ErrorLog" />
+                                              </InOutArgument>
+                                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isKinLogin">
+                                                <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isKinLogin" />
+                                              </OutArgument>
+                                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isKinAccess">
+                                                <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isKinAccess" />
+                                              </OutArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                                             </ui:InvokeWorkflowFile.Arguments>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -326,43 +356,34 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:InvokeWorkflowFile>
                                           <FlowStep.Next>
-                                            <FlowStep x:Name="__ReferenceID6">
+                                            <FlowDecision x:Name="__ReferenceID19" sap2010:Annotation.AnnotationText="勤次郎にアクセス、ログインできたか&#xD;&#xA;(それぞれ2回リトライ後)" DisplayName="勤次郎アクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="146.66666666666666,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                                              <FlowDecision.Condition>
+                                                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="isKinAccess = true AND isKinLogin = true" />
+                                              </FlowDecision.Condition>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <av:Point x:Key="ShapeLocation">370,1003.3333333333334</av:Point>
-                                                  <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                                  <av:PointCollection x:Key="ConnectorLocation">470,1056.6666666666667 470,1123.3333333333333</av:PointCollection>
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <av:Point x:Key="ShapeLocation">696.6666666666666,946.6666666666666</av:Point>
+                                                  <av:Size x:Key="ShapeSize">146.66666666666666,86.66666666666667</av:Size>
+                                                  <av:PointCollection x:Key="TrueConnector">696.6666666666666,990 470,990 470,1053.3333333333333</av:PointCollection>
+                                                  <av:PointCollection x:Key="FalseConnector">843.3333333333333,990 873.3333333333331,990 873.3333333333331,1690 570,1690</av:PointCollection>
+                                                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="未承認取得.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Excecution\Kinjiro\未承認取得.xaml">
-                                                <ui:InvokeWorkflowFile.Arguments>
-                                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_NotApprovalWork">[NotApprovalWork]</OutArgument>
-                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsNotApproval">[isNotApproval]</OutArgument>
-                                                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
-                                                </ui:InvokeWorkflowFile.Arguments>
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </ui:InvokeWorkflowFile>
-                                              <FlowStep.Next>
-                                                <FlowStep x:Name="__ReferenceID7">
+                                              <FlowDecision.True>
+                                                <FlowStep x:Name="__ReferenceID6">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <av:Point x:Key="ShapeLocation">370,1123.3333333333333</av:Point>
+                                                      <av:Point x:Key="ShapeLocation">370,1053.3333333333333</av:Point>
                                                       <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">470,1176.6666666666665 470,1223.3333333333333</av:PointCollection>
+                                                      <av:PointCollection x:Key="ConnectorLocation">470,1106.6666666666665 470,1143.3333333333333</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務実績データ取得.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Excecution\Kinjiro\勤務実績データ取得.xaml">
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="未承認取得.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Excecution\Kinjiro\未承認取得.xaml">
                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                      <InArgument x:TypeArguments="x:String" x:Key="in_RequestMonth">[RequestMonth]</InArgument>
-                                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_NotEnd">[NotEnd]</OutArgument>
-                                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_NotApprovalWork">[NotApprovalWork]</InArgument>
-                                                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_WorkData">[WorkData]</OutArgument>
-                                                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_isRequestMonth">[isRequestMonth]</InArgument>
-                                                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsNotApproval">[isNotApproval]</InArgument>
+                                                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_NotApprovalWork">[NotApprovalWork]</OutArgument>
+                                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsNotApproval">[isNotApproval]</OutArgument>
+                                                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
                                                     </ui:InvokeWorkflowFile.Arguments>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -371,17 +392,22 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:InvokeWorkflowFile>
                                                   <FlowStep.Next>
-                                                    <FlowStep x:Name="__ReferenceID8">
+                                                    <FlowStep x:Name="__ReferenceID7">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <av:Point x:Key="ShapeLocation">370,1223.3333333333333</av:Point>
+                                                          <av:Point x:Key="ShapeLocation">370,1143.3333333333333</av:Point>
                                                           <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                                          <av:PointCollection x:Key="ConnectorLocation">470,1276.6666666666665 470,1343.3333333333333</av:PointCollection>
+                                                          <av:PointCollection x:Key="ConnectorLocation">470,1196.6666666666665 470,1243.3333333333333</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務実績の書き込み.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Excecution\Config\勤務実績の書き込み.xaml">
+                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務実績データ取得.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Excecution\Kinjiro\勤務実績データ取得.xaml">
                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_WorkData">[WorkData]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_RequestMonth">[RequestMonth]</InArgument>
+                                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_NotEnd">[NotEnd]</OutArgument>
+                                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_NotApprovalWork">[NotApprovalWork]</InArgument>
+                                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_WorkData">[WorkData]</OutArgument>
+                                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_isRequestMonth">[isRequestMonth]</InArgument>
+                                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsNotApproval">[isNotApproval]</InArgument>
                                                         </ui:InvokeWorkflowFile.Arguments>
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -390,17 +416,17 @@
                                                         </sap:WorkflowViewStateService.ViewState>
                                                       </ui:InvokeWorkflowFile>
                                                       <FlowStep.Next>
-                                                        <FlowStep x:Name="__ReferenceID9">
+                                                        <FlowStep x:Name="__ReferenceID8">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <av:Point x:Key="ShapeLocation">370,1343.3333333333333</av:Point>
+                                                              <av:Point x:Key="ShapeLocation">370,1243.3333333333333</av:Point>
                                                               <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                                              <av:PointCollection x:Key="ConnectorLocation">470,1396.6666666666665 470,1443.3333333333333</av:PointCollection>
+                                                              <av:PointCollection x:Key="ConnectorLocation">470,1296.6666666666665 470,1343.3333333333333</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKタブ移動、勤次郎終了.xaml - ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excecution\TK\TKタブ移動、勤次郎終了.xaml">
+                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務実績の書き込み.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Excecution\Config\勤務実績の書き込み.xaml">
                                                             <ui:InvokeWorkflowFile.Arguments>
-                                                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_WorkData">[WorkData]</InArgument>
                                                             </ui:InvokeWorkflowFile.Arguments>
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -409,21 +435,17 @@
                                                             </sap:WorkflowViewStateService.ViewState>
                                                           </ui:InvokeWorkflowFile>
                                                           <FlowStep.Next>
-                                                            <FlowStep x:Name="__ReferenceID16">
+                                                            <FlowStep x:Name="__ReferenceID9">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <av:Point x:Key="ShapeLocation">370,1443.3333333333333</av:Point>
+                                                                  <av:Point x:Key="ShapeLocation">370,1343.3333333333333</av:Point>
                                                                   <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                                                  <av:PointCollection x:Key="ConnectorLocation">470,1496.6666666666665 470,1563.3333333333333</av:PointCollection>
+                                                                  <av:PointCollection x:Key="ConnectorLocation">470,1396.6666666666665 470,1443.3333333333333</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務実績の繰り返し入力.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Excecution\TK\勤務実績の繰り返し入力.xaml">
+                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKタブ移動、勤次郎終了.xaml - ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excecution\TK\TKタブ移動、勤次郎終了.xaml">
                                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
-                                                                  <OutArgument x:TypeArguments="x:Int32" x:Key="out_ExeCount">[ExeCount]</OutArgument>
-                                                                  <OutArgument x:TypeArguments="x:Int32" x:Key="out_SuccessCount">[SuccessCount]</OutArgument>
-                                                                  <OutArgument x:TypeArguments="x:String" x:Key="out_SuccessDays">[SuccessDays]</OutArgument>
-                                                                  <OutArgument x:TypeArguments="x:String" x:Key="out_SkipDays">[SkipDays]</OutArgument>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -432,25 +454,21 @@
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:InvokeWorkflowFile>
                                                               <FlowStep.Next>
-                                                                <FlowStep x:Name="__ReferenceID10">
+                                                                <FlowStep x:Name="__ReferenceID16">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <av:Point x:Key="ShapeLocation">370,1563.3333333333333</av:Point>
+                                                                      <av:Point x:Key="ShapeLocation">370,1443.3333333333333</av:Point>
                                                                       <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                                                      <av:PointCollection x:Key="ConnectorLocation">470,1616.6666666666665 470,1663.3333333333333</av:PointCollection>
+                                                                      <av:PointCollection x:Key="ConnectorLocation">470,1496.6666666666665 470,1563.3333333333333</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="履歴、結果ファイル作成.xaml - ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Excecution\Config\履歴、結果ファイル作成.xaml">
+                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務実績の繰り返し入力.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Excecution\TK\勤務実績の繰り返し入力.xaml">
                                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_NotEnd">[NotEnd]</InArgument>
-                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_RequestMonth">[RequestMonth]</InArgument>
-                                                                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_isRequestMonth">[isRequestMonth]</InArgument>
-                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_ExeStartTime">[ExeStartTime]</InArgument>
-                                                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Errorlog">[ErrorLog]</InArgument>
-                                                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_ExeCount" />
-                                                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_SuccessCount" />
-                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_SuccessDays" />
-                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_SkipDays" />
+                                                                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
+                                                                      <OutArgument x:TypeArguments="x:Int32" x:Key="out_ExeCount">[ExeCount]</OutArgument>
+                                                                      <OutArgument x:TypeArguments="x:Int32" x:Key="out_SuccessCount">[SuccessCount]</OutArgument>
+                                                                      <OutArgument x:TypeArguments="x:String" x:Key="out_SuccessDays">[SuccessDays]</OutArgument>
+                                                                      <OutArgument x:TypeArguments="x:String" x:Key="out_SkipDays">[SkipDays]</OutArgument>
                                                                     </ui:InvokeWorkflowFile.Arguments>
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -459,14 +477,43 @@
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                   </ui:InvokeWorkflowFile>
                                                                   <FlowStep.Next>
-                                                                    <FlowStep x:Name="__ReferenceID0">
+                                                                    <FlowStep x:Name="__ReferenceID10">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <av:Point x:Key="ShapeLocation">370,1663.3333333333333</av:Point>
+                                                                          <av:Point x:Key="ShapeLocation">370,1563.3333333333333</av:Point>
                                                                           <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
+                                                                          <av:PointCollection x:Key="ConnectorLocation">470,1616.6666666666665 470,1663.3333333333333</av:PointCollection>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:AppendLine File="{x:Null}" DisplayName="実行終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;実行を終了しました。&quot;]" UseDefaultEncoding="False" />
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="履歴、結果ファイル作成.xaml - ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Excecution\Config\履歴、結果ファイル作成.xaml">
+                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_NotEnd">[NotEnd]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_RequestMonth">[RequestMonth]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_isRequestMonth">[isRequestMonth]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_ExeStartTime">[ExeStartTime]</InArgument>
+                                                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Errorlog">[ErrorLog]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_ExeCount" />
+                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_SuccessCount" />
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_SuccessDays" />
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_SkipDays" />
+                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                      </ui:InvokeWorkflowFile>
+                                                                      <FlowStep.Next>
+                                                                        <FlowStep x:Name="__ReferenceID0">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <av:Point x:Key="ShapeLocation">370,1663.3333333333333</av:Point>
+                                                                              <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                          <ui:AppendLine File="{x:Null}" DisplayName="実行終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd hh:mm:ss&quot;) + &quot; &quot; + &quot;実行を終了しました。&quot;]" UseDefaultEncoding="False" />
+                                                                        </FlowStep>
+                                                                      </FlowStep.Next>
                                                                     </FlowStep>
                                                                   </FlowStep.Next>
                                                                 </FlowStep>
@@ -478,8 +525,11 @@
                                                     </FlowStep>
                                                   </FlowStep.Next>
                                                 </FlowStep>
-                                              </FlowStep.Next>
-                                            </FlowStep>
+                                              </FlowDecision.True>
+                                              <FlowDecision.False>
+                                                <x:Reference>__ReferenceID0</x:Reference>
+                                              </FlowDecision.False>
+                                            </FlowDecision>
                                           </FlowStep.Next>
                                         </FlowStep>
                                       </FlowDecision.True>
@@ -522,7 +572,7 @@
     <x:Reference>__ReferenceID8</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
     <x:Reference>__ReferenceID10</x:Reference>
-    <FlowStep x:Name="__ReferenceID19">
+    <FlowStep x:Name="__ReferenceID20">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">443,7.666666666666664</av:Point>
@@ -585,5 +635,6 @@
     <x:Reference>__ReferenceID16</x:Reference>
     <x:Reference>__ReferenceID17</x:Reference>
     <x:Reference>__ReferenceID18</x:Reference>
+    <x:Reference>__ReferenceID19</x:Reference>
   </Flowchart>
 </Activity>
