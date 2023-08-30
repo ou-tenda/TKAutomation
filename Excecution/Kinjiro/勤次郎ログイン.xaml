@@ -113,6 +113,9 @@
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①Chromeを開く&#xA;②勤次郎のURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;③勤次郎にログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;&#xA;次のワークフローは「未承認取得」" DisplayName="勤次郎ログイン" sap:VirtualizedContainerService.HintSize="670,3029.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="RepairCount" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
