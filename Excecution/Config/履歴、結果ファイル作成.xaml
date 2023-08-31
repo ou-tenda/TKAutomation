@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>612,3476.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>612,3602</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>履歴_結果ファイル作成_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,9 +116,10 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①結果ファイルの出力&#xA;　→途中フラグがある場合はファイル名に【途中】をつける&#xA;　→途中フラグがない場合はファイル名に【完了】をつける&#xA;&#xA;次はMainに戻って終了する" DisplayName="履歴_結果ファイル作成" sap:VirtualizedContainerService.HintSize="450,3412" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①結果ファイルの出力&#xA;　→途中フラグがある場合はファイル名に【途中】をつける&#xA;　→途中フラグがない場合はファイル名に【完了】をつける&#xA;&#xA;次はMainに戻って終了する" DisplayName="履歴_結果ファイル作成" sap:VirtualizedContainerService.HintSize="496,3537.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="Result" />
+      <Variable x:TypeArguments="x:String" Name="FileName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -126,8 +127,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DataTable="[Result]" DisplayName="結果のdtを構築" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;_x0031_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;_x0032_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;_x0033_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-    <If Condition="[in_isRequestMonth = true]" DisplayName="指定月の判定" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:BuildDataTable DataTable="[Result]" DisplayName="結果のdtを構築" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;_x0031_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;_x0032_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;_x0033_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <If Condition="[in_isRequestMonth = true]" DisplayName="指定月の判定" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="376,278.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -149,27 +150,28 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;&quot;}]" DataTable="[Result]" DisplayName="空白行" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;実行開始時間&quot;,&quot;&quot;,in_ExeStartTime}]" DataTable="[Result]" DisplayName="実行開始時間" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;実行開始時間&quot;,&quot;&quot;,DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;)}]" DataTable="[Result]" DisplayName="実行終了時間" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;&quot;}]" DataTable="[Result]" DisplayName="空白行" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;処理した日数(営業日)&quot;,&quot;&quot;,in_ExeCount.ToString}]" DataTable="[Result]" DisplayName="処理した日数(営業日)" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;登録した日数&quot;,&quot;&quot;,in_SuccessCount.ToString}]" DataTable="[Result]" DisplayName="登録した日数" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_9" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;登録した日付&quot;,&quot;&quot;,in_SuccessDays}]" DataTable="[Result]" DisplayName="登録した日付" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_10" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;スキップした日付&quot;,&quot;&quot;,in_SkipDays}]" DataTable="[Result]" DisplayName="スキップした日付" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_11" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;&quot;}]" DataTable="[Result]" DisplayName="空白行" sap:VirtualizedContainerService.HintSize="388,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_8" />
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel プロセス スコープ" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;&quot;}]" DataTable="[Result]" DisplayName="空白行" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;実行開始時間&quot;,&quot;&quot;,in_ExeStartTime}]" DataTable="[Result]" DisplayName="実行開始時間" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;実行終了時間&quot;,&quot;&quot;,DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;)}]" DataTable="[Result]" DisplayName="実行終了時間" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;&quot;}]" DataTable="[Result]" DisplayName="空白行" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;処理した日数(営業日)&quot;,&quot;&quot;,in_ExeCount.ToString}]" DataTable="[Result]" DisplayName="処理した日数(営業日)" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;登録した日数&quot;,&quot;&quot;,in_SuccessCount.ToString}]" DataTable="[Result]" DisplayName="登録した日数" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_9" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;登録した日付&quot;,&quot;&quot;,in_SuccessDays}]" DataTable="[Result]" DisplayName="登録した日付" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_10" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;スキップした日付&quot;,&quot;&quot;,in_SkipDays}]" DataTable="[Result]" DisplayName="スキップした日付" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_11" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;&quot;}]" DataTable="[Result]" DisplayName="空白行" sap:VirtualizedContainerService.HintSize="434,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_8" />
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel プロセス スコープ" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="434,297.3333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="..\TKAutomation\01_OUTPUT\作業実績入力_結果.xlsx">
+          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="434,417.3333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="..\TKAutomation\01_OUTPUT\作業実績入力_結果.xlsx">
             <ueab:ExcelApplicationCard.Body>
               <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                 </ActivityAction.Argument>
+                <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="プロセスを強制終了" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Excel" />
               </ActivityAction>
             </ueab:ExcelApplicationCard.Body>
           </ueab:ExcelApplicationCard>
@@ -182,9 +184,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[Result]" DisplayName="結果に書き込み" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="01_OUTPUT\作業実績入力_結果.xlsx" />
-    <ui:WriteRange AddHeaders="False" DataTable="[in_Errorlog]" DisplayName="エラー情報書き込み" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A11" WorkbookPath="01_OUTPUT\作業実績入力_結果.xlsx" />
-    <If Condition="[in_NotEnd = true]" DisplayName="途中フラグによりファイル名変更" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="If_3">
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[Result]" DisplayName="結果に書き込み" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="01_OUTPUT\作業実績入力_結果.xlsx" />
+    <ui:WriteRange AddHeaders="False" DataTable="[in_Errorlog]" DisplayName="エラー情報書き込み" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A11" WorkbookPath="01_OUTPUT\作業実績入力_結果.xlsx" />
+    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FileName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["作業実績入力_結果_" + DateTime.Now.ToString("yyyyMMddHHmm") + ".xlsx"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[in_NotEnd = true]" DisplayName="途中フラグによりファイル名変更" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,26 +202,62 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,235.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,329.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:RenameFileX DisplayName="ファイル名を変更" FilePath="01_OUTPUT\作業実績入力_結果.xlsx" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="RenameFileX_3" KeepExtension="True" NewName="[&quot;【途中】作業実績入力_結果_&quot; + DateTime.Now.ToString(&quot;yyyyMMddhhmm&quot;) + &quot;.xlsx&quot;]" />
+          <ui:RenameFileX DisplayName="ファイル名を変更" FilePath="01_OUTPUT\作業実績入力_結果.xlsx" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="RenameFileX_3" KeepExtension="True" NewName="[&quot;【途中】&quot; + FileName]" />
+          <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="無視されるアクティビティ" sap:VirtualizedContainerService.HintSize="450,198.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="結果ファイルを開いたままにする" FileName="[&quot;..\TKAutomation\01_OUTPUT\【途中】&quot; + FileName]" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,235.33333333333337" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,329.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:RenameFileX DisplayName="ファイル名を変更" FilePath="01_OUTPUT\作業実績入力_結果.xlsx" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="RenameFileX_2" KeepExtension="True" NewName="[&quot;【完了】作業実績入力_結果_&quot; + DateTime.Now.ToString(&quot;yyyyMMddhhmm&quot;) + &quot;.xlsx&quot;]" />
+          <ui:RenameFileX DisplayName="ファイル名を変更" FilePath="01_OUTPUT\作業実績入力_結果.xlsx" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="RenameFileX_2" KeepExtension="True" NewName="[&quot;【完了】&quot; + FileName]" />
+          <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="334,54" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="無視されるアクティビティ" sap:VirtualizedContainerService.HintSize="450,198.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="結果ファイルを開いたままにする" FileName="[&quot;..\TKAutomation\01_OUTPUT\【完了】&quot; + FileName]" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="StartProcess_2" />
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
         </Sequence>
       </If.Else>
     </If>
-    <ui:AppendLine File="{x:Null}" DisplayName="結果ファイル作成完了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;結果ファイルの作成を終了しました。&quot;]" UseDefaultEncoding="False" />
+    <ui:AppendLine File="{x:Null}" DisplayName="結果ファイル作成完了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;結果ファイルの作成を終了しました。&quot;]" UseDefaultEncoding="False" />
   </Sequence>
 </Activity>
