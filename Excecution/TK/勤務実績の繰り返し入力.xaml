@@ -280,7 +280,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:LogMessage DisplayName="日付を出力" sap:VirtualizedContainerService.HintSize="752,143" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[CurrentRow(&quot;日付&quot;)]" />
-                          <Sequence sap2010:Annotation.AnnotationText="休憩時間の部分を切り取り、StartTIme1,2,3,4とEndTime1,2,3,4に代入します。&#xA;&#xA;変数&#xA;breakStartTime1 = &quot;12:00&quot;&#xA;breakStartTime2 = &quot;18:00&quot;&#xA;breakStartTime3 = &quot;23:30&quot;&#xA;breakStartTime4 = &quot;05:00&quot;&#xA;breakEndTime1 = &quot;13:00&quot;&#xA;breakEndTime2 = &quot;18:30&quot;&#xA;breakEndTime3 = &quot;00:30&quot;&#xA;breakEndTime4 = &quot;09:00&quot;" DisplayName="④出勤時刻と終了時刻を4段階に分割し、代入する" sap:VirtualizedContainerService.HintSize="752,1081" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                          <Sequence sap2010:Annotation.AnnotationText="休憩時間の部分を切り取り、StartTIme1,2,3,4とEndTime1,2,3,4に代入します。&#xA;&#xA;変数&#xA;breakStartTime1 = &quot;12:00&quot;&#xA;breakStartTime2 = &quot;18:00&quot;&#xA;breakStartTime3 = &quot;23:30&quot;&#xA;breakStartTime4 = &quot;05:00&quot;&#xA;breakEndTime1 = &quot;13:00&quot;&#xA;breakEndTime2 = &quot;18:30&quot;&#xA;breakEndTime3 = &quot;00:30&quot;&#xA;breakEndTime4 = &quot;09:00&quot;" DisplayName="④出勤時刻と終了時刻を4段階に分割し、代入する" sap:VirtualizedContainerService.HintSize="792,1081" sap2010:WorkflowViewState.IdRef="Sequence_58">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Default="12:00" Name="breakStartTime1" />
                               <Variable x:TypeArguments="x:String" Default="13:00" Name="breakEndTime1" />
@@ -306,7 +306,7 @@
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_29">
+                              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_29">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="s:String[]">[StartTimeArr]</OutArgument>
                                 </Assign.To>
@@ -314,7 +314,7 @@
                                   <InArgument x:TypeArguments="s:String[]">[{"-1", "-1", "-1", "-1"}]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_30">
+                              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_30">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="s:String[]">[EndTimeArr]</OutArgument>
                                 </Assign.To>
@@ -322,7 +322,7 @@
                                   <InArgument x:TypeArguments="s:String[]">[{"-1", "-1", "-1", "-1"}]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_51">
+                              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_51">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Int32">[itemNum]</OutArgument>
                                 </Assign.To>
@@ -330,7 +330,7 @@
                                   <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_31">
+                              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_31">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Int32">[scheduleNum]</OutArgument>
                                 </Assign.To>
@@ -955,7 +955,7 @@
                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <If Condition="[StartTimeArr(itemNum) &lt;&gt; -1 OR EndTimeArr(itemNum) &lt;&gt; -1 OR string.IsNullOrEmpty(StartTimeArr(itemNum)) = false OR string.IsNullOrEmpty(EndTimeArr(itemNum)) = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="526,539" sap2010:WorkflowViewState.IdRef="If_23">
+                                        <If Condition="[StartTimeArr(itemNum).ToString &lt;&gt; &quot;-1&quot; OR EndTimeArr(itemNum).ToString &lt;&gt; &quot;-1&quot; OR string.IsNullOrEmpty(StartTimeArr(itemNum)) = false OR string.IsNullOrEmpty(EndTimeArr(itemNum)) = false]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="526,539" sap2010:WorkflowViewState.IdRef="If_23">
                                           <If.Then>
                                             <Sequence sap:VirtualizedContainerService.HintSize="492,356" sap2010:WorkflowViewState.IdRef="Sequence_105">
                                               <sap:WorkflowViewStateService.ViewState>
