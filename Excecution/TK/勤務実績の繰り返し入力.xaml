@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1064.6666666666667,8470.666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1064.6666666666667,10246</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>時間ごとの繰り返し入力_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -133,7 +133,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="作成者：落合&#xA;&#xA;本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「履歴、結果ファイルの作成」&#xA;&#xA;---&#xA;&#xA;変数&#xA;WorkName：String型　「勤務情報&amp;実績.xlsx」から件名を取得する&#xA;Category：String型　「勤務情報&amp;実績.xlsx」からカテゴリーを取得する&#xA;ProjectName：String型　「勤務情報&amp;実績.xlsx」からプロジェクト名を取得する&#xA;StartTime：String型　「勤務情報&amp;実績.xlsx」から開始時間を取得する&#xA;EndTime：String型　「勤務情報&amp;実績.xlsx」から終了時間を取得する&#xA;StartTimeArr：String型配列　休憩時間を区切った時の各時間の開始時間を格納する&#xA;EndTimeArr：String型配列　休憩時間を区切った時の各時間の終了時間を格納する&#xA; &#xA;- 使用しない　消去予定&#xA;※StartTime1&#xA;※StartTime2&#xA;※StartTime3&#xA;※StartTime4&#xA;※EndTime1&#xA;※EndTime2&#xA;※EndTime3&#xA;※EndTime4&#xA;&#xA;未完成事項&#xA;・Excelファイルで繰り返しの挙動を確認する&#xA;→勤務実績ファイルのフォーマット(完成例)を確認" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="1074.6666666666667,8406" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="作成者：落合&#xA;&#xA;本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「履歴、結果ファイルの作成」&#xA;&#xA;---&#xA;&#xA;変数&#xA;WorkName：String型　「勤務情報&amp;実績.xlsx」から件名を取得する&#xA;Category：String型　「勤務情報&amp;実績.xlsx」からカテゴリーを取得する&#xA;ProjectName：String型　「勤務情報&amp;実績.xlsx」からプロジェクト名を取得する&#xA;StartTime：String型　「勤務情報&amp;実績.xlsx」から開始時間を取得する&#xA;EndTime：String型　「勤務情報&amp;実績.xlsx」から終了時間を取得する&#xA;StartTimeArr：String型配列　休憩時間を区切った時の各時間の開始時間を格納する&#xA;EndTimeArr：String型配列　休憩時間を区切った時の各時間の終了時間を格納する&#xA; &#xA;- 使用しない　消去予定&#xA;※StartTime1&#xA;※StartTime2&#xA;※StartTime3&#xA;※StartTime4&#xA;※EndTime1&#xA;※EndTime2&#xA;※EndTime3&#xA;※EndTime4&#xA;&#xA;未完成事項&#xA;・Excelファイルで繰り返しの挙動を確認する&#xA;→勤務実績ファイルのフォーマット(完成例)を確認" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="1074.6666666666667,10181.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="StartTime" />
       <Variable x:TypeArguments="x:String" Name="EndTime" />
@@ -159,14 +159,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="1012.6666666666666,604" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="1012.6666666666666,604.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,493.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,494" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -198,7 +198,7 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持" DisplayName="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し" sap:VirtualizedContainerService.HintSize="1012.6666666666666,6396" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持" DisplayName="②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し" sap:VirtualizedContainerService.HintSize="1012.6666666666666,8136" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -206,20 +206,20 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ueab:SequenceX DisplayName="単一の Excel プロセス スコープ" sap:VirtualizedContainerService.HintSize="950.6666666666666,6241.333333333333" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+      <ueab:SequenceX DisplayName="単一の Excel プロセス スコープ" sap:VirtualizedContainerService.HintSize="950.6666666666666,7980" sap2010:WorkflowViewState.IdRef="SequenceX_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" sap2010:Annotation.AnnotationText="現在は仮に「勤務情報＆勤務実績ファイル」を対象とする&#xA;勤務実績シートのフォーマットが完成させたら追加する&#xD;&#xA;&#xD;&#xA;変数&#xD;&#xA;DataTableWorkInfo：勤務情報シートから読み取る用&#xD;&#xA;DataTableWorkRecord：勤務実績シートから読み取る用&#xD;&#xA;DataTableWorkList：「DataTableWorkInfo」と「DataTableWorkRecord」を結合した結果を保持" AutoSave="False" CreateNewFile="False" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="888.6666666666666,7530" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="事前設定\勤務情報&amp;実績_test_ochiai.xlsx" UseTemplate="True" WorkbookPath="[in_WorkFilePathName]">
+        <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" sap2010:Annotation.AnnotationText="現在は仮に「勤務情報＆勤務実績ファイル」を対象とする&#xA;勤務実績シートのフォーマットが完成させたら追加する&#xA;&#xA;変数&#xA;DataTableWorkInfo：勤務情報シートから読み取る用&#xA;DataTableWorkRecord：勤務実績シートから読み取る用&#xA;DataTableWorkList：「DataTableWorkInfo」と「DataTableWorkRecord」を結合した結果を保持" AutoSave="False" CreateNewFile="False" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="888.6666666666666,7869.333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="事前設定\勤務情報&amp;実績_test_ochiai.xlsx" UseTemplate="True" WorkbookPath="[in_WorkFilePathName]">
           <ueab:ExcelApplicationCard.Body>
             <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="WorkFile" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="854.6666666666666,7109.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_48">
+              <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="854.6666666666666,7437.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_48">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Name="DataTableWorkInfo" />
                   <Variable x:TypeArguments="sd:DataTable" Name="DataTableWorkRecord" />
@@ -230,15 +230,15 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Excelファイルをデータテーブルとして読み込む" sap:VirtualizedContainerService.HintSize="792.6666666666666,776.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                <Sequence DisplayName="Excelファイルをデータテーブルとして読み込む" sap:VirtualizedContainerService.HintSize="792.6666666666666,783.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_55">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ueab:ReadRangeX DisplayName="勤務情報を読み込み" sap:VirtualizedContainerService.HintSize="444,171.33333333333334" sap2010:WorkflowViewState.IdRef="ReadRangeX_5" Range="[WorkFile.Sheet(&quot;勤務情報&quot;).Range(&quot;B6:F37&quot;)]" SaveTo="[DataTableWorkInfo]" />
-                  <ueab:ReadRangeX DisplayName="勤務実績を読み込み" sap:VirtualizedContainerService.HintSize="444,171.33333333333334" sap2010:WorkflowViewState.IdRef="ReadRangeX_6" Range="[WorkFile.Sheet(&quot;勤務実績&quot;).Range(&quot;B1:F32&quot;)]" SaveTo="[DataTableWorkRecord]" />
+                  <ueab:ReadRangeX DisplayName="勤務情報を読み込み" sap:VirtualizedContainerService.HintSize="444,174.66666666666666" sap2010:WorkflowViewState.IdRef="ReadRangeX_5" Range="[WorkFile.Sheet(&quot;勤務情報&quot;).Range(&quot;B6:F37&quot;)]" SaveTo="[DataTableWorkInfo]" />
+                  <ueab:ReadRangeX DisplayName="勤務実績を読み込み" sap:VirtualizedContainerService.HintSize="444,174.66666666666666" sap2010:WorkflowViewState.IdRef="ReadRangeX_6" Range="[WorkFile.Sheet(&quot;勤務実績&quot;).Range(&quot;B1:F32&quot;)]" SaveTo="[DataTableWorkRecord]" />
                   <ui:JoinDataTables DataTable1="[DataTableWorkInfo]" DataTable2="[DataTableWorkRecord]" DisplayName="データ テーブルを結合" sap:VirtualizedContainerService.HintSize="444,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Left" OutputDataTable="[DataTableWorkList]">
                     <ui:JoinDataTables.Arguments>
                       <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
@@ -259,35 +259,35 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:JoinDataTables>
-                  <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="444,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[DataTableWorkRecord(0).ToString + &quot; - &quot; + DataTableWorkRecord(1).ToString + Environment.NewLine +&#xD;&#xA;DataTableWorkList(9).ToString + &quot; - &quot; +DataTableWorkList(10).ToString]" />
+                  <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="444,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[DataTableWorkRecord(0).ToString + &quot; - &quot; + DataTableWorkRecord(1).ToString + Environment.NewLine +&#xA;DataTableWorkList(9).ToString + &quot; - &quot; +DataTableWorkList(10).ToString]" />
                 </Sequence>
-                <Sequence DisplayName="各日ごとに入力を繰り返す" sap:VirtualizedContainerService.HintSize="792.6666666666666,6182" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                <Sequence DisplayName="各日ごとに入力を繰り返す" sap:VirtualizedContainerService.HintSize="792.6666666666666,6503.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_57">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTableWorkList]" DisplayName="繰り返し (データ テーブルの各行)" sap:VirtualizedContainerService.HintSize="730.6666666666666,5948" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DataTableWorkList]" DisplayName="繰り返し (データ テーブルの各行)" sap:VirtualizedContainerService.HintSize="730.6666666666666,6268" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="696.6666666666666,5759.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                        <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="696.6666666666666,6078" sap2010:WorkflowViewState.IdRef="Sequence_56">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="654.6666666666666,104" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="654.6666666666666,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_93">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </Sequence>
-                          <Sequence sap2010:Annotation.AnnotationText="休憩時間の部分を切り取り、StartTIme1,2,3,4とEndTime1,2,3,4に代入します。&#xA;&#xA;変数&#xA;breakStartTime1 = &quot;12:00&quot;&#xA;breakStartTime2 = &quot;18:00&quot;&#xA;breakStartTime3 = &quot;23:30&quot;&#xA;breakStartTime4 = &quot;05:00&quot;&#xA;breakEndTime1 = &quot;13:00&quot;&#xA;breakEndTime2 = &quot;18:30&quot;&#xA;breakEndTime3 = &quot;00:30&quot;&#xA;breakEndTime4 = &quot;09:00&quot;" DisplayName="④出勤時刻と終了時刻を4段階に分割し、代入する" sap:VirtualizedContainerService.HintSize="654.6666666666666,2600.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                          <Sequence sap2010:Annotation.AnnotationText="休憩時間の部分を切り取り、StartTIme1,2,3,4とEndTime1,2,3,4に代入します。&#xA;&#xA;変数&#xA;breakStartTime1 = &quot;12:00&quot;&#xA;breakStartTime2 = &quot;18:00&quot;&#xA;breakStartTime3 = &quot;23:30&quot;&#xA;breakStartTime4 = &quot;05:00&quot;&#xA;breakEndTime1 = &quot;13:00&quot;&#xA;breakEndTime2 = &quot;18:30&quot;&#xA;breakEndTime3 = &quot;00:30&quot;&#xA;breakEndTime4 = &quot;09:00&quot;" DisplayName="④出勤時刻と終了時刻を4段階に分割し、代入する" sap:VirtualizedContainerService.HintSize="654.6666666666666,2608.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_58">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Default="12:00" Name="breakStartTime1" />
                               <Variable x:TypeArguments="x:String" Default="13:00" Name="breakEndTime1" />
@@ -755,50 +755,48 @@
                               </If>
                             </Sequence>
                           </Sequence>
-                          <Sequence DisplayName="各時間ごとに繰り返す" sap:VirtualizedContainerService.HintSize="654.6666666666666,2887.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                          <Sequence DisplayName="各時間ごとに繰り返す" sap:VirtualizedContainerService.HintSize="654.6666666666666,3197.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_92">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <While DisplayName="繰り返し (前判定)" sap:VirtualizedContainerService.HintSize="592.6666666666666,2776.6666666666665" sap2010:WorkflowViewState.IdRef="While_3">
+                            <While DisplayName="繰り返し (前判定)" sap:VirtualizedContainerService.HintSize="592.6666666666666,3086.6666666666665" sap2010:WorkflowViewState.IdRef="While_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <While.Condition>
-                                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="scheduleNum &gt;= itemNum" />
-                              </While.Condition>
-                              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="546,2616" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V2">
+                              <While.Condition>[scheduleNum &gt;= itemNum]</While.Condition>
+                              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="546,2924.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V2">
                                 <uix:NApplicationCard.Body>
                                   <ActivityAction x:TypeArguments="x:Object">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="512,2357.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="512,2705.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_89">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="⑤作業実績詳細欄が登録されているかを判定" sap:VirtualizedContainerService.HintSize="450,83.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                                      <Sequence DisplayName="⑤作業実績詳細欄が登録されているかを判定" sap:VirtualizedContainerService.HintSize="450,414.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_80">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:Boolean" Name="isSchedule9to12" />
                                         </Sequence.Variables>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <uix:NCheckElement DelayBefore="0" DisplayName="要素を確認 '09:00-12:00test'" sap:VirtualizedContainerService.HintSize="388,158.66666666666666" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[isSchedule9to12]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                                        <uix:NCheckElement DelayBefore="0" DisplayName="要素を確認 '09:00-12:00test'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[isSchedule9to12]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
                                           <uix:NCheckElement.Target>
                                             <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_create" CvTextArgument="09:00-12:00 test" CvType="Text" DesignTimeRectangle="1402, 509, 397, 365" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'09:00-12:00test'" FullSelectorArgument="&lt;webctrl class='string' idx='7' parentid='performance_cell_2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='string' type='' parentid='performance_cell_2' tag='DIV' aaname='' check:innerText='09:00-12:00test' /&gt;" Guid="5e93d461-17e2-4d11-a1b5-8b6810100e01" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZEAAAFxCAYAAACyZZXVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAg6SURBVHhe7dnNattoGIDR2c8VzKLQXbsoBAptYSCr0sUsuuz9X4onke3YsiVFetxC05zF2dj6+aTA+8jKX//+92MHAIWIAJCJCACZiACQiQgAmYgAkIkIANl1RO6/7P5+8+Hk3f3u0+U2g2+7t+fbvfm4e/91arvnrD3O9937d+fbfdi9vZ/abq39eeeOcXc3Ptfg7tvktss2rHv1vQf4PYwjMgyx8RAfhunlMDsMu9EwnPrsWftB/s/n76fPJtbwNIjPh/jX+90/m893cozE5P7Dsb/s7kafH2K3abBvWPfae7/RzzjGohv/DsDLdhaRiYE++fnEYDz49PnjwyC8HL7z5gbc5edzx916vpt/zUwGbt76da+999uJCPArnSIyDIPpATkMomM0lobGpoGyH+iTA3IY1qchOzr/uYU1P6sMv437rF73wnXMHmMlEQF+pVNEFp6yR4NocWhMPTkfn/4vj73wlD1ay/wvn5sGWNl35h7tf1nMXPeada+99xsN+z6cZ2x8nqttrs51/evt0bD2w3VcfndL9ICX5SkiS6+Gxt8tvWLZEJGlIT76buv5VgoR2Q/cuddTl+tYv+719367+Qgd/i6j7y4/26/zKgqP0Tt+Fu4j8OcIETkNzcvBcXyqXTXUX1pEhl8LW4bl7x2R2eOe35c192jrfQT+KCkig8NQPff2fj8cVw2UpeEz+m5DRCbWNP0U/mDL8Dtsu+01ze8ckYVXbaO1zfyKPCci8Kpt/5/IkmGgLAyckYUhO1rLwsC7ZYCt3ne/zlXXP7Jh3T/j3s9YjMjjdc05X/dVnM+iJiLwqp0ishCAYRCteAofnppXD7z9IJuPyGlQzZ5/Yc3PWjX8akD2Vq/7J9z7OYsRScc97Hs85qr7CPypThGZ/WWw8IthZL/dlmEyPeCuP597pXPTq57nht/h+1sG+Pp133rv583d41vu3WhfEYFX7SwiDyZeq8wNoZHDIJkedsdXJ1NP2hNDcvLVzsST863Da2n/jQHZD9Wp69+w7nrvn3N4FXV9nft7PxfxYfvHfa++P+z3dE0Xv0yAV2UckUeHofNkcjgcBsmT6Vcxe0sRebT2WMfjnGwPyPUxnpxd5zEK88ZP8PMRebRh3avu/XZDjJ6OOxGq83M+ejrv5d9m7+o6j9E9uuHXG/CyXEcEAFYSEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASATEQAyEQEgExEAMhEBIBMRADIRASD6sfsfStPVnh+FGVUAAAAASUVORK5CYII=" InformativeScreenshot="b047351c76763a7d44f3fb025c3aff88.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
                                           </uix:NCheckElement.Target>
                                         </uix:NCheckElement>
-                                        <If sap2010:Annotation.AnnotationText="TRUE:要素があるとき&#xA;FALSE:要素がないとき" Condition="[isSchedule9to12 = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="388,97.33333333333333" sap2010:WorkflowViewState.IdRef="If_19">
+                                        <If sap2010:Annotation.AnnotationText="TRUE:要素があるとき&#xA;FALSE:要素がないとき" Condition="[isSchedule9to12 = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="388,99.33333333333333" sap2010:WorkflowViewState.IdRef="If_19">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -859,8 +857,8 @@
                                           </If.Else>
                                         </If>
                                       </Sequence>
-                                      <Delay DisplayName="待機" Duration="00:00:00.5000000" sap:VirtualizedContainerService.HintSize="450,91.33333333333333" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                                      <Sequence sap2010:Annotation.AnnotationText="⑥、⑧の作業実績詳細の入力" DisplayName="⑥、⑧作業実績入力" sap:VirtualizedContainerService.HintSize="450,1739.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                      <Delay DisplayName="待機" Duration="00:00:00.5000000" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                      <Sequence sap2010:Annotation.AnnotationText="⑥、⑧の作業実績詳細の入力" DisplayName="⑥、⑧作業実績入力" sap:VirtualizedContainerService.HintSize="450,1752.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_85">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -868,8 +866,8 @@
                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(0) + Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(1) +&#xD;&#xA;Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(0) + Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(1) + Environment.NewLine +&#xD;&#xA;&quot;カテゴリー&quot; + CurrentRow(&quot;カテゴリー&quot;).ToString + Environment.NewLine +&#xD;&#xA;&quot;件名&quot; + CurrentRow(&quot;件名&quot;).ToString + Environment.NewLine +&#xD;&#xA;&quot;プロジェクト名&quot; + CurrentRow(&quot;プロジェクト名&quot;).ToString]" />
-                                        <uix:NSelectItem DisplayName="開始時選択" sap:VirtualizedContainerService.HintSize="388,158.66666666666666" sap2010:WorkflowViewState.IdRef="NSelectItem_8" Item="[Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(0)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                                        <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(0) + Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(1) +&#xA;Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(0) + Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(1) + Environment.NewLine +&#xA;&quot;カテゴリー&quot; + CurrentRow(&quot;カテゴリー&quot;).ToString + Environment.NewLine +&#xA;&quot;件名&quot; + CurrentRow(&quot;件名&quot;).ToString + Environment.NewLine +&#xA;&quot;プロジェクト名&quot; + CurrentRow(&quot;プロジェクト名&quot;).ToString]" />
+                                        <uix:NSelectItem DisplayName="開始時選択" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_8" Item="[Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(0)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
                                           <uix:NSelectItem.Items>
                                             <scg:List x:TypeArguments="x:String" Capacity="34">
                                               <x:String>－</x:String>
@@ -909,16 +907,16 @@
                                             </scg:List>
                                           </uix:NSelectItem.Items>
                                           <uix:NSelectItem.Target>
-                                            <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="492, 245, 56, 31" CvTextArea="499, 254, 17, 12" CvTextArgument="09" CvType="InputBox" DesignTimeRectangle="494, 247, 52, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="DropDown" FriendlyName="'09'" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' type='' class='' aaname='' /&gt;" Guid="6136119f-9827-4455-b6ef-e8849cb7508d" InformativeScreenshot="516bc2bf61979e6148ee3792737c950d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                            <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="492, 245, 56, 31" CvTextArea="499, 254, 17, 12" CvTextArgument="09" CvType="InputBox" DesignTimeRectangle="412, 247, 52, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="DropDown" FriendlyName="'09'" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' type='' class='' aaname='' /&gt;" Guid="6136119f-9827-4455-b6ef-e8849cb7508d" InformativeScreenshot="46acaa8e76f05e613b959a9f6ff8c239.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                                               <uix:TargetAnchorable.Anchors>
                                                 <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                                                  <uix:Target CvTextArgument="2023/08/01((K)" CvType="Text" DesignTimeRectangle="382, 253, 99, 20" ElementType="Text" FriendlyName="'2023/08/01(火)'" FullSelectorArgument="&lt;webctrl id='work_date' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='work_date' tag='DIV' type='' class='string' aaname='2023/08/01(火)' check:innerText='2023/08/01(火)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAYCAYAAADnNePtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAKSSURBVGhD7VbBbcMwDOxWXqsZJcgkQRYJvEWA7OCaEq2Qx5OVNEGhAjogD1kiebyj1H4tA91imNMxhjkdY5jTMYY5HWOY0zH6Ned6XKbTrItP4b6cvw/L+abLT0B4Tjs5b+fl8H1eK9cwL8dpor2COXrQ/I5X3VLcLwezD6SEiIlt78f8GSKi3cvrEheaRd4VsURIG5uEfcQ9x8VC6jbMZuaEweM1vDlr0OFi0iQxTfHUzHGlpIC1GOcKtPYx/wZoaD6t4plm/Do2lgfI8FRIXDmHtQMXPxAonEDqOL0U7jv0InA8NohWcK7xrPnGWVJaqKA1WXxifNOSA4W231iNVgwXlovNOfK6AjkPpjvRGTcBxK1omGMJxGBBbXoS0jQyIgoyLaFpMnnIRTjYp6wmPN6+ILjwCW9/xRzKawV+Rw1ojQzhZHnvmJNJPQ7zScGmH5Dz/FZlMf1TVYDkqYEgWBLg8QTFJw0HqyL4M7U2VEQOpsu5okMllwK1rJiTk/jpwwYz2JTuGeOQiPucobnWzcHJFOA3kuPdm1MfSguNvbAeCKA+MScLGwXnDVExnzFGIfGlFhM68dn5Jg01pt3VULCh4oPGzeFGeiQDlRvjgEDDvTlJnHg7CtKkG6Faa8B8gtxQj4uTG7Ok/ZoMk+PBzF2BvVZ7r5gj53duQxLa5ct59gxCA505OaF9u/VnSPgzvpkkmo3bfpuQSTS7h+SZOILcWIlDUZKwZh8HpjbhwMcbADXDGTGd8C1c2JBqTmpq7H/nH4I/hgi1M4m/QxYjTP2HEJ4qNbtZL50DY0n/3ZgjjX5cxMbT8z4qt+dl8CHq5+b8V7Bb8BLy30z29A5zOsYwp2MMczrGMKdjDHO6xbL8ALhJX6TWnRx/AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                                                  <uix:Target CvTextArgument="????/??/??((?)" CvType="Text" DesignTimeRectangle="300, 253, 99, 20" ElementType="Text" FriendlyName="'2023/08/01(火)'" FullSelectorArgument="&lt;webctrl id='work_date' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='work_date' tag='DIV' type='' class='string' aaname='2023/08/01(火)' check:innerText='2023/08/01(火)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAYCAYAAADnNePtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAKSSURBVGhD7VbBbcMwDOxWXqsZJcgkQRYJvEWA7OCaEq2Qx5OVNEGhAjogD1kiebyj1H4tA91imNMxhjkdY5jTMYY5HWOY0zH6Ned6XKbTrItP4b6cvw/L+abLT0B4Tjs5b+fl8H1eK9cwL8dpor2COXrQ/I5X3VLcLwezD6SEiIlt78f8GSKi3cvrEheaRd4VsURIG5uEfcQ9x8VC6jbMZuaEweM1vDlr0OFi0iQxTfHUzHGlpIC1GOcKtPYx/wZoaD6t4plm/Do2lgfI8FRIXDmHtQMXPxAonEDqOL0U7jv0InA8NohWcK7xrPnGWVJaqKA1WXxifNOSA4W231iNVgwXlovNOfK6AjkPpjvRGTcBxK1omGMJxGBBbXoS0jQyIgoyLaFpMnnIRTjYp6wmPN6+ILjwCW9/xRzKawV+Rw1ojQzhZHnvmJNJPQ7zScGmH5Dz/FZlMf1TVYDkqYEgWBLg8QTFJw0HqyL4M7U2VEQOpsu5okMllwK1rJiTk/jpwwYz2JTuGeOQiPucobnWzcHJFOA3kuPdm1MfSguNvbAeCKA+MScLGwXnDVExnzFGIfGlFhM68dn5Jg01pt3VULCh4oPGzeFGeiQDlRvjgEDDvTlJnHg7CtKkG6Faa8B8gtxQj4uTG7Ok/ZoMk+PBzF2BvVZ7r5gj53duQxLa5ct59gxCA505OaF9u/VnSPgzvpkkmo3bfpuQSTS7h+SZOILcWIlDUZKwZh8HpjbhwMcbADXDGTGd8C1c2JBqTmpq7H/nH4I/hgi1M4m/QxYjTP2HEJ4qNbtZL50DY0n/3ZgjjX5cxMbT8z4qt+dl8CHq5+b8V7Bb8BLy30z29A5zOsYwp2MMczrGMKdjDHO6xbL8ALhJX6TWnRx/AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
                                                 </scg:List>
                                               </uix:TargetAnchorable.Anchors>
                                             </uix:TargetAnchorable>
                                           </uix:NSelectItem.Target>
                                         </uix:NSelectItem>
-                                        <uix:NSelectItem DisplayName="開始分入力" sap:VirtualizedContainerService.HintSize="388,158.66666666666666" sap2010:WorkflowViewState.IdRef="NSelectItem_9" Item="[Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(1)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                                        <uix:NSelectItem DisplayName="開始分入力" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_9" Item="[Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(1)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
                                           <uix:NSelectItem.Items>
                                             <scg:List x:TypeArguments="x:String" Capacity="50">
                                               <x:String>－</x:String>
@@ -983,7 +981,7 @@
                                             </uix:TargetAnchorable>
                                           </uix:NSelectItem.Target>
                                         </uix:NSelectItem>
-                                        <uix:NSelectItem DisplayName="終了時選択" sap:VirtualizedContainerService.HintSize="388,158.66666666666666" sap2010:WorkflowViewState.IdRef="NSelectItem_10" Item="[Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(0)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                                        <uix:NSelectItem DisplayName="終了時選択" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_10" Item="[Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(0)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
                                           <uix:NSelectItem.Items>
                                             <scg:List x:TypeArguments="x:String" Capacity="34">
                                               <x:String>－</x:String>
@@ -1025,14 +1023,14 @@
                                           <uix:NSelectItem.Target>
                                             <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvTextArgument="12" CvType="Text" DesignTimeRectangle="692, 247, 52, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="DropDown" FriendlyName="'12'" FullSelectorArgument="&lt;webctrl parentid='date_hour_stop' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='date_hour_stop' tag='SELECT' type='' class='' aaname='' /&gt;" Guid="1fe4805c-dae6-4e62-a82c-8eca296ae39a" InformativeScreenshot="9321226ead0b61541d3028a3e9ac8373.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                                               <uix:TargetAnchorable.Anchors>
-                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                                   <uix:Target CvTextArgument="N\5" CvType="Text" DesignTimeRectangle="654, 253, 26, 20" ElementType="Text" FriendlyName="'から'" FullSelectorArgument="&lt;webctrl aaname='から' class='string' parentid='edit_date' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='から' class='string' parentid='edit_date' tag='DIV' type='' check:innerText='から' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAYCAYAAADtaU2/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAD4SURBVEhL7ZNhDoMgDEZ3K64lRyGehHgR4y1MdoeOKkIp7cQlY/vhS0zGBB79qA/4Ebe4G/8lXkYDbo6DL3FB/AQ/WPBrHBbgOwPGxGdc4v86ilgRrB7s4IPmhNnlQyjzs5hO5g9ZjGnYiW61gGs5DEOoGGNzYbtMIeNVt6bAEMRCBSGNXOV+n6kHyDs8YJWWct+1GCPnkwtxUE82jfH3IaFzDrbDCPJKTDdNMHGGVS8SEjTl1SFMjJPqjsbDfP5dy59hKZZiDqifVwtK8xExrZZ0Ni4UojpnvwYjJIgkcXW3m3BvmpaYpY5+t65qrl7c4m7c4k4AvADkvK+eIWzfXAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
                                                 </scg:List>
                                               </uix:TargetAnchorable.Anchors>
                                             </uix:TargetAnchorable>
                                           </uix:NSelectItem.Target>
                                         </uix:NSelectItem>
-                                        <uix:NSelectItem DisplayName="終了分入力" sap:VirtualizedContainerService.HintSize="388,158.66666666666666" sap2010:WorkflowViewState.IdRef="NSelectItem_11" Item="[Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(1)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                                        <uix:NSelectItem DisplayName="終了分入力" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_11" Item="[Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(1)]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
                                           <uix:NSelectItem.Items>
                                             <scg:List x:TypeArguments="x:String" Capacity="50">
                                               <x:String>－</x:String>
@@ -1090,14 +1088,14 @@
                                           <uix:NSelectItem.Target>
                                             <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvTextArgument="00" CvType="Text" DesignTimeRectangle="775, 247, 52, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="DropDown" FriendlyName="'00'" FullSelectorArgument="&lt;webctrl parentid='date_minute_stop' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='date_minute_stop' tag='SELECT' type='' class='' aaname='' /&gt;" Guid="ce4823c7-1022-4585-84b8-2d2596bf4a65" InformativeScreenshot="987eaf67a1b2483e7b22794ed6bc2fe6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                                               <uix:TargetAnchorable.Anchors>
-                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                                   <uix:Target DesignTimeRectangle="750, 253, 13, 20" ElementType="Text" FriendlyName="'時'" FullSelectorArgument="&lt;webctrl aaname='時' class='string' idx='2' parentid='edit_date' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='時' class='string' type='' parentid='edit_date' tag='DIV' check:innerText='時' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABEAAAAYCAYAAAAcYhYyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAACYSURBVDhP7ZFbCoAgEEXbldvKpUgrkTYi7UJoD7fGVzZFTVHQRwcGH+jxqg0e4JdskUm8hW4txjTkLBJaqBRUKA3r0zxxSdINc2eEbUkywBQpKyY8kMTpwO0kvdlPkcq4uI2QvUnGzeJw0BrZdTKXJa5OxsugVr2cxFOroPvqT0SSEjcnYaJTyRHVAatkCZnkhF+y5SsSYAJKON+Enz2SxgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
                                                 </scg:List>
                                               </uix:TargetAnchorable.Anchors>
                                             </uix:TargetAnchorable>
                                           </uix:NSelectItem.Target>
                                         </uix:NSelectItem>
-                                        <uix:NSelectItem DisplayName="項目を選択 '作業内容'" sap:VirtualizedContainerService.HintSize="388,158.66666666666666" sap2010:WorkflowViewState.IdRef="NSelectItem_12" Item="[CurrentRow(&quot;プロジェクト名&quot;).ToString]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                                        <uix:NSelectItem DisplayName="項目を選択 '作業内容'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_12" Item="[CurrentRow(&quot;プロジェクト名&quot;).ToString]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
                                           <uix:NSelectItem.Items>
                                             <scg:List x:TypeArguments="x:String" Capacity="3">
                                               <x:String>プロジェクト名を選択</x:String>
@@ -1108,14 +1106,14 @@
                                           <uix:NSelectItem.Target>
                                             <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvTextArgument="&amp;IR" CvType="Text" DesignTimeRectangle="650, 296, 191, 27" DesignTimeScaleFactor="0.800000011920929" FriendlyName="'プロジェクト名を選択'" FullSelectorArgument="&lt;webctrl parentid='performance_pulldown' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='performance_pulldown' tag='DIV' type='' class='common_btn' aaname='' /&gt;" Guid="2ff1ff8a-e6ac-4bd0-a4c9-97d3cfbf1d48" ImageBase64="" InformativeScreenshot="4b08cd1f50969b60f378951bcb5e6758.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                                               <uix:TargetAnchorable.Anchors>
-                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                                   <uix:Target CvTextArgument="No" CvType="Text" DesignTimeRectangle="173, 299, 141, 20" ElementType="Text" FriendlyName="'作業内容'" FullSelectorArgument="&lt;webctrl parentid='edit_performance_3' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='edit_performance_3' tag='DIV' type='' class='edit_title' aaname='作業内容' check:innerText='作業内容' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJEAAAAYCAYAAAD6Zx8zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAIqSURBVGhD7Zk9bsIwFMe5AD0BLBlROyFxhd6lk3sN1IFwBMZOTZF6gypjCwMSWwaQisrExsLri79iB9MPIjs0ej/pyTEGyZJ/+ueFtNqdawhdk8kE0jSF3W4Hh8MBiP9Nq929gSuskCNJ1CxEEnVlSgQaSaJmoZNIVYg5SdQsqCciKnMBPdEM4sEABiyBrdzUz8zP+A3hi1JPhIccYP43ibaQMFzPv/ObIrGCczKJVPlYj6IIer0e9Pt9twiqxnPcopSIX2MGjYtrtcamQhu+RhIFx+6JVGLoOR66NTeu+fy89Si6heGLTKKPJ2BcmhhvUpJNIj7Tsgi2U8blYiiKWClSSolEhGW9XtfTE1kSvY108sTvcmcOiXjKKFnUuhRPyVWWjvDLfr+HxWKheiI83ICjKdEsFnJYEpQkEgLJpNICyVK3rxPpRfgjyzIpER5snhCqQswLiVIYSRESlyglIXTiYOWJpOfUB9XCcrk0kqiDh2smhue5kih7vEMJGCQb3JEpTlmiUvro2x5iimV+TvgnF8hKopAjl+jhnj+dsedPuaVCiHjqEOrXJaUkvGMnUX64R6M4cB/r6hF/+Hr8j7WZLObtTAvmSJvv1gh/HPVE5VGVj3Xr6cz12sPRE5FEl8fFPJ3ZEsnXGbzs25KVUCeKJArParWqpyeiF7DNApNIHKyuAHOSqFnU8j8RSdQsjJ5IHHCIOUnULKgnIipDPRFRGeqJiIoAfAFkv5STqmev4QAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
                                                 </scg:List>
                                               </uix:TargetAnchorable.Anchors>
                                             </uix:TargetAnchorable>
                                           </uix:NSelectItem.Target>
                                         </uix:NSelectItem>
-                                        <uix:NSelectItem DisplayName="項目を選択 'カテゴリを選択'" sap:VirtualizedContainerService.HintSize="388,158.66666666666666" sap2010:WorkflowViewState.IdRef="NSelectItem_7" Item="[CurrentRow(&quot;カテゴリー&quot;).ToString]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
+                                        <uix:NSelectItem DisplayName="項目を選択 '件名'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_7" Item="[CurrentRow(&quot;カテゴリー&quot;).ToString]" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Version="V3">
                                           <uix:NSelectItem.Items>
                                             <scg:List x:TypeArguments="x:String" Capacity="27">
                                               <x:String>カテゴリを選択</x:String>
@@ -1148,14 +1146,20 @@
                                             </scg:List>
                                           </uix:NSelectItem.Items>
                                           <uix:NSelectItem.Target>
-                                            <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="312, 259, 130, 30" CvTextArea="320, 264, 93, 15" CvTextArgument="JJTJU&amp;itR" CvType="InputBox" DesignTimeRectangle="570, 455, 191, 41" DesignTimeScaleFactor="1.2000000476837158" FriendlyName="'カテゴリを選択'" FullSelectorArgument="&lt;webctrl parentid='performance_category' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='performance_category' tag='DIV' type='' class='common_btn' aaname='' check:innerText='*' /&gt;" Guid="d0e79dcd-29b5-4495-9233-3c16e8e52be0" ImageBase64="" InformativeScreenshot="474a0d92970012f5b77032a2e8913759.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                            <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvTextArgument="JJTJU&amp;itR" CvType="Text" DesignTimeRectangle="381, 260, 127, 27" DesignTimeScaleFactor="0.800000011920929" FriendlyName="'カテゴリを選択'" FullSelectorArgument="&lt;webctrl parentid='performance_category' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='performance_category' tag='DIV' type='' class='common_btn' aaname='' /&gt;" Guid="3d64c74c-cf85-4bc8-ab8e-5177a495df0b" ImageBase64="" InformativeScreenshot="e71c9598ad0ba2339a8c6729a6be81cc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                              <uix:TargetAnchorable.Anchors>
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                  <uix:Target CvTextArgument="f8 ooAE" CvType="Text" DesignTimeRectangle="240, 267, 141, 20" FriendlyName="'件名'" FullSelectorArgument="&lt;webctrl parentid='edit_plan' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='edit_plan' tag='DIV' type='' class='edit_title common_required' aaname='件名' check:innerText='件名' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJEAAAAYCAYAAAD6Zx8zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPWSURBVGhD7ZlLSBtBGIAVnygivm+CKIqvgw8CogfBg3iUCoo9iC8stYdgEW+WCgUPIiQXQcTiQbTiJURBVKhXwehiomhaNbbWarNqfNRHY/y782c3XdddDWbTWpgPfrI7M7tzmI9//tkEAIXySAorX+AvlYjyaKhEFJ95chI5jEZYyc4GU2goLAQE+ByL4eGwkpUFRwYDPwNFbZ6URF+0WlkR1Irt1lZ+Joqa3CPRMug0GtBoDWDQc78aLRiMOu5XA1ojy4+RhzVqvRon5nhmRnbh1Y7jqSl+RopaKEu0bwAtkUjPSaR1y8QyXkjEj5GL+56zZGbKLvpiZCRcHx3BakGBbD8JJiEBnCwLx7Oz8Gt3906Ix1rS0/kZKWqhKNGyJPsohY7hH+CQzUAeqXRcblPmoRro3GKBnY4OYOLj4ebiwtNurahAUZaio2ExIgJWCwvhZG4ONqqr8ZqMF7/HFBLCz0hRCwWJpFsZL4BiJmLd2QplEfUL2YzIuO9uUkK80OL4XFmJsRAYiFnpymaD9bIy7FuKioLdri4wBQXBSk4OrObng72/H9ZLSzF22tvB1tR0550UdZGVSMgod6SQlYgXTk80E8mk17nbuRBnKyWkC83ExcFaURFsNTTAVn09trGDg3A4MoLZh0gljF0rLgYXl52IRDdOJ16TuLm6ohL9BWQk4qUgQeogvhXxpiaSZCVvBCJIF3qrrg6+trV5JNqoqYHj6WnsszU2wtH4OJjCwsA+MIBFOdkOiUQ/+vpQKhLkeSqR/7kjkbsWEiTisolICNnADPSHW8/LhWS8gHShybZE6hki0cHwMFxarWAKDvb0g8uF96t5eXi/kpsLayUlcDA6Cpu1tRjfu7upRH8BiUQst5XpuExj8NRE3maiW1ug9DmC57TnhUTcVuU6PcUi+FtnJ9ZBQh+TlAR7PT3gmJwEa3k5tn3itjfn/j5mop8mE7BDQxgkQ1GJ/M+DhfXDEsnUQY+QSHo6M6em4jedc7MZtyVxO5FIuCfb2dn8PH6ZXk5ORomWYmPB1twMJ9yRn0lM9IwlQU9n6qOCRGIUniM8IJElI+PWYu/19mLWYWJi4NrhANfZGQb5ZmTJysIx5NvRRlUVXpNa6HJzExhOIOEdZDt02u14ehPazGlp/IwUtfCPRPeFgkSOiQnPQvszHPQ/NNV5MpmIsN3SIrvwagUp0inqoyDRv+NwbAzMKSm3TmK+BHkPed8hd2qj+AfNs5dwzZ2Wn4xElP+P56/fgclipRJRHs+HyY/w6q2eSkTxjTe691Qiiu9QiSg+QyWi+AjAbxiTHWQHXyv8AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                                                </scg:List>
+                                              </uix:TargetAnchorable.Anchors>
+                                            </uix:TargetAnchorable>
                                           </uix:NSelectItem.Target>
                                         </uix:NSelectItem>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="文字を入力 '128文字まで'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,220" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Text="[CurrentRow(&quot;件名&quot;).ToString]" Version="V3">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="文字を入力 '128文字まで'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="cc4b58f6-3c27-4f76-a734-6cd5dee68c05" Text="[CurrentRow(&quot;件名&quot;).ToString]" Version="V3">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_detail" CvElementArea="452, 304, 561, 29" CvTextArea="460, 311, 41, 14" CvTextArgument="FRH" CvType="InputBox" DesignTimeRectangle="454, 305, 556, 27" DesignTimeScaleFactor="0.800000011920929" ElementType="InputBox" FriendlyName="'テスト'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='required' aaname='' /&gt;" Guid="cd075a07-f30e-4b58-9a7e-ca5cb52dac3b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAjAAAAAfCAYAAAD5lPelAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJASURBVHhe7dzLbeJQFIBhakRKQ4hWSA+4AGfjnSuwssjOJXBnjl/jDB4eA5Lt8H3SWTg81r/OvWGTAABWRsAAAKtzFjBVVaU8z1OWZel4PBpjjDHGzDbRI9El0Sdj3wKmLMtUFEWq6zqdTqfurwAA84geiS6JPolO6Q0BE2UTLwIALFF0Sr+JGQIm1jNROAAASxSdEr0ShoCJMybHRgDAUkWnRK+EIWDiogwAwJL1vSJgAIDVWEXAfL1v02bXnnUBANwfMJ+HtN1s0ubqbNPhs/tM+kqHt6n3jObt8Ptd0wQMADC2gA1MGzf7j+5xgoABAMbmD5hmo7NPl/JEwAAAYzMHTLt92b7/6/Co1QRMf9QkZADg5d0dMPvxvZWrc8Nm5cLdl954AzPEjJABgJf1nA3MDcdAZ+74zOQR0se+CZlr2xsA4Od5XsDcsEkZNPGyTftdbFOuR8xkwHTynYgBgFfzlIC5FBhnms3J6F+s/36ecNf3AwA/3uMBc0OA9Nr7KxMblyvfIWAAgLEHAubPj9Nd+g2XVt5e/r0UId2dlqnvEjAAwNj/BUwXGzfdPbljQ9O8d+IujYABAMYe2MAAAMxDwAAAqyNgAIDVOQuYLMvS6XTqngAAliU6JXolDAGT53mq67p7AgBYluiU6JUwBExVVakoiu4JAGBZolOiV8IQMKEsy+bFKBzHSQDA3KJHokuiT6JTet8CJkTZxHomzpjioowxxhhjzFwTPRJd0m9eemcBAwCwdAIGAFiZlH4B6IuxCicbL8kAAAAASUVORK5CYII=" InformativeScreenshot="b2c3d314f7b076c4844f9990071387f7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                                               <uix:TargetAnchorable.Anchors>
-                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                                   <uix:Target CvTextArgument="12827dt" CvType="Text" DesignTimeRectangle="1020, 310, 68, 17" ElementType="Text" FriendlyName="'128文字まで'" FullSelectorArgument="&lt;webctrl class='notes' parentid='edit_plan' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='notes' parentid='edit_plan' tag='DIV' type='' aaname='128文字まで' check:innerText='128文字まで' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAVCAYAAADl/ahuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAG+SURBVFhH7ZTtjcMgDIZvq6xVRkGZJOoiVbao1B18EOxg4E2cpKe7nsQr+Qdftnmw+aKuXXVAhjogQx2QoT8B9Lo7GgZPM48/WZ8P6OHDXkfTk8eG5nGg4TbRi8fvCgKCQZ4TuSHMK3N3vWMmX637B69Ef9Uasrg/wcPr2pLvF003vF7YGJ4C5I+svFMFqLgIAhQDsdJeeVlJVKpCxurlOUEEVc8tgHYrIPkW+LWOVxDIEQhUEB80gshLly+ZgyWAuo1av8lHmWAC5Mkv/oDxmgCyKw4DkGLQoOex3XsREKDflDD4Y5b/RCqGW1JV5Z7kQm6caAYXFh2roCp2zD2eqbok6hKgNVnVGmkuAtN/UQtJ9rka8JZW8Af2Bh0CxA9lVU/USUBSOcE0abmEmitbUCv7qD/EKLtlkuWzKiexC4C2dAJQroz2YrKWKyZXFE8skn1SQRhSIYa/dZkUp47Lttm+KQ8zdlABqHDOtjph6o0JyLUVxDQc9coa/OoT/FeiU4AkThirfNBZqVQLEqign1f9yrVwO+q/bO//aVssXzqu7cAvYgQDFfcrgP6zOiBDHZChDshQB2SoA9oV0Tf0foWAtX9/qQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
                                                 </scg:List>
                                               </uix:TargetAnchorable.Anchors>
@@ -1163,7 +1167,7 @@
                                           </uix:NTypeInto.Target>
                                         </uix:NTypeInto>
                                       </Sequence>
-                                      <Sequence DisplayName="⑦、⑨更新ボタンを押下する" sap:VirtualizedContainerService.HintSize="450,83.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                      <Sequence DisplayName="⑦、⑨更新ボタンを押下する" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_86">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1182,7 +1186,7 @@
                                           </uix:NClick.Target>
                                         </uix:NClick>
                                       </Sequence>
-                                      <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="Assign_49">
+                                      <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="450,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_49">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:Int32">[itemNum]</OutArgument>
                                         </Assign.To>
@@ -1215,7 +1219,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <Sequence DisplayName="⑪その日が終了したら登録を押下し、次の日に移動" sap:VirtualizedContainerService.HintSize="526,83.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                  <Sequence DisplayName="⑪その日が終了したら登録を押下し、次の日に移動" sap:VirtualizedContainerService.HintSize="730.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_91">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
