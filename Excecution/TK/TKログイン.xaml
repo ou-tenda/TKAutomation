@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>894,4548.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>894,3915.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TKログイン_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,7 +128,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①アプリが開いているを判定する&#xA;　→開いている場合は全部閉じる&#xA;②Chromeを開く&#xA;③TKのURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;④TKにログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;⑤作業実績確認画面に遷移する&#xA;&#xA;次のワークフローは「プロジェクト名取得」&#xA;&#xA;引数&#xA;in_TKID:TKのID&#xA;in_TKPW:TKのパスワード&#xA;in_TKURL:TKのURL&#xA;&#xA;変数&#xA;isTKAccess:TKにアクセスできたかの判定に使用 / Boolean / TKにアクセスできたかの判定&#xA;isTKLogin:TKにログインできたかの判定に使用 / Boolean / ログインできたかの判定&#xA;isTKNotice:TKログイン時、お知らせ表示の判定に使用 / Boolean / お知らせの判定" DisplayName="TKログイン" sap:VirtualizedContainerService.HintSize="904,4484" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①アプリが開いているを判定する&#xA;　→開いている場合は全部閉じる&#xA;②Chromeを開く&#xA;③TKのURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;④TKにログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;⑤作業実績確認画面に遷移する&#xA;&#xA;次のワークフローは「プロジェクト名取得」&#xA;&#xA;引数&#xA;in_TKID:TKのID&#xA;in_TKPW:TKのパスワード&#xA;in_TKURL:TKのURL&#xA;&#xA;変数&#xA;isTKAccess:TKにアクセスできたかの判定に使用 / Boolean / TKにアクセスできたかの判定&#xA;isTKLogin:TKにログインできたかの判定に使用 / Boolean / ログインできたかの判定&#xA;isTKNotice:TKログイン時、お知らせ表示の判定に使用 / Boolean / お知らせの判定" DisplayName="TKログイン" sap:VirtualizedContainerService.HintSize="904,3850.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TKURL" />
       <Variable x:TypeArguments="x:String" Name="TKName" />
@@ -170,7 +170,7 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <Sequence DisplayName="②Chromeを開く / ③TKにアクセス" sap:VirtualizedContainerService.HintSize="842,3216" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence DisplayName="②Chromeを開く / ③TKにアクセス" sap:VirtualizedContainerService.HintSize="842,2582.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -622,7 +622,7 @@
                           </If.Else>
                         </If>
                       </Sequence>
-                      <If Condition="[out_isTKLogin = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="546,54" sap2010:WorkflowViewState.IdRef="If_11">
+                      <If Condition="[out_isTKLogin = true]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="526,356" sap2010:WorkflowViewState.IdRef="If_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -643,7 +643,7 @@
                                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence sap2010:Annotation.AnnotationText="TKログイン時、お知らせが表示されているときは閉じます。&#xA;表示されないときは何もしません。" DisplayName="お知らせの判定" sap:VirtualizedContainerService.HintSize="472,786" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                              <Sequence sap2010:Annotation.AnnotationText="TKログイン時、お知らせが表示されているときは閉じます。&#xA;表示されないときは何もしません。" DisplayName="お知らせの判定" sap:VirtualizedContainerService.HintSize="450,539.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:Boolean" Name="isTKNotice" />
                                 </Sequence.Variables>
@@ -654,7 +654,7 @@
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NCheckElement DelayBefore="0" DisplayName="要素を確認 '未読のみ'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NCheckElement_4" Result="[isTKNotice]" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V3">
+                                <uix:NCheckElement ContinueOnError="True" DelayBefore="0" DisplayName="要素を確認 '未読のみ'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NCheckElement_4" Result="[isTKNotice]" ScopeIdentifier="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Timeout="1" Version="V3">
                                   <uix:NCheckElement.Target>
                                     <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#schedule_week" CvElementArea="394, 336, 107, 46" CvTextArea="410, 347, 73, 22" CvTextArgument="*1Oa+" CvType="Button" DesignTimeRectangle="395, 339, 106, 42" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" FriendlyName="'未読のみ'" FullSelectorArgument="&lt;webctrl parentid='content_readtype_btns_news' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='content_readtype_btns_news' tag='DIV' type='' class='common_btn_left common_tab tab_color_2 active' aaname='未読のみ' check:innerText='未読のみ' /&gt;" Guid="e3637957-9424-4c2b-a22f-fd01fe1ed157" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG4AAAAuCAYAAADJAyyXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAS/SURBVHhe7ZxZUyM3GEXznofUVKqSykz2KTLFDMNqVgPGBttgGy9g/v9PUXSEb5fcLRvDYNNK9HCLRrt0dL9WN9V8NxgMTFJ8SuAiVQIXqYLg6u222Tyrmt8rO+aHL5/M9+trSSURfN59+FgEd9i4ML9sfw1WSnp7BcHt12vm3cZ6sEJSOVQA1+rcJKdFoAI47mmhgknlUgHc+53NYMGkcmkKXKfXS6fHSFRwXKhQUvmUwEWqBC5SJXCR6s3AHV01zMPDgxnd35t/jg+CZZJmq/TgeE96Oxy6stJN/3ZmGdr18/6rKj24RfRccB92t0y1dWX6o5EZj8fZhrizY+n0+2avXjM/bn4u1GOcjFfl8zprNQt1lqWVgMMhoYnOU+Pm2tUVYF8sXt6Fs+SD5Bn1oFF3gEJlffVHQ7NePc7qoqfArdLtpQe3iBZxHNBq1+3MYcC76nbM/fgRxLGtB6j2bS8bw/DuzqYdBduTdi7ObRtj127FOjVUZhlaCbiQ5KSXhsqQE/Py74WAEbTuoG/+PqhMOcgHjisFtGPL/jznpfupDY+UYyN8njh0VruvqSjA5R2bP5w8pbWjfece6uLMP/d3XfrXs6pbcByDc1Qed+JGyru82lmWl1er9+hQQusfk3ajBxc6ET5H88LlouGXheMgwnU+nOGssU333SJRTg49vrrM0oFet+Ma3T9uBImyHHYAjgt1H/1fgws5TmmzFoa6ypcrGAtjUpnzdsulD+yC/3WwN1Ufl+E28jUOHCrnLipC7a5187xw+xItFVxI23ZBFEZ8sYuf85cJgdNPoMhZXCvUAc4vq/o/bW24ex3pgPXbRj44HMQhRdAGdyOzdX6aHWQAv3F6YvYbF67fUQAu99h8H9+ilYJj5ymEEKI0KV23el33jOXX8e8Xkg8AMKQBgZDGdd5ZIXCERsZC34eX9Sxd0qGDEAgQxsbvQPp4WDGbFpwOMGwYv64cDkD6ZDxrR6/7dmgl4AgTOEr3DCbP0dxNzi7eSfMyWwTtXtUVOCZPOtc+gEbnxtVjsQQxD07uAy5Oc/UmoZT7kg4rEmAYhxuPdRcP5HIbQJnP9WQz5Pv6YseozXlpx+a3+5paKjhCH7vVvy8wYSaqRQYEcPwQCuBmt+sWdB443NkbDjLX+OBwHwtYu25NHULoZ++i5jYKadXmtFvogxOixgsojYHQSdRodB6h0wa/q64DOgmf9AVEv+3X1FLB4SQtAJMkpOhVUh4caTxbcTNXHXY7QGaBc0DsYmrX++B4/cQ1zgJw185N7Uos8nubR/8nFiD1/PymDY/AoIzuhxL9Mj/Nlf4ZVyhvGVoqOIUUucfPC4FDcikhjN2s3e4vGgvEcxfpuFlvN9SmL06O5NGONgWbiNDN+BQyfeEWnOgflj6dHDqwuJQ+K3aMyvt1b9v0vI3x3IPWS7RUcPM0C1xeAidXkfabXSjg4QK/Lte+awh5LLjyQ+J5jRAIDA4gbJbQC+anRFikP+a1bGjozcAlfZsSuEiVwEWqBC5SJXCRKoGLVAlcpErgItUUuPTRRzwqOC59ZhWHCuDSh41xqAAufUochwrgUPp4v/wKgkPp32WUWzPBofQPasor+MwEl1R2Dcy/aog06Pd3T5AAAAAASUVORK5CYII=" InformativeScreenshot="fa2e5e108755ba89a8e0f263a51da2de.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
@@ -665,7 +665,7 @@
                                     </uix:TargetAnchorable>
                                   </uix:NCheckElement.Target>
                                 </uix:NCheckElement>
-                                <If Condition="[isTKNotice]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="410,430.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If Condition="[isTKNotice]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="If_3">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -687,7 +687,13 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19" />
+                                    <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
                                   </If.Else>
                                 </If>
                               </Sequence>
