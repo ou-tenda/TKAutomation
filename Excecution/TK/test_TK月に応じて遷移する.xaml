@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="test_TK日付に応じて遷移する" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="570,854.6666666666666" sap2010:WorkflowViewState.IdRef="test_TK日付に応じて遷移する_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="test_TK日付に応じて遷移する" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="644.6666666666666,2193.3333333333335" sap2010:WorkflowViewState.IdRef="test_TK日付に応じて遷移する_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -83,35 +83,143 @@
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test_TK日付に応じて遷移する" sap:VirtualizedContainerService.HintSize="546,790" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="test_TK日付に応じて遷移する" sap:VirtualizedContainerService.HintSize="644,2830" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,679.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="582,2719.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,460" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="548,2500.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="nowMonth" />
+              <Variable x:TypeArguments="x:Int32" Name="designationMonth">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" Value="9" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:Int32" Name="intNowMonth" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetText DisplayName="テキストを取得 '2023年9月 実績'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" TextString="[nowMonth]" Version="V3">
+            <uix:NGetText DisplayName="テキストを取得 '2023年9月 実績'" sap:VirtualizedContainerService.HintSize="486,158.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" TextString="[nowMonth]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_list" CvType="AnyWordGroup" DesignTimeRectangle="232, 185, 136, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="Text" FriendlyName="'2023年9月 実績'" FullSelectorArgument="&lt;webctrl id='schedule_date_info' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='schedule_date_info' tag='DIV' type='' class='' /&gt;" Guid="91b5b7be-c33f-475e-8e86-e488967755fa" InformativeScreenshot="c5219cffd6ad229a39a1cbc0ae0421eb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NGetText.Target>
             </uix:NGetText>
-            <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;nowMonth : &quot; + nowMonth]" />
+            <Assign DisplayName="&quot;年&quot;より後の文字を切り取る" sap:VirtualizedContainerService.HintSize="486,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[nowMonth]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Split(nowMonth.ToString,"年")(1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="&quot;月&quot;より前の文字を切り取る" sap:VirtualizedContainerService.HintSize="486,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[nowMonth]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Split(nowMonth.ToString,"月")(0)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="int 型に変換" sap:VirtualizedContainerService.HintSize="486,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intNowMonth]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[Integer.Parse(nowMonth)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="486,146" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;nowMonth : &quot; + NowMonth]" />
+            <If sap2010:Annotation.AnnotationText="TRUE:等しい&#xD;&#xA;FALSE::等しくない(次の条件分岐に進む)" Condition="[intNowMonth = designationMonth]" DisplayName="条件分岐 (if)" sap:VirtualizedContainerService.HintSize="486,1626" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,233.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;等しい&quot;]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="452,1165.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If sap2010:Annotation.AnnotationText="TRUE:等しい&#xD;&#xA;FALSE::等しくない(次の条件分岐に進む)" Condition="[intNowMonth &gt; designationMonth]" DisplayName="読み込んだ月の値が対象の値と等しいかどうか" sap:VirtualizedContainerService.HintSize="410,1078" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,432" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[designationMonth.ToString + &quot; &lt; &quot; + intNowMonth.ToString]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '今月'" sap:VirtualizedContainerService.HintSize="334,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_list" CvType="ArrowButton" DesignTimeRectangle="1013, 183, 29, 32" DesignTimeScaleFactor="1" ElementType="ArrowButton" FriendlyName="'chrome.exe Time Krei'" Guid="cc9ccc1a-e7ed-48d8-acbb-248c062c202a" InformativeScreenshot="a28bfe9d9ec16922e0dd07b3b58302af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target CvElementArea="964, 183, 51, 33" CvTextArea="977, 190, 24, 14" CvTextArgument="4R" CvType="Button" DesignTimeRectangle="966, 185, 48, 28" ElementType="Text" FriendlyName="'今月'" FullSelectorArgument="&lt;webctrl id='schedule_btn_today' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='schedule_btn_today' tag='DIV' type='' class='common_btn_center' aaname='今月' check:innerText='今月' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAgCAYAAABdP1tmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADrSURBVFhH7ZWxDYMwEEUzVBZhi4yTCZggBQvQUTEBFRUSrRWR+sK/EIkYYygS5WPdSU9Yhy3d42xzcs5JSqQndM4uOsDzyLwdTIgVE2LHhNgxoW0qaQXRSxF8P5I3ctc5oYis28F3hcp+VhDEHlLn3hwAoa5a5rOb1AOFEAoZXRZFTvmhkes8Ty2kXUEnpuL9gIxusVm3DrPl9kK/5bRLsfCK5D9DEULFRz8AtRBuumWBRSfSlp+5F8wd0oMfKG4tr7AKYUv5V7Wy/m9C1zSC6/bzuw79CRNix4TYMSF2TIiddIUwSInEhJw8AXEEC7c94XTbAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,432" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[designationMonth.ToString + &quot; &gt; &quot; + intNowMonth.ToString]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="クリック '今月'" sap:VirtualizedContainerService.HintSize="334,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#schedule_week" CvType="ArrowButton" DesignTimeRectangle="936, 183, 29, 31" DesignTimeScaleFactor="1" ElementType="ArrowButton" FriendlyName="'chrome.exe Time Krei'" Guid="e20ea14a-9a78-4f60-8777-cfd40f194e59" InformativeScreenshot="f5035d041f2597741912e5b4aa665006.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target CvElementArea="964, 183, 51, 33" CvTextArea="977, 190, 24, 14" CvTextArgument="4R" CvType="Button" DesignTimeRectangle="966, 185, 48, 28" ElementType="Text" FriendlyName="'今月'" FullSelectorArgument="&lt;webctrl id='schedule_btn_today' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='schedule_btn_today' tag='DIV' type='' class='common_btn_center' aaname='今月' check:innerText='今月' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAgCAYAAABdP1tmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADrSURBVFhH7ZWxDYMwEEUzVBZhi4yTCZggBQvQUTEBFRUSrRWR+sK/EIkYYygS5WPdSU9Yhy3d42xzcs5JSqQndM4uOsDzyLwdTIgVE2LHhNgxoW0qaQXRSxF8P5I3ctc5oYis28F3hcp+VhDEHlLn3hwAoa5a5rOb1AOFEAoZXRZFTvmhkes8Ty2kXUEnpuL9gIxusVm3DrPl9kK/5bRLsfCK5D9DEULFRz8AtRBuumWBRSfSlp+5F8wd0oMfKG4tr7AKYUv5V7Wy/m9C1zSC6/bzuw79CRNix4TYMSF2TIiddIUwSInEhJw8AXEEC7c94XTbAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
