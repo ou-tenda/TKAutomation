@@ -1,0 +1,123 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="test_TK日付に応じて遷移する" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="570,854.6666666666666" sap2010:WorkflowViewState.IdRef="test_TK日付に応じて遷移する_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="test_TK日付に応じて遷移する" sap:VirtualizedContainerService.HintSize="546,790" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,679.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,460" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="nowMonth" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetText DisplayName="テキストを取得 '2023年9月 実績'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" TextString="[nowMonth]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_list" CvType="AnyWordGroup" DesignTimeRectangle="232, 185, 136, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="Text" FriendlyName="'2023年9月 実績'" FullSelectorArgument="&lt;webctrl id='schedule_date_info' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='schedule_date_info' tag='DIV' type='' class='' /&gt;" Guid="91b5b7be-c33f-475e-8e86-e488967755fa" InformativeScreenshot="c5219cffd6ad229a39a1cbc0ae0421eb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;nowMonth : &quot; + nowMonth]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="26, -1037, 1280, 676" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="8c5b8a628f50961c075476ee457a8456.jpg" Selector="&lt;html app='chrome.exe' title='Time Krei' /&gt;" Title="Time Krei" Url="https://tenda.timekrei.net/home.html#performance_list" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
