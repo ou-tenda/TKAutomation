@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1529.3333333333333,8440</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1529.3333333333333,8470.666666666666</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>時間ごとの繰り返し入力_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -134,7 +134,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="作成者：落合&#xA;&#xA;本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「履歴、結果ファイルの作成」&#xA;&#xA;---&#xA;&#xA;引数&#xA;in_WorkFilePathName：勤務実績情報ファイルのパス&#xA;&#xA;変数&#xA;WorkName：String型　「勤務情報&amp;実績.xlsx」から件名を取得する&#xA;Category：String型　「勤務情報&amp;実績.xlsx」からカテゴリーを取得する&#xA;ProjectName：String型　「勤務情報&amp;実績.xlsx」からプロジェクト名を取得する&#xA;StartTime：String型　「勤務情報&amp;実績.xlsx」から開始時間を取得する&#xA;EndTime：String型　「勤務情報&amp;実績.xlsx」から終了時間を取得する&#xA;StartTimeArr：String型配列　休憩時間を区切った時の各時間の開始時間を格納する&#xA;EndTimeArr：String型配列　休憩時間を区切った時の各時間の終了時間を格納する&#xA; &#xA;- 使用しない　消去予定&#xA;※StartTime1&#xA;※StartTime2&#xA;※StartTime3&#xA;※StartTime4&#xA;※EndTime1&#xA;※EndTime2&#xA;※EndTime3&#xA;※EndTime4&#xA;&#xA;未完成事項&#xA;・Excelファイルで繰り返しの挙動を確認する&#xA;→勤務実績ファイルのフォーマット(完成例)を確認" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="1539.3333333333333,8375.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="作成者：落合&#xA;&#xA;本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「履歴、結果ファイルの作成」&#xA;&#xA;---&#xA;&#xA;引数&#xA;in_WorkFilePathName：勤務実績情報ファイルのパス&#xA;&#xA;変数&#xA;WorkName：String型　「勤務情報&amp;実績.xlsx」から件名を取得する&#xA;Category：String型　「勤務情報&amp;実績.xlsx」からカテゴリーを取得する&#xA;ProjectName：String型　「勤務情報&amp;実績.xlsx」からプロジェクト名を取得する&#xA;StartTime：String型　「勤務情報&amp;実績.xlsx」から開始時間を取得する&#xA;EndTime：String型　「勤務情報&amp;実績.xlsx」から終了時間を取得する&#xA;StartTimeArr：String型配列　休憩時間を区切った時の各時間の開始時間を格納する&#xA;EndTimeArr：String型配列　休憩時間を区切った時の各時間の終了時間を格納する&#xA; &#xA;- 使用しない　消去予定&#xA;※StartTime1&#xA;※StartTime2&#xA;※StartTime3&#xA;※StartTime4&#xA;※EndTime1&#xA;※EndTime2&#xA;※EndTime3&#xA;※EndTime4&#xA;&#xA;未完成事項&#xA;・Excelファイルで繰り返しの挙動を確認する&#xA;→勤務実績ファイルのフォーマット(完成例)を確認" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="1539.3333333333333,8406" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="StartTime" />
       <Variable x:TypeArguments="x:String" Name="EndTime" />
@@ -163,26 +163,26 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="1477.3333333333333,604" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="1477.3333333333333,634.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,493.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,524" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,274.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,305.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="クリック '9月1日（金）'" sap:VirtualizedContainerService.HintSize="388,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V3">
+              <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="各月の1日の9時のあたりをダブルクリックする" ClickType="Double" DisplayName="クリック '9月1日（金）'" sap:VirtualizedContainerService.HintSize="388,189.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_list" DesignTimeRectangle="272, 283, 38, 44" DesignTimeScaleFactor="1" FriendlyName="'chrome.exe Time Krei'" Guid="33615192-7864-4066-bdf9-5c07b75632c9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAsCAYAAAAJpsrIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABOSURBVFhH7dGxDQAwDMOw/n9dPkpv4JZBBLwL8NujClOFqcJUYaowVZgqTBWmClOFqbthM7MX15WqMFWYKkwVpgpThanCVGGqMHU0bPcDXLDyagUVOKwAAAAASUVORK5CYII=" InformativeScreenshot="a9db7c213a99d1db9ee587488ab54a13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -194,6 +194,11 @@
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
             </Sequence>
           </ActivityAction>
