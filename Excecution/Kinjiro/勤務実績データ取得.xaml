@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>734,4053.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>734,4304</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>勤務実績データ取得_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,7 +121,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①勤務実績参照を開く&#xA;②当月入力判定&#xA;　→指定月がある場合、入力して抽出ボタンを押下&#xA;③勤務実績情報の表データを取得、dt変数に保存&#xA;④dt変数の出勤時刻、退勤時刻の「当」を削除する&#xA;⑤当日の日付と比較する&#xA;　→当日以降の勤務時間がある場合は途中フラグをつける&#xA;⑥未承認フラグ判定&#xA;　→未承認がある場合、対応する日付データを上書きする&#xA;⑦処理したdt変数を引数として出力する&#xA;&#xA;次のワークフローは「勤務実績の書き込み」" DisplayName="勤務実績データ取得" sap:VirtualizedContainerService.HintSize="744,3988.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①勤務実績参照を開く&#xA;②当月入力判定&#xA;　→指定月がある場合、入力して抽出ボタンを押下&#xA;③勤務実績情報の表データを取得、dt変数に保存&#xA;④dt変数の出勤時刻、退勤時刻の「当」を削除する&#xA;⑤当日の日付と比較する&#xA;　→当日以降の勤務時間がある場合は途中フラグをつける&#xA;⑥未承認フラグ判定&#xA;　→未承認がある場合、対応する日付データを上書きする&#xA;⑦処理したdt変数を引数として出力する&#xA;&#xA;次のワークフローは「勤務実績の書き込み」" DisplayName="勤務実績データ取得" sap:VirtualizedContainerService.HintSize="744,4239.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="WorkData" />
       <Variable x:TypeArguments="x:Boolean" Name="isPopUp" />
@@ -212,13 +212,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="アプリケーション/ブラウザーを使用" sap:VirtualizedContainerService.HintSize="682,2644" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="a984b94d-9ef0-425f-87e0-7b59743b7aa8" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="アプリケーション/ブラウザーを使用" sap:VirtualizedContainerService.HintSize="682,2894.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="a984b94d-9ef0-425f-87e0-7b59743b7aa8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="648,2424.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="648,2675.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="test" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -278,19 +281,35 @@
                 <uix:TargetAnchorable DesignTimeRectangle="36, 388, 800, 1085" DesignTimeScaleFactor="1.5" FriendlyName="'23/08/01（火） 出勤通常勤務当8:49…'" FullSelectorArgument="&lt;webctrl tableRow='3' tag='TABLE' /&gt;" Guid="744ebbd4-89a6-4803-9a1e-e7e683ed1cc6" InformativeScreenshot="a251680950ef6f02ee1e3d1953da82b5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='kwtop' title='勤次郎' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[WorkData]" DisplayName="繰り返し (データ テーブルの各行)" sap:VirtualizedContainerService.HintSize="586,1057.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[WorkData]" DisplayName="繰り返し (データ テーブルの各行)" sap:VirtualizedContainerService.HintSize="586,1308" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="work" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="552,867.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="本文" sap:VirtualizedContainerService.HintSize="552,1118" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="510,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign DisplayName="括弧を半角に" sap:VirtualizedContainerService.HintSize="510,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">[work("日付")]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Object">[work("日付").ToString.Replace("（","(")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="括弧を半角に" sap:VirtualizedContainerService.HintSize="510,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">[work("日付")]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Object">[work("日付").ToString.Replace("）",")")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="時刻の&quot;当&quot;を消す" sap:VirtualizedContainerService.HintSize="510,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_12">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[work("出勤時刻")]</OutArgument>
                       </Assign.To>
@@ -298,7 +317,7 @@
                         <InArgument x:TypeArguments="x:Object">[work("出勤時刻").ToString.Replace("当","")]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="510,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign DisplayName="時刻の&quot;当&quot;を消す" sap:VirtualizedContainerService.HintSize="510,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[work("退勤時刻")]</OutArgument>
                       </Assign.To>
