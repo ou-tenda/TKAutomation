@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>734,4304</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>734,4301.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>勤務実績データ取得_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,7 +121,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①勤務実績参照を開く&#xA;②当月入力判定&#xA;　→指定月がある場合、入力して抽出ボタンを押下&#xA;③勤務実績情報の表データを取得、dt変数に保存&#xA;④dt変数の出勤時刻、退勤時刻の「当」を削除する&#xA;⑤当日の日付と比較する&#xA;　→当日以降の勤務時間がある場合は途中フラグをつける&#xA;⑥未承認フラグ判定&#xA;　→未承認がある場合、対応する日付データを上書きする&#xA;⑦処理したdt変数を引数として出力する&#xA;&#xA;次のワークフローは「勤務実績の書き込み」" DisplayName="勤務実績データ取得" sap:VirtualizedContainerService.HintSize="744,4239.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①勤務実績参照を開く&#xA;②当月入力判定&#xA;　→指定月がある場合、入力して抽出ボタンを押下&#xA;③勤務実績情報の表データを取得、dt変数に保存&#xA;④dt変数の出勤時刻、退勤時刻の「当」を削除する&#xA;⑤当日の日付と比較する&#xA;　→当日以降の勤務時間がある場合は途中フラグをつける&#xA;⑥未承認フラグ判定&#xA;　→未承認がある場合、対応する日付データを上書きする&#xA;⑦処理したdt変数を引数として出力する&#xA;&#xA;次のワークフローは「勤務実績の書き込み」" DisplayName="勤務実績データ取得" sap:VirtualizedContainerService.HintSize="744,4236.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="WorkData" />
       <Variable x:TypeArguments="x:Boolean" Name="isPopUp" />
@@ -132,13 +132,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①勤務実績参照を開く" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 株式会社テンダ" sap:VirtualizedContainerService.HintSize="682,948.6666666666666" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="8e971d63-a144-412f-b573-7ddfcd8cce6d" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①勤務実績参照を開く" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 株式会社テンダ" sap:VirtualizedContainerService.HintSize="682,946" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="8e971d63-a144-412f-b573-7ddfcd8cce6d" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="450,698.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="450,696" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
