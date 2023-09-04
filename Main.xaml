@@ -210,24 +210,12 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKログイン.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excecution\TK\TKログイン.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_TKID">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">
-                            <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="TKPass" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_TKURL">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKURL" />
-                          </InArgument>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">
-                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ErrorLog" />
-                          </InOutArgument>
-                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKAccess">
-                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="IsTKAccess" />
-                          </OutArgument>
-                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKLogin">
-                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isTKLogin" />
-                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_TKID">[TKName]</InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">[TKPass]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_TKURL">[TKURL]</InArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKAccess">[IsTKAccess]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKLogin">[isTKLogin]</OutArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
@@ -277,10 +265,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:InvokeWorkflowFile>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID20" sap2010:Annotation.AnnotationText="作業実績確認の1日の作業実績編集欄にアクセスできたか&#xA;(2回リトライ後)" DisplayName="1日クリック判定" sap:VirtualizedContainerService.HintSize="82.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
-                                  <FlowDecision.Condition>
-                                    <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="isClickFirst = True" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID20" sap2010:Annotation.AnnotationText="作業実績確認の1日の作業実績編集欄にアクセスできたか&#xA;(2回リトライ後)" Condition="[isClickFirst = True]" DisplayName="1日クリック判定" sap:VirtualizedContainerService.HintSize="82.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -302,12 +287,22 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務情報保存と書き込み.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Excecution\Config\勤務情報保存と書き込み.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ProjectList">[ProjectList]</InArgument>
-                                          <OutArgument x:TypeArguments="x:String" x:Key="out_RequestMonth">[RequestMonth]</OutArgument>
-                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isRequestMonth">[isRequestMonth]</OutArgument>
-                                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
+                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ProjectList">
+                                            <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ProjectList" />
+                                          </InArgument>
+                                          <OutArgument x:TypeArguments="x:String" x:Key="out_RequestMonth">
+                                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="RequestMonth" />
+                                          </OutArgument>
+                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isRequestMonth">
+                                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isRequestMonth" />
+                                          </OutArgument>
+                                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">
+                                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ErrorLog" />
+                                          </InOutArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
-                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isRequestFormat">[isRequestformat]</OutArgument>
+                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isRequestFormat">
+                                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isRequestformat" />
+                                          </OutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -439,24 +434,12 @@
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKタブ移動、勤次郎終了.xaml - ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excecution\TK\TKタブ移動、勤次郎終了.xaml">
                                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_TKID">
-                                                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKName" />
-                                                                      </InArgument>
-                                                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">
-                                                                        <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="TKPass" />
-                                                                      </InArgument>
-                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_TKURL">
-                                                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKURL" />
-                                                                      </InArgument>
-                                                                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">
-                                                                        <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ErrorLog" />
-                                                                      </InOutArgument>
-                                                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKAccess">
-                                                                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="IsTKAccess" />
-                                                                      </OutArgument>
-                                                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKLogin">
-                                                                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isTKLogin" />
-                                                                      </OutArgument>
+                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_TKID">[TKName]</InArgument>
+                                                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">[TKPass]</InArgument>
+                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_TKURL">[TKURL]</InArgument>
+                                                                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
+                                                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKAccess">[IsTKAccess]</OutArgument>
+                                                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKLogin">[isTKLogin]</OutArgument>
                                                                     </ui:InvokeWorkflowFile.Arguments>
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -465,10 +448,7 @@
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                   </ui:InvokeWorkflowFile>
                                                                   <FlowStep.Next>
-                                                                    <FlowDecision x:Name="__ReferenceID21" sap2010:Annotation.AnnotationText="TKにアクセス、ログインできたか&#xA;(それぞれ2回リトライ後)" DisplayName="TKアクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="124,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
-                                                                      <FlowDecision.Condition>
-                                                                        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="isTKAccess = true AND isTKLogin = true" />
-                                                                      </FlowDecision.Condition>
+                                                                    <FlowDecision x:Name="__ReferenceID21" sap2010:Annotation.AnnotationText="TKにアクセス、ログインできたか&#xA;(それぞれ2回リトライ後)" Condition="[isTKAccess = true AND isTKLogin = true]" DisplayName="TKアクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="124,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
