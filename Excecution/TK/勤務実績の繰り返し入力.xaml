@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1529.3333333333333,8470.666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1529.3333333333333,8686</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>時間ごとの繰り返し入力_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -58,6 +58,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -134,7 +135,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="作成者：落合&#xA;&#xA;本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「履歴、結果ファイルの作成」&#xA;&#xA;---&#xA;&#xA;引数&#xA;in_WorkFilePathName：勤務実績情報ファイルのパス&#xA;&#xA;変数&#xA;WorkName：String型　「勤務情報&amp;実績.xlsx」から件名を取得する&#xA;Category：String型　「勤務情報&amp;実績.xlsx」からカテゴリーを取得する&#xA;ProjectName：String型　「勤務情報&amp;実績.xlsx」からプロジェクト名を取得する&#xA;StartTime：String型　「勤務情報&amp;実績.xlsx」から開始時間を取得する&#xA;EndTime：String型　「勤務情報&amp;実績.xlsx」から終了時間を取得する&#xA;StartTimeArr：String型配列　休憩時間を区切った時の各時間の開始時間を格納する&#xA;EndTimeArr：String型配列　休憩時間を区切った時の各時間の終了時間を格納する&#xA; &#xA;- 使用しない　消去予定&#xA;※StartTime1&#xA;※StartTime2&#xA;※StartTime3&#xA;※StartTime4&#xA;※EndTime1&#xA;※EndTime2&#xA;※EndTime3&#xA;※EndTime4&#xA;&#xA;未完成事項&#xA;・Excelファイルで繰り返しの挙動を確認する&#xA;→勤務実績ファイルのフォーマット(完成例)を確認" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="1539.3333333333333,8406" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="作成者：落合&#xA;&#xA;本ワークフローの流れは以下である。&#xA;&#xA;①スケジュール画面の1日の項目をクリック&#xA;②勤務情報＆実績.xlsxの「勤務実績」シートの行を繰り返し、出勤と退勤時刻があるか&#xA;　→ない場合はその日をスキップし、ログ保持&#xA;③「勤務実績」シートから出勤時刻、終了時刻、件名、カテゴリー、プロジェクト名を取得する&#xA;　→件名がない時はその日をスキップし、エラー内容を保持&#xA;④出勤時刻と終了時刻を4段階に分割し、代入する&#xA;⑤作業実績詳細欄が登録されているかを判定&#xA;　→登録済(青)の場合は⑥へ&#xA;　→未登録(白)の場合は⑧へ&#xA;⑥登録済(青)の作業実績詳細欄をダブルクリックし、データを取得し、「勤務実績」から取得したデータと照会する&#xA;　→不一致の場合は入力し、更新する&#xA;⑦更新を押下する(⑩へ)&#xA;⑧未登録(白)の作業実績詳細欄をダブルクリックし、項目を入力する&#xA;　→プロジェクト名に一致しない場合はエラー情報を保持し、選択しない&#xA;⑨更新を押下する(⑩へ)&#xA;⑩分割した次の勤務時間帯に移動&#xA;⑪その日が終了したら登録を押下し、次の日に移動&#xA;⑫その月分の繰り返しが終了したらChromeを終了する&#xA;&#xA;次のワークフローは「履歴、結果ファイルの作成」&#xA;&#xA;---&#xA;&#xA;引数&#xA;in_WorkFilePathName：勤務実績情報ファイルのパス&#xA;&#xA;変数&#xA;WorkName：String型　「勤務情報&amp;実績.xlsx」から件名を取得する&#xA;Category：String型　「勤務情報&amp;実績.xlsx」からカテゴリーを取得する&#xA;ProjectName：String型　「勤務情報&amp;実績.xlsx」からプロジェクト名を取得する&#xA;StartTime：String型　「勤務情報&amp;実績.xlsx」から開始時間を取得する&#xA;EndTime：String型　「勤務情報&amp;実績.xlsx」から終了時間を取得する&#xA;StartTimeArr：String型配列　休憩時間を区切った時の各時間の開始時間を格納する&#xA;EndTimeArr：String型配列　休憩時間を区切った時の各時間の終了時間を格納する&#xA; &#xA;- 使用しない　消去予定&#xA;※StartTime1&#xA;※StartTime2&#xA;※StartTime3&#xA;※StartTime4&#xA;※EndTime1&#xA;※EndTime2&#xA;※EndTime3&#xA;※EndTime4&#xA;&#xA;未完成事項&#xA;・Excelファイルで繰り返しの挙動を確認する&#xA;→勤務実績ファイルのフォーマット(完成例)を確認&#xD;&#xA;&#xD;&#xA;・追加事項&#xD;&#xA;入力月に遷移する" DisplayName="時間ごとの繰り返し入力" sap:VirtualizedContainerService.HintSize="1539.3333333333333,8621.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="StartTime" />
       <Variable x:TypeArguments="x:String" Name="EndTime" />
@@ -163,30 +164,216 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="1477.3333333333333,634.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="①スケジュール画面の1日の項目をクリック" sap:VirtualizedContainerService.HintSize="1477.3333333333333,802" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="484,524" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="546,691.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="450,305.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="512,472.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="各月の1日の9時のあたりをダブルクリックする" ClickType="Double" DisplayName="クリック '9月1日（金）'" sap:VirtualizedContainerService.HintSize="388,189.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V3">
+              <Sequence sap2010:Annotation.AnnotationText="指定した月に遷移します。&#xA;指定した月は年と月は存在するものとします。判定はしません。" DisplayName="test_TK日付に応じて遷移する" sap:VirtualizedContainerService.HintSize="450,127.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_127">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="690.6666666666666,2760" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" ScopeGuid="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="656.6666666666666,2541.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Int32" Name="intNowMonth" />
+                          <Variable x:TypeArguments="x:String" Name="nowYearMonth" />
+                          <Variable x:TypeArguments="x:Int32" Name="intNowYear" />
+                          <Variable x:TypeArguments="x:String" Name="nowYear" />
+                          <Variable x:TypeArguments="x:String" Name="nowMonth" />
+                          <Variable x:TypeArguments="x:Int32" Default="202308" Name="designationYearMonth" />
+                          <Variable x:TypeArguments="x:Int32" Name="intNowYearMonth" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <DoWhile DisplayName="繰り返し (後判定)" sap:VirtualizedContainerService.HintSize="594.6666666666666,2430.6666666666665" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[intNowYearMonth &lt;&gt; designationYearMonth]">
+                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="548,2263.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_126">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NGetText DisplayName="テキストを取得 '2023年9月 実績'" sap:VirtualizedContainerService.HintSize="486,158.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" TextString="[nowYearMonth]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_list" CvType="AnyWordGroup" DesignTimeRectangle="232, 185, 136, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="Text" FriendlyName="'2023年9月 実績'" FullSelectorArgument="&lt;webctrl id='schedule_date_info' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='schedule_date_info' tag='DIV' type='' class='' /&gt;" Guid="91b5b7be-c33f-475e-8e86-e488967755fa" InformativeScreenshot="c5219cffd6ad229a39a1cbc0ae0421eb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                            <Sequence DisplayName="取得した数の変更" sap:VirtualizedContainerService.HintSize="486,83.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="&quot;年&quot;より前の文字を切り取る" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[nowMonth]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Split(nowYearMonth.ToString,"年")(1)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="&quot;月&quot;より前の文字を切り取る" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_53">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[nowMonth]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Split(nowMonth.ToString,"月")(0)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="int 型に変更" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_54">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[intNowMonth]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[Integer.Parse(nowMonth)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="&quot;年&quot;のより前を切り取る" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_55">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[nowYear]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Split(nowYearMonth.ToString,"年")(0)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="int 型に変更" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_56">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[intNowYear]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[Integer.Parse(nowYear)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="年と月を結合する" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_57">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[intNowYearMonth]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[intNowYear * 100 + intNowMonth]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                            <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="486,146" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;nowMonth : &quot; + NowMonth + Environment.NewLine +&#xA;&quot;nowYear : &quot; + NowYear + Environment.NewLine +&#xA;&quot;intNowYearMonth : &quot;+ intNowYearMonth.ToString + Environment.NewLine]" />
+                            <If sap2010:Annotation.AnnotationText="TRUE:等しい&#xA;FALSE::等しくない(次の条件分岐に進む)" Condition="[intNowYearMonth = designationYearMonth]" DisplayName="年と月が等しいかどうか" sap:VirtualizedContainerService.HintSize="486,1639.3333333333333" sap2010:WorkflowViewState.IdRef="If_29">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="376,233.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;画面の月と指定した月が等しい&quot;]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap:VirtualizedContainerService.HintSize="452,1178.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If sap2010:Annotation.AnnotationText="TRUE:等しい&#xA;FALSE::等しくない(次の条件分岐に進む)" Condition="[intNowYearMonth &gt; designationYearMonth]" DisplayName="読み込んだ月の値が対象の値と等しいかどうか" sap:VirtualizedContainerService.HintSize="410,1091.3333333333333" sap2010:WorkflowViewState.IdRef="If_28">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="376,432" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[designationYearMonth.ToString + &quot; &lt; &quot; + intNowYearMonth.ToString]" />
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="前の月に進む" sap:VirtualizedContainerService.HintSize="334,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V3">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#schedule_week" CvType="ArrowButton" DesignTimeRectangle="936, 183, 29, 31" DesignTimeScaleFactor="1" ElementType="ArrowButton" FriendlyName="'chrome.exe Time Krei'" Guid="e20ea14a-9a78-4f60-8777-cfd40f194e59" InformativeScreenshot="f5035d041f2597741912e5b4aa665006.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                              <uix:TargetAnchorable.Anchors>
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                  <uix:Target CvElementArea="964, 183, 51, 33" CvTextArea="977, 190, 24, 14" CvTextArgument="4R" CvType="Button" DesignTimeRectangle="966, 185, 48, 28" ElementType="Text" FriendlyName="'今月'" FullSelectorArgument="&lt;webctrl id='schedule_btn_today' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='schedule_btn_today' tag='DIV' type='' class='common_btn_center' aaname='今月' check:innerText='今月' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAgCAYAAABdP1tmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADrSURBVFhH7ZWxDYMwEEUzVBZhi4yTCZggBQvQUTEBFRUSrRWR+sK/EIkYYygS5WPdSU9Yhy3d42xzcs5JSqQndM4uOsDzyLwdTIgVE2LHhNgxoW0qaQXRSxF8P5I3ctc5oYis28F3hcp+VhDEHlLn3hwAoa5a5rOb1AOFEAoZXRZFTvmhkes8Ty2kXUEnpuL9gIxusVm3DrPl9kK/5bRLsfCK5D9DEULFRz8AtRBuumWBRSfSlp+5F8wd0oMfKG4tr7AKYUv5V7Wy/m9C1zSC6/bzuw79CRNix4TYMSF2TIiddIUwSInEhJw8AXEEC7c94XTbAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                                                </scg:List>
+                                              </uix:TargetAnchorable.Anchors>
+                                            </uix:TargetAnchorable>
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="376,432" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[designationYearMonth.ToString + &quot; &gt; &quot; + intNowYearMonth.ToString]" />
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="次の月に進む" sap:VirtualizedContainerService.HintSize="334,158.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V3">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_list" CvType="ArrowButton" DesignTimeRectangle="1013, 183, 29, 32" DesignTimeScaleFactor="1" ElementType="ArrowButton" FriendlyName="'chrome.exe Time Krei'" Guid="cc9ccc1a-e7ed-48d8-acbb-248c062c202a" InformativeScreenshot="a28bfe9d9ec16922e0dd07b3b58302af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                              <uix:TargetAnchorable.Anchors>
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                  <uix:Target CvElementArea="964, 183, 51, 33" CvTextArea="977, 190, 24, 14" CvTextArgument="4R" CvType="Button" DesignTimeRectangle="966, 185, 48, 28" ElementType="Text" FriendlyName="'今月'" FullSelectorArgument="&lt;webctrl id='schedule_btn_today' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='schedule_btn_today' tag='DIV' type='' class='common_btn_center' aaname='今月' check:innerText='今月' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAgCAYAAABdP1tmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADrSURBVFhH7ZWxDYMwEEUzVBZhi4yTCZggBQvQUTEBFRUSrRWR+sK/EIkYYygS5WPdSU9Yhy3d42xzcs5JSqQndM4uOsDzyLwdTIgVE2LHhNgxoW0qaQXRSxF8P5I3ctc5oYis28F3hcp+VhDEHlLn3hwAoa5a5rOb1AOFEAoZXRZFTvmhkes8Ty2kXUEnpuL9gIxusVm3DrPl9kK/5bRLsfCK5D9DEULFRz8AtRBuumWBRSfSlp+5F8wd0oMfKG4tr7AKYUv5V7Wy/m9C1zSC6/bzuw79CRNix4TYMSF2TIiddIUwSInEhJw8AXEEC7c94XTbAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                                                </scg:List>
+                                              </uix:TargetAnchorable.Anchors>
+                                            </uix:TargetAnchorable>
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </DoWhile>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="26, -1037, 1280, 676" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="8c5b8a628f50961c075476ee457a8456.jpg" Selector="&lt;html app='chrome.exe' title='Time Krei' /&gt;" Title="Time Krei" Url="https://tenda.timekrei.net/home.html#performance_list" />
+                  </uix:NApplicationCard.TargetApp>
+                </uix:NApplicationCard>
+              </Sequence>
+              <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="各月の1日の9時のあたりをダブルクリックする" ClickType="Double" DisplayName="クリック '9月1日（金）'" sap:VirtualizedContainerService.HintSize="450,189.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="de2c2504-93bc-418c-b397-7b2cc759914d" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_list" DesignTimeRectangle="272, 283, 38, 44" DesignTimeScaleFactor="1" FriendlyName="'chrome.exe Time Krei'" Guid="33615192-7864-4066-bdf9-5c07b75632c9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAsCAYAAAAJpsrIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABOSURBVFhH7dGxDQAwDMOw/n9dPkpv4JZBBLwL8NujClOFqcJUYaowVZgqTBWmClOFqbthM7MX15WqMFWYKkwVpgpThanCVGGqMHU0bPcDXLDyagUVOKwAAAAASUVORK5CYII=" InformativeScreenshot="a9db7c213a99d1db9ee587488ab54a13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
                         <uix:Target CvTextArgument="?318 (A)" CvType="Text" DesignTimeRectangle="272, 223, 111, 28" ElementType="Text" FriendlyName="'9月1日（金）'" FullSelectorArgument="&lt;webctrl aaname='9月1日（金）' parentid='schedule_head' tag='DIV' /&gt;" FuzzyAccuracy="0.6" FuzzySelectorArgument="&lt;webctrl aaname='*月1日（*）' parentid='schedule_head' tag='DIV' type='' class='string dateinfo' check:innerText='*月1日（*）' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAgCAYAAAAhWUe/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAIDSURBVGhD7ZddasMwDIB7q1yrOUroSUIvEvq2x8FeCmUEdgAvri3/ynY6lC4R+kDQ2qkb6bPc9DTPs5LgESe1ME0TOilxrHAyheOi/X1+/4hMDohMRohMRohMRohMRohMRojMGvdR9V2num5QNzsU4eZ7Nd7tWMRDjWc936nhDaXdQKZPwESe6OPaB/N4lJK/XfR8vqYZb0Wp6BiQR0Fkmud5XEYwWuvQQSzzpoaoaJBIXESQiQnD52BdiJLMsqzWfMY0PL+rv2KKvMjnvL22KNR2ML4WHaQyXcdd/B6sja2XCaSbxUMt01yPdZPfWJEcEIp+xsovdi8NpDJNAZIk4XclSMQJrsT/ysSLv+a+IdIuNJ9dv5n+wuadiT1E1LqvNteW2Yq1xbTfg+QRS7LXJdKxjXM4mZi4Wmfu95hFZKLgMjGOJ1PjfjuSCAqzpov2eMz6zdqK1++PAnqZCXmngRD8UX0fnQnX5/cYd1jSmehRrDngA1AG7OTwuILOLRxhe5FZ/GsSjccyi/delEwLsUz//wsiSswdU3hXavCCgMQ0vBwjqxUvyHS5pPcaCgxfl7qvtA4923Zmyn1J/owXFCSaeD1x8s7URJsv36jVCAUv7/GThpb3yhQ2RWQyQmQyQmQyQmQyQmQyQmQyQmQyQmQywsnULyR4hHQmA7S/rw+lfgEoji99pk0klAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
                         <uix:Target CvTextArgument="09:00" CvType="Text" DesignTimeRectangle="223, 253, 48, 51" FriendlyName="'09:00'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='10' parentid='schedule_head_time_bg_scroll' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' parentid='schedule_head_time_bg_scroll' tag='DIV' aaname='' check:innerText='09:00' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAA3CAYAAABD7GlFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAEuSURBVGhD7ZRbCoNADEW7K7dVlyKuRNzI4C4KfriD1IyjnfhIEQq9yj2QjzGiOUn0MQyDaIQQbhGL0NVRGYUTQkVlFAqhQiF0KIQOhdChUCRUUhTFFM9G+nRZ6dvyMLdHV6d7xyhbe7eXO+K80KuRsqikS0cVWF6movWcSXLZeY3N99I8S2le6eTkPM4LjUWbbqlgmoR2tJqel+ikyqYUi8zOXW2LzJvj5TxOC20fPBadJma7qnxyW3a6vkzYy/n8VCiesr2PcfgdgQh5K7fhSxEQK+f+FAw6uVWXV9gVtVPxch7nhRTt/O5K6YvnddsWEItcTfP/v21wKIQOhdChEDoUQodC6FAIHQqhQyF0KIQOhdChEDoUQodC6FAIHQqhc38hvXD1MEJXZ5IK8gbS4Wa8gaYeBgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image, CV" />
                         <uix:Target CvTextArgument="10:00" CvType="Text" DesignTimeRectangle="223, 304, 48, 51" FriendlyName="'10:00'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='11' parentid='schedule_head_time_bg_scroll' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' parentid='schedule_head_time_bg_scroll' tag='DIV' aaname='' check:innerText='10:00' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAA3CAYAAABD7GlFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAEFSURBVGhD7ZRtCoQgEIb3Vl4rjxKdJLqIdIugH91gVu1L3XZgl368xvvAEDoD+ujka1kWCVE7zrn4fa5QmKg9MqHa2aX4D6FCIXQohA6F0KHQySht08u8jQ5cK8aYNa7yBWO31fqwQ16t5b7xl9CxULnhqRdrWq+6Mg9W3UjIm+6olr6x0k/bSMlp3HtD/nYygSCY1MRNJuOxyzeZHoCW07hV6HNRX5PcWM7FqYd2jbei5XQodPJ7y5XAt1y1j0L6nMZIWyG0xj5/0ZLlHMSzjQyF0KEQOhRCh0LoUAgdCqFDIXQohA6F0KEQOhRCh0LoUAgdCqFDIXSeLxQmao9MqHZWKSdvptmRuE5U76YAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
@@ -285,7 +472,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1119.3333333333333,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;出勤時刻 : &quot; + CurrentRow(&quot;出勤時刻&quot;).ToString + Environment.NewLine +&#xD;&#xA;&quot;日付 : &quot; + CurrentRow(&quot;日付&quot;).ToString + Environment.NewLine +&#xD;&#xA;&quot;件名 : &quot; + CurrentRow(&quot;件名&quot;).ToString + Environment.NewLine +&#xD;&#xA;&quot;9 : &quot; + CurrentRow(9).ToString + Environment.NewLine]" />
+                          <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="1119.3333333333333,143.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;出勤時刻 : &quot; + CurrentRow(&quot;出勤時刻&quot;).ToString + Environment.NewLine +&#xA;&quot;日付 : &quot; + CurrentRow(&quot;日付&quot;).ToString + Environment.NewLine +&#xA;&quot;件名 : &quot; + CurrentRow(&quot;件名&quot;).ToString + Environment.NewLine +&#xA;&quot;9 : &quot; + CurrentRow(9).ToString + Environment.NewLine]" />
                           <If Condition="[string.IsNullOrEmpty(CurrentRow(&quot;出勤時刻&quot;).ToString) = false]" DisplayName="就業時間帯が空のときは入力しない" sap:VirtualizedContainerService.HintSize="1119.3333333333333,4348.666666666667" sap2010:WorkflowViewState.IdRef="If_24">
                             <If.Then>
                               <Sequence sap:VirtualizedContainerService.HintSize="1085.3333333333333,3934.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_108">
@@ -1357,7 +1544,7 @@
                                                                     </Sequence>
                                                                   </ui:CommentOut.Body>
                                                                 </ui:CommentOut>
-                                                                <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="548.6666666666666,53.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(0) + Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(1) + Environment.NewLine +&#xD;&#xA;Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(0) + Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(1) + Environment.NewLine +&#xD;&#xA;&quot;カテゴリー&quot; + CurrentRow(&quot;カテゴリー&quot;).ToString + Environment.NewLine +&#xD;&#xA;&quot;件名&quot; + CurrentRow(&quot;件名&quot;).ToString + Environment.NewLine +&#xD;&#xA;&quot;プロジェクト名&quot; + CurrentRow(&quot;プロジェクト名&quot;).ToString]">
+                                                                <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="548.6666666666666,53.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(0) + Split(StartTimeArr(itemNum).ToString,&quot;:&quot;)(1) + Environment.NewLine +&#xA;Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(0) + Split(EndTimeArr(itemNum).ToString,&quot;:&quot;)(1) + Environment.NewLine +&#xA;&quot;カテゴリー&quot; + CurrentRow(&quot;カテゴリー&quot;).ToString + Environment.NewLine +&#xA;&quot;件名&quot; + CurrentRow(&quot;件名&quot;).ToString + Environment.NewLine +&#xA;&quot;プロジェクト名&quot; + CurrentRow(&quot;プロジェクト名&quot;).ToString]">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
