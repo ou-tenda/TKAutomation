@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="フローチャート" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1274,2670.6666666666665" sap2010:WorkflowViewState.IdRef="フローチャート_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="フローチャート" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1274,2670.666666666667" sap2010:WorkflowViewState.IdRef="フローチャート_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -85,7 +85,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="TKの作業実績確認の自動入力のフローチャート。&#xA;作業の流れは、大まかに以下の通りである。&#xA;&#xA;①configファイル読み込み、勤務情報&amp;実績ファイル準備&#xA;②TKにログインし、プロジェクト名を取得&#xA;③勤務情報&amp;実績ファイルに手動で記入&#xA;④勤次郎にログインし、勤務実績参照から該当月のデータをExcelファイルに保存&#xA;⑤TKに未入力の日から1日ずつ実績を入力&amp;登録する&#xA;⑥終了後履歴と結果のExcelファイルをローカルに保存&#xA;&#xA;使用変数：&#xA;ExeStartTime：実行開始時間　string&#xA;TKURL：TKのURL　string&#xA;KinURL：勤次郎のURL　string&#xA;TKName：TKのログインID　string&#xA;TKPass：TKのログインパスワード　securestring&#xA;KinName：勤次郎のユーザーID　string&#xA;KinPass：勤次郎のパスワード　securestring&#xA;ProjectList：プロジェクト名　datatable&#xA;RequestMonth：指定月　string&#xA;isRequestMonth：指定月の有無フラグ　boolean&#xA;NotApprovalWork：未承認の申請情報　datatabel&#xA;isNotApproval：未承認の有無　boolean&#xA;NotEnd：途中フラグ　boolean&#xA;WorkData：勤務実績データ　datatable&#xA;&#xA;ExeCount：土日祝以外処理した日数　int32&#xA;SuccessCount：登録した日数　int32&#xA;SuccessDays：登録した日付、&quot;、&quot;で連結した文字列　string&#xA;SkipDays：スキップした日付、&quot;、&quot;で連結した文字列　string&#xA;Errorlog：全体で保持するエラーログ情報　datatable&#xA;&#xA;isconfig：config読み込みが空じゃないかのフラグ&#xA;isInfo：勤務情報＆実績ファイルが存在するかのフラグ&#xA;isRequestFormat：指定月のフォーマットチェックフラグ&#xA;isTKAccess：TKにアクセスできたかのフラグ&#xA;isTKLogin：TKにログインできたかのフラグ&#xA;isKinAccess：勤次郎にアクセスできたかのフラグ&#xA;isKinLogin：勤次郎にログインできたかのフラグ&#xD;&#xA;isClickFirst：TK作業実績確認にて1日をクリックできたのフラグ&#xA;" DisplayName="Main" sap:VirtualizedContainerService.HintSize="1284,2606" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="TKの作業実績確認の自動入力のフローチャート。&#xA;作業の流れは、大まかに以下の通りである。&#xA;&#xA;①configファイル読み込み、勤務情報&amp;実績ファイル準備&#xA;②TKにログインし、プロジェクト名を取得&#xA;③勤務情報&amp;実績ファイルに手動で記入&#xA;④勤次郎にログインし、勤務実績参照から該当月のデータをExcelファイルに保存&#xA;⑤TKに未入力の日から1日ずつ実績を入力&amp;登録する&#xA;⑥終了後履歴と結果のExcelファイルをローカルに保存&#xA;&#xA;使用変数：&#xA;ExeStartTime：実行開始時間　string&#xA;TKURL：TKのURL　string&#xA;KinURL：勤次郎のURL　string&#xA;TKName：TKのログインID　string&#xA;TKPass：TKのログインパスワード　securestring&#xA;KinName：勤次郎のユーザーID　string&#xA;KinPass：勤次郎のパスワード　securestring&#xA;ProjectList：プロジェクト名　datatable&#xA;RequestMonth：指定月　string&#xA;isRequestMonth：指定月の有無フラグ　boolean&#xA;NotApprovalWork：未承認の申請情報　datatabel&#xA;isNotApproval：未承認の有無　boolean&#xA;NotEnd：途中フラグ　boolean&#xA;WorkData：勤務実績データ　datatable&#xA;&#xA;ExeCount：土日祝以外処理した日数　int32&#xA;SuccessCount：登録した日数　int32&#xA;SuccessDays：登録した日付、&quot;、&quot;で連結した文字列　string&#xA;SkipDays：スキップした日付、&quot;、&quot;で連結した文字列　string&#xA;Errorlog：全体で保持するエラーログ情報　datatable&#xA;&#xA;isconfig：config読み込みが空じゃないかのフラグ&#xA;isInfo：勤務情報＆実績ファイルが存在するかのフラグ&#xA;isRequestFormat：指定月のフォーマットチェックフラグ&#xA;isTKAccess：TKにアクセスできたかのフラグ&#xA;isTKLogin：TKにログインできたかのフラグ&#xA;isKinAccess：勤次郎にアクセスできたかのフラグ&#xA;isKinLogin：勤次郎にログインできたかのフラグ&#xA;isClickFirst：TK作業実績確認にて1日をクリックできたのフラグ&#xA;" DisplayName="Main" sap:VirtualizedContainerService.HintSize="1284,2606" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="TKURL" />
       <Variable x:TypeArguments="x:String" Name="KinURL" />
@@ -210,12 +210,24 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKログイン.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excecution\TK\TKログイン.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_TKID">[TKName]</InArgument>
-                          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">[TKPass]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_TKURL">[TKURL]</InArgument>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
-                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKAccess">[IsTKAccess]</OutArgument>
-                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKLogin">[isTKLogin]</OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_TKID">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKName" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">
+                            <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="TKPass" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_TKURL">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKURL" />
+                          </InArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">
+                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ErrorLog" />
+                          </InOutArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKAccess">
+                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="IsTKAccess" />
+                          </OutArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKLogin">
+                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isTKLogin" />
+                          </OutArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
@@ -403,7 +415,24 @@
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKタブ移動、勤次郎終了.xaml - ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excecution\TK\TKタブ移動、勤次郎終了.xaml">
                                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_TKID">
+                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKName" />
+                                                                  </InArgument>
+                                                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">
+                                                                    <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="TKPass" />
+                                                                  </InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_TKURL">
+                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TKURL" />
+                                                                  </InArgument>
+                                                                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">
+                                                                    <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="ErrorLog" />
+                                                                  </InOutArgument>
+                                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKAccess">
+                                                                    <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="IsTKAccess" />
+                                                                  </OutArgument>
+                                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKLogin">
+                                                                    <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="isTKLogin" />
+                                                                  </OutArgument>
                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -445,33 +474,15 @@
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="履歴、結果ファイル作成.xaml - ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Excecution\Config\履歴、結果ファイル作成.xaml">
                                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_NotEnd">
-                                                                            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="NotEnd" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_RequestMonth">
-                                                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="RequestMonth" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_isRequestMonth">
-                                                                            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="isRequestMonth" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_ExeStartTime">
-                                                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExeStartTime" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Errorlog">
-                                                                            <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ErrorLog" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_ExeCount">
-                                                                            <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="ExeCount" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_SuccessCount">
-                                                                            <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="SuccessCount" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_SuccessDays">
-                                                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="SuccessDays" />
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_SkipDays">
-                                                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="SkipDays" />
-                                                                          </InArgument>
+                                                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_NotEnd">[NotEnd]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_RequestMonth">[RequestMonth]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_isRequestMonth">[isRequestMonth]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_ExeStartTime">[ExeStartTime]</InArgument>
+                                                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Errorlog">[ErrorLog]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_ExeCount">[ExeCount]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_SuccessCount">[SuccessCount]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_SuccessDays">[SuccessDays]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_SkipDays">[SkipDays]</InArgument>
                                                                         </ui:InvokeWorkflowFile.Arguments>
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
