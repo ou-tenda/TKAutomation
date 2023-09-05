@@ -163,7 +163,7 @@
               <av:Point x:Key="ShapeLocation">686,316.6666666666667</av:Point>
               <av:Size x:Key="ShapeSize">88,86.66666666666667</av:Size>
               <av:PointCollection x:Key="TrueConnector">686,360 470,360 470,393.3333333333333</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">774,360 804,360 804,1900 570,1900</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">774,360 859.5871690296669,360 859.5871690296669,1900 570,1900</av:PointCollection>
               <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -195,7 +195,7 @@
                       <av:Point x:Key="ShapeLocation">646,446.6666666666667</av:Point>
                       <av:Size x:Key="ShapeSize">148,86.66666666666667</av:Size>
                       <av:PointCollection x:Key="TrueConnector">646,490 470,490 470,533.3333333333334</av:PointCollection>
-                      <av:PointCollection x:Key="FalseConnector">794,490 824,490 824,1900 570,1900</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">794,490 860.5227546021382,490 860.5227546021382,1900 570,1900</av:PointCollection>
                       <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -232,7 +232,7 @@
                               <av:Point x:Key="ShapeLocation">658,586.6666666666666</av:Point>
                               <av:Size x:Key="ShapeSize">124,86.66666666666667</av:Size>
                               <av:PointCollection x:Key="TrueConnector">658,630 470,630 470,673.3333333333334</av:PointCollection>
-                              <av:PointCollection x:Key="FalseConnector">782,630 812,630 812,1900 570,1900</av:PointCollection>
+                              <av:PointCollection x:Key="FalseConnector">782,630 859.5871690296669,630 859.5871690296669,1900 570,1900</av:PointCollection>
                               <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -266,7 +266,7 @@
                                       <av:Point x:Key="ShapeLocation">678.6666666666666,736.6666666666666</av:Point>
                                       <av:Size x:Key="ShapeSize">82.66666666666667,86.66666666666667</av:Size>
                                       <av:PointCollection x:Key="TrueConnector">678.6666666666666,780 470,780 470,823.3333333333334</av:PointCollection>
-                                      <av:PointCollection x:Key="FalseConnector">761.3333333333333,780 823.0956583375579,780 823.0956583375579,1900 570,1900</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">761.3333333333333,780 860.5227546021382,780 860.5227546021382,1900 570,1900</av:PointCollection>
                                       <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -302,7 +302,7 @@
                                               <av:Point x:Key="ShapeLocation">662.6666666666666,876.6666666666666</av:Point>
                                               <av:Size x:Key="ShapeSize">134.66666666666666,86.66666666666667</av:Size>
                                               <av:PointCollection x:Key="TrueConnector">662.6666666666666,920 470,920 470,983.3333333333334</av:PointCollection>
-                                              <av:PointCollection x:Key="FalseConnector">797.3333333333333,920 827.3333333333334,920 827.3333333333334,1900 570,1900</av:PointCollection>
+                                              <av:PointCollection x:Key="FalseConnector">797.3333333333333,920 858.6515834571957,920 858.6515834571957,1900 570,1900</av:PointCollection>
                                               <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
@@ -339,7 +339,7 @@
                                                       <av:Point x:Key="ShapeLocation">656.6666666666666,1046.6666666666667</av:Point>
                                                       <av:Size x:Key="ShapeSize">146.66666666666666,86.66666666666667</av:Size>
                                                       <av:PointCollection x:Key="TrueConnector">656.6666666666666,1090 470,1090 470,1163.3333333333333</av:PointCollection>
-                                                      <av:PointCollection x:Key="FalseConnector">803.3333333333333,1090 833.3333333333333,1090 833.3333333333333,1900 570,1900</av:PointCollection>
+                                                      <av:PointCollection x:Key="FalseConnector">803.3333333333333,1090 858.6515834571957,1090 858.6515834571957,1900 570,1900</av:PointCollection>
                                                       <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
@@ -439,7 +439,7 @@
                                                                           <av:Point x:Key="ShapeLocation">668,1546.6666666666667</av:Point>
                                                                           <av:Size x:Key="ShapeSize">124,86.66666666666667</av:Size>
                                                                           <av:PointCollection x:Key="TrueConnector">668,1590 470,1590 470,1673.3333333333333</av:PointCollection>
-                                                                          <av:PointCollection x:Key="FalseConnector">792,1590 822,1590 822,1900 570,1900</av:PointCollection>
+                                                                          <av:PointCollection x:Key="FalseConnector">792,1590 857.7159978847245,1590 857.7159978847245,1900 570,1900</av:PointCollection>
                                                                           <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
@@ -469,9 +469,6 @@
                                                                               <OutArgument x:TypeArguments="x:String" x:Key="out_SkipDays">
                                                                                 <VisualBasicReference x:TypeArguments="x:String" ExpressionText="SkipDays" />
                                                                               </OutArgument>
-                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_WorkFilePathName">
-                                                                                <Literal x:TypeArguments="x:String">事前設定\勤務情報&amp;実績.xlsx</Literal>
-                                                                              </InArgument>
                                                                               <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                                                                               <InArgument x:TypeArguments="x:Int32" x:Key="in_designationYearMonth">
                                                                                 <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="CInt(RequestMonth.Replace(&quot;/&quot;,&quot;&quot;))" />
@@ -661,7 +658,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">678.6666666666666,1726.6666666666667</av:Point>
           <av:Size x:Key="ShapeSize">82.66666666666667,86.66666666666667</av:Size>
-          <av:PointCollection x:Key="FalseConnector">761.3333333333333,1770 791.3333333333334,1770 791.3333333333334,1900 570,1900</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">761.3333333333333,1770 857.7159978847245,1770 857.7159978847245,1900 570,1900</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.False>
