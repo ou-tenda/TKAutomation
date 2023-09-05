@@ -1,16 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="test_TK日付に応じて遷移する" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="test_TK日付に応じて遷移する" this:test_TK日付に応じて遷移する.in_designationYearMonth="202308" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_designationYearMonth" Type="InArgument(x:Int32)" />
   </x:Members>
-  <this:test_TK日付に応じて遷移する.in_designationYearMonth>
-    <InArgument x:TypeArguments="x:Int32">
-      <Literal x:TypeArguments="x:Int32" Value="202308" />
-    </InArgument>
-  </this:test_TK日付に応じて遷移する.in_designationYearMonth>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>851.3333333333334,4174</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>851.3333333333334,4142</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>test_TK日付に応じて遷移する_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +111,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="勤務情報ファイル(Excel)から指定した月に遷移します。&#xD;&#xA;指定した月は年と月は存在するものとします。判定はしません。" DisplayName="test_TK日付に応じて遷移する" sap:VirtualizedContainerService.HintSize="861.3333333333334,4109.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="勤務情報ファイル(Excel)から指定した月に遷移します。&#xA;指定した月は年と月は存在するものとします。判定はしません。" DisplayName="test_TK日付に応じて遷移する" sap:VirtualizedContainerService.HintSize="861.3333333333334,4077.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="stringDesignationYearMonth" />
     </Sequence.Variables>
@@ -127,7 +122,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="799.3333333333334,53.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="799.3333333333334,54" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="無視されるアクティビティ" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
@@ -234,13 +229,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="799.3333333333334,3861.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="799.3333333333334,3827.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="79a73745-b7a8-4492-8697-c7d3ffb39ed8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="765.3333333333334,3602.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="実行" sap:VirtualizedContainerService.HintSize="765.3333333333334,3608" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="intNowMonth" />
               <Variable x:TypeArguments="x:String" Name="nowYearMonth" />
@@ -254,30 +249,27 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <DoWhile DisplayName="繰り返し (後判定)" sap:VirtualizedContainerService.HintSize="703.3333333333334,3486.6666666666665" sap2010:WorkflowViewState.IdRef="DoWhile_1">
-              <DoWhile.Condition>
-                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="intNowYearMonth &lt;&gt; in_designationYearMonth" />
-              </DoWhile.Condition>
-              <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="656.6666666666666,3319.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <DoWhile DisplayName="繰り返し (後判定)" sap:VirtualizedContainerService.HintSize="703.3333333333334,3492" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[intNowYearMonth &lt;&gt; in_designationYearMonth]">
+              <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="656.6666666666666,3323.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NGetText DisplayName="テキストを取得 '2023年9月 実績'" sap:VirtualizedContainerService.HintSize="594.6666666666666,158.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" TextString="[nowYearMonth]" Version="V3">
+                <uix:NGetText DisplayName="テキストを取得 '2023年9月 実績'" sap:VirtualizedContainerService.HintSize="594.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="79a73745-b7a8-4492-8697-c7d3ffb39ed8" TextString="[nowYearMonth]" Version="V3">
                   <uix:NGetText.Target>
                     <uix:TargetAnchorable BrowserURL="https://tenda.timekrei.net/home.html#performance_list" CvType="AnyWordGroup" DesignTimeRectangle="232, 185, 136, 28" DesignTimeScaleFactor="0.800000011920929" ElementType="Text" FriendlyName="'2023年9月 実績'" FullSelectorArgument="&lt;webctrl id='schedule_date_info' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='schedule_date_info' tag='DIV' type='' class='' /&gt;" Guid="91b5b7be-c33f-475e-8e86-e488967755fa" InformativeScreenshot="c5219cffd6ad229a39a1cbc0ae0421eb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Time Krei' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                   </uix:NGetText.Target>
                 </uix:NGetText>
-                <Sequence DisplayName="取得した数の変更" sap:VirtualizedContainerService.HintSize="594.6666666666666,1139.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="取得した数の変更" sap:VirtualizedContainerService.HintSize="594.6666666666666,1142.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="&quot;年&quot;より前の文字を切り取る" sap:VirtualizedContainerService.HintSize="532.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign DisplayName="&quot;年&quot;より前の文字を切り取る" sap:VirtualizedContainerService.HintSize="532.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[nowMonth]</OutArgument>
                     </Assign.To>
@@ -285,7 +277,7 @@
                       <InArgument x:TypeArguments="x:String">[Split(nowYearMonth.ToString,"年")(1)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="&quot;月&quot;より前の文字を切り取る" sap:VirtualizedContainerService.HintSize="532.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign DisplayName="&quot;月&quot;より前の文字を切り取る" sap:VirtualizedContainerService.HintSize="532.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[nowMonth]</OutArgument>
                     </Assign.To>
@@ -293,7 +285,7 @@
                       <InArgument x:TypeArguments="x:String">[Split(nowMonth.ToString,"月")(0)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="int 型に変更" sap:VirtualizedContainerService.HintSize="532.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign DisplayName="int 型に変更" sap:VirtualizedContainerService.HintSize="532.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[intNowMonth]</OutArgument>
                     </Assign.To>
@@ -301,7 +293,7 @@
                       <InArgument x:TypeArguments="x:Int32">[Integer.Parse(nowMonth)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="&quot;年&quot;のより前を切り取る" sap:VirtualizedContainerService.HintSize="532.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign DisplayName="&quot;年&quot;のより前を切り取る" sap:VirtualizedContainerService.HintSize="532.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[nowYear]</OutArgument>
                     </Assign.To>
@@ -309,7 +301,7 @@
                       <InArgument x:TypeArguments="x:String">[Split(nowYearMonth.ToString,"年")(0)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="int 型に変更" sap:VirtualizedContainerService.HintSize="532.6666666666666,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign DisplayName="int 型に変更" sap:VirtualizedContainerService.HintSize="532.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[intNowYear]</OutArgument>
                     </Assign.To>
@@ -345,7 +337,7 @@
                     </ui:CommentOut.Body>
                   </ui:CommentOut>
                 </Sequence>
-                <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="594.6666666666666,146" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;nowMonth : &quot; + NowMonth + Environment.NewLine +&#xD;&#xA;&quot;nowYear : &quot; + NowYear + Environment.NewLine +&#xD;&#xA;&quot;intNowYearMonth : &quot;+ intNowYearMonth.ToString + Environment.NewLine +&#xD;&#xA;&quot;designationYearMonth : &quot; + in_designationYearMonth.ToString]" />
+                <ui:LogMessage DisplayName="メッセージをログ" sap:VirtualizedContainerService.HintSize="594.6666666666666,146" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;nowMonth : &quot; + NowMonth + Environment.NewLine +&#xA;&quot;nowYear : &quot; + NowYear + Environment.NewLine +&#xA;&quot;intNowYearMonth : &quot;+ intNowYearMonth.ToString + Environment.NewLine +&#xA;&quot;designationYearMonth : &quot; + in_designationYearMonth.ToString]" />
                 <If sap2010:Annotation.AnnotationText="TRUE:等しい&#xA;FALSE::等しくない(次の条件分岐に進む)" Condition="[intNowYearMonth = in_designationYearMonth]" DisplayName="年と月が等しいかどうか" sap:VirtualizedContainerService.HintSize="594.6666666666666,1639.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
