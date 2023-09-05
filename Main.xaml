@@ -106,8 +106,16 @@
       <Variable x:TypeArguments="x:Boolean" Name="isInfo" />
       <Variable x:TypeArguments="x:Int32" Name="ExeCount" />
       <Variable x:TypeArguments="x:Int32" Name="SuccessCount" />
-      <Variable x:TypeArguments="x:String" Name="SuccessDays" />
-      <Variable x:TypeArguments="x:String" Name="SkipDays" />
+      <Variable x:TypeArguments="x:String" Name="SuccessDays">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="SkipDays">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:Boolean" Name="isRequestformat" />
       <Variable x:TypeArguments="x:Boolean" Name="IsTKAccess" />
       <Variable x:TypeArguments="x:Boolean" Name="isTKLogin" />
@@ -129,7 +137,7 @@
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID22</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID10">
+    <FlowStep x:Name="__ReferenceID9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">370,253.33333333333331</av:Point>
@@ -156,7 +164,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID13" sap2010:Annotation.AnnotationText="config読み込み情報に抜け漏れがないか&#xA;(2回リトライ後)" Condition="[isconfig = true]" DisplayName="config情報判定" sap:VirtualizedContainerService.HintSize="88,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+        <FlowDecision x:Name="__ReferenceID12" sap2010:Annotation.AnnotationText="config読み込み情報に抜け漏れがないか&#xA;(2回リトライ後)" Condition="[isconfig = true]" DisplayName="config情報判定" sap:VirtualizedContainerService.HintSize="88,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -188,7 +196,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID15" sap2010:Annotation.AnnotationText="勤務情報＆実績ファイルが存在しない場合は担当者に連絡" Condition="[isInfo = True]" DisplayName="勤務情報＆実績ファイル判定" sap:VirtualizedContainerService.HintSize="148,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                <FlowDecision x:Name="__ReferenceID14" sap2010:Annotation.AnnotationText="勤務情報＆実績ファイルが存在しない場合は担当者に連絡" Condition="[isInfo = True]" DisplayName="勤務情報＆実績ファイル判定" sap:VirtualizedContainerService.HintSize="148,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -225,7 +233,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
                       <FlowStep.Next>
-                        <FlowDecision x:Name="__ReferenceID18" sap2010:Annotation.AnnotationText="TKにアクセス、ログインできたか&#xA;(それぞれ2回リトライ後)" Condition="[isTKAccess = true AND isTKLogin = true]" DisplayName="TKアクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="124,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                        <FlowDecision x:Name="__ReferenceID17" sap2010:Annotation.AnnotationText="TKにアクセス、ログインできたか&#xA;(それぞれ2回リトライ後)" Condition="[isTKAccess = true AND isTKLogin = true]" DisplayName="TKアクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="124,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -259,7 +267,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:InvokeWorkflowFile>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID20" sap2010:Annotation.AnnotationText="作業実績確認の1日の作業実績編集欄にアクセスできたか&#xA;(2回リトライ後)" Condition="[isClickFirst = True]" DisplayName="1日クリック判定" sap:VirtualizedContainerService.HintSize="82.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                                <FlowDecision x:Name="__ReferenceID19" sap2010:Annotation.AnnotationText="作業実績確認の1日の作業実績編集欄にアクセスできたか&#xA;(2回リトライ後)" Condition="[isClickFirst = True]" DisplayName="1日クリック判定" sap:VirtualizedContainerService.HintSize="82.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -295,7 +303,7 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:InvokeWorkflowFile>
                                       <FlowStep.Next>
-                                        <FlowDecision x:Name="__ReferenceID17" sap2010:Annotation.AnnotationText="指定月のフォーマットが正常であるか&#xA;(2回リトライ)" Condition="[isRequestformat = True]" DisplayName="指定月のフォーマットチェック" sap:VirtualizedContainerService.HintSize="134.66666666666666,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                                        <FlowDecision x:Name="__ReferenceID16" sap2010:Annotation.AnnotationText="指定月のフォーマットが正常であるか&#xA;(2回リトライ)" Condition="[isRequestformat = True]" DisplayName="指定月のフォーマットチェック" sap:VirtualizedContainerService.HintSize="134.66666666666666,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -332,7 +340,7 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </ui:InvokeWorkflowFile>
                                               <FlowStep.Next>
-                                                <FlowDecision x:Name="__ReferenceID19" sap2010:Annotation.AnnotationText="勤次郎にアクセス、ログインできたか&#xA;(それぞれ2回リトライ後)" Condition="[isKinAccess = true AND isKinLogin = true]" DisplayName="勤次郎アクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="146.66666666666666,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                                                <FlowDecision x:Name="__ReferenceID18" sap2010:Annotation.AnnotationText="勤次郎にアクセス、ログインできたか&#xA;(それぞれ2回リトライ後)" Condition="[isKinAccess = true AND isKinLogin = true]" DisplayName="勤次郎アクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="146.66666666666666,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -394,7 +402,7 @@
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <av:Point x:Key="ShapeLocation">370,1373.3333333333333</av:Point>
                                                                   <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                                                  <av:PointCollection x:Key="ConnectorLocation">470,1426.6666666666665 470,1483.3333333333333</av:PointCollection>
+                                                                  <av:PointCollection x:Key="ConnectorLocation">470,1426.6666666666665 470,1473.3333333333333</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="勤務実績の書き込み.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Excecution\Config\勤務実績の書き込み.xaml">
@@ -408,15 +416,15 @@
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:InvokeWorkflowFile>
                                                               <FlowStep.Next>
-                                                                <FlowStep x:Name="__ReferenceID9">
+                                                                <FlowStep x:Name="__ReferenceID21">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <av:Point x:Key="ShapeLocation">370,1483.3333333333333</av:Point>
+                                                                      <av:Point x:Key="ShapeLocation">370,1473.3333333333333</av:Point>
                                                                       <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
-                                                                      <av:PointCollection x:Key="ConnectorLocation">570,1510 730,1510 730,1546.6666666666667</av:PointCollection>
+                                                                      <av:PointCollection x:Key="ConnectorLocation">570,1500 730,1500 730,1546.6666666666667</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKタブ移動、勤次郎終了.xaml - ワークフロー ファイルを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excecution\TK\TKタブ移動、勤次郎終了.xaml">
+                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TKログイン.xamlを呼び出し" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Excecution\TK\TKログイン.xaml">
                                                                     <ui:InvokeWorkflowFile.Arguments>
                                                                       <InArgument x:TypeArguments="x:String" x:Key="in_TKID">[TKName]</InArgument>
                                                                       <InArgument x:TypeArguments="ss:SecureString" x:Key="in_TKPW">[TKPass]</InArgument>
@@ -424,6 +432,7 @@
                                                                       <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_ErrorLog">[ErrorLog]</InOutArgument>
                                                                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKAccess">[IsTKAccess]</OutArgument>
                                                                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isTKLogin">[isTKLogin]</OutArgument>
+                                                                      <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                                                                     </ui:InvokeWorkflowFile.Arguments>
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -432,19 +441,19 @@
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                   </ui:InvokeWorkflowFile>
                                                                   <FlowStep.Next>
-                                                                    <FlowDecision x:Name="__ReferenceID21" sap2010:Annotation.AnnotationText="TKにアクセス、ログインできたか&#xA;(それぞれ2回リトライ後)" Condition="[isTKAccess = true AND isTKLogin = true]" DisplayName="TKアクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="124,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                                                                    <FlowDecision x:Name="__ReferenceID20" sap2010:Annotation.AnnotationText="TKにアクセス、ログインできたか&#xA;(それぞれ2回リトライ後)" Condition="[isTKAccess = true AND isTKLogin = true]" DisplayName="TKアクセス、ログイン判定" sap:VirtualizedContainerService.HintSize="124,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           <av:Point x:Key="ShapeLocation">668,1546.6666666666667</av:Point>
                                                                           <av:Size x:Key="ShapeSize">124,86.66666666666667</av:Size>
-                                                                          <av:PointCollection x:Key="TrueConnector">668,1590 470,1590 470,1673.3333333333333</av:PointCollection>
+                                                                          <av:PointCollection x:Key="TrueConnector">668,1590 638,1590 638,1700 570,1700</av:PointCollection>
                                                                           <av:PointCollection x:Key="FalseConnector">792,1590 879.3083633956853,1590 879.3083633956853,1830 570,1830</av:PointCollection>
                                                                           <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                       <FlowDecision.True>
-                                                                        <FlowStep x:Name="__ReferenceID16">
+                                                                        <FlowStep x:Name="__ReferenceID15">
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                               <av:Point x:Key="ShapeLocation">370,1673.3333333333333</av:Point>
@@ -470,9 +479,6 @@
                                                                                 <VisualBasicReference x:TypeArguments="x:String" ExpressionText="SkipDays" />
                                                                               </OutArgument>
                                                                               <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
-                                                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_designationYearMonth">
-                                                                                <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="CInt(RequestMonth.Replace(&quot;/&quot;,&quot;&quot;))" />
-                                                                              </InArgument>
                                                                             </ui:InvokeWorkflowFile.Arguments>
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -508,7 +514,7 @@
                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                               </ui:InvokeWorkflowFile>
                                                                               <FlowStep.Next>
-                                                                                <FlowStep x:Name="__ReferenceID11">
+                                                                                <FlowStep x:Name="__ReferenceID10">
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                       <av:Point x:Key="ShapeLocation">370,1913.3333333333333</av:Point>
@@ -584,7 +590,6 @@
     <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID7</x:Reference>
     <x:Reference>__ReferenceID8</x:Reference>
-    <x:Reference>__ReferenceID9</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
     <FlowStep x:Name="__ReferenceID22">
       <sap:WorkflowViewStateService.ViewState>
@@ -608,7 +613,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID14">
+        <FlowStep x:Name="__ReferenceID13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">600,113.33333333333334</av:Point>
@@ -624,7 +629,7 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:BuildDataTable>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID12">
+            <FlowStep x:Name="__ReferenceID11">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">370,173.33333333333334</av:Point>
@@ -634,13 +639,14 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:AppendLine File="{x:Null}" DisplayName="実行→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[ExeStartTime + &quot; &quot; + &quot;実行を始めました。&quot;]" UseDefaultEncoding="False" />
               <FlowStep.Next>
-                <x:Reference>__ReferenceID10</x:Reference>
+                <x:Reference>__ReferenceID9</x:Reference>
               </FlowStep.Next>
             </FlowStep>
           </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID10</x:Reference>
     <x:Reference>__ReferenceID11</x:Reference>
     <x:Reference>__ReferenceID12</x:Reference>
     <x:Reference>__ReferenceID13</x:Reference>
