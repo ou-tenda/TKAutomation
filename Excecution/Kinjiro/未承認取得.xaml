@@ -126,7 +126,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 株式会社テンダ" sap:VirtualizedContainerService.HintSize="506,2230" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="①Chromeを開く&#xA;②勤次郎のURLにアクセス" AttachMode="ByInstance" DisplayName="ブラウザーを使用 Chrome: 勤次郎Enterprise - 株式会社テンダ" sap:VirtualizedContainerService.HintSize="506,2230" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
