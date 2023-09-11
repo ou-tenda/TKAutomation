@@ -165,7 +165,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="434,417.3333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="\01_OUTPUT\作業実績入力_結果.xlsx">
+          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Excel ファイルを使用" sap:VirtualizedContainerService.HintSize="434,417.3333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="01_OUTPUT\作業実績入力_結果.xlsx">
             <ueab:ExcelApplicationCard.Body>
               <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                 <ActivityAction.Argument>
@@ -215,7 +215,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:RenameFileX DisplayName="ファイル名を変更" FilePath="01_OUTPUT\作業実績入力_結果.xlsx" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="RenameFileX_3" KeepExtension="True" NewName="[&quot;【途中】&quot; + FileName]" />
-          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="結果ファイルを開いたままにする" FileName="[&quot;\01_OUTPUT\【途中】&quot; + FileName]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="StartProcess_3" />
+          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="結果ファイルを開いたままにする" FileName="[&quot;01_OUTPUT\【途中】&quot; + FileName]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="StartProcess_3" />
         </Sequence>
       </If.Then>
       <If.Else>
@@ -226,7 +226,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:RenameFileX DisplayName="ファイル名を変更" FilePath="01_OUTPUT\作業実績入力_結果.xlsx" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="RenameFileX_2" KeepExtension="True" NewName="[&quot;【完了】&quot; + FileName]" />
-          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="結果ファイルを開いたままにする" FileName="[&quot;\01_OUTPUT\【完了】&quot; + FileName]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="StartProcess_4" />
+          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="結果ファイルを開いたままにする" FileName="[&quot;01_OUTPUT\【完了】&quot; + FileName]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="StartProcess_4" />
         </Sequence>
       </If.Else>
     </If>
