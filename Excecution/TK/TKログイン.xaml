@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>894,7688.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>894,7688</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TKログイン_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,7 +128,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①アプリが開いているを判定する&#xA;　→開いている場合は全部閉じる&#xA;②Chromeを開く&#xA;③TKのURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;④TKにログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;⑤作業実績確認画面に遷移する&#xA;&#xA;次のワークフローは「プロジェクト名取得」&#xA;&#xA;引数&#xA;in_TKID:TKのID&#xA;in_TKPW:TKのパスワード&#xA;in_TKURL:TKのURL&#xA;&#xA;変数&#xA;isTKAccess:TKにアクセスできたかの判定に使用 / Boolean / TKにアクセスできたかの判定&#xA;isTKLogin:TKにログインできたかの判定に使用 / Boolean / ログインできたかの判定&#xA;isTKNotice:TKログイン時、お知らせ表示の判定に使用 / Boolean / お知らせの判定" DisplayName="TKログイン" sap:VirtualizedContainerService.HintSize="904,7624" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="本ワークフローの流れは以下である。&#xA;&#xA;①アプリが開いているを判定する&#xA;　→開いている場合は全部閉じる&#xA;②Chromeを開く&#xA;③TKのURLにアクセス&#xA;　→アクセス失敗の場合はメッセージボックスを表示、手動入力させる&#xA;④TKにログインする&#xA;　→ログイン失敗の場合はエラー内容を保持し、終了する&#xA;⑤作業実績確認画面に遷移する&#xA;&#xA;次のワークフローは「プロジェクト名取得」&#xA;&#xA;引数&#xA;in_TKID:TKのID&#xA;in_TKPW:TKのパスワード&#xA;in_TKURL:TKのURL&#xA;&#xA;変数&#xA;isTKAccess:TKにアクセスできたかの判定に使用 / Boolean / TKにアクセスできたかの判定&#xA;isTKLogin:TKにログインできたかの判定に使用 / Boolean / ログインできたかの判定&#xA;isTKNotice:TKログイン時、お知らせ表示の判定に使用 / Boolean / お知らせの判定" DisplayName="TKログイン" sap:VirtualizedContainerService.HintSize="904,7623.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TKURL" />
       <Variable x:TypeArguments="x:String" Name="TKName" />
@@ -165,19 +165,19 @@
       </ui:KillProcess>
       <ui:AppendLine File="{x:Null}" DisplayName="ChromeとExcelを終了→履歴" FileName="02_実行履歴\作業実績入力_履歴.log" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[DateTime.Now.ToString(&quot;yyyy.MM.dd HH:mm:ss&quot;) + &quot; &quot; + &quot;起動中のChromeとExcelファイルを終了しました。&quot;]" UseDefaultEncoding="False" />
     </Sequence>
-    <Sequence DisplayName="②Chromeを開く / ③TKにアクセス" sap:VirtualizedContainerService.HintSize="842,6362.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence DisplayName="②Chromeを開く / ③TKにアクセス" sap:VirtualizedContainerService.HintSize="842,6362" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard sap2010:Annotation.AnnotationText="②Chromeを開く&#xA;③TKのURLにアクセス" AttachMode="ByInstance" CloseMode="Never" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="780,6252" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2">
+      <uix:NApplicationCard sap2010:Annotation.AnnotationText="②Chromeを開く&#xA;③TKのURLにアクセス" AttachMode="ByInstance" CloseMode="Never" DisplayName="ブラウザーを使用 Chrome: Time Krei" sap:VirtualizedContainerService.HintSize="780,6251.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8f3081a6-7328-4de4-8f9f-22cf5c57c33a" Version="V2" WindowResize="Maximize">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="TKにアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="746,5989.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap2010:Annotation.AnnotationText="TKにアクセスできるか判定" DisplayName="実行" sap:VirtualizedContainerService.HintSize="746,5988.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Name="RepairCount" />
               </Sequence.Variables>
@@ -188,7 +188,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="684,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="684,84" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[RepairCount]</OutArgument>
                 </Assign.To>
